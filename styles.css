@@ -266,3 +266,38 @@ section {
         font-size: 1rem;
     }
 }
+
+.login-container {
+    max-width: 400px;
+    margin: 100px auto;
+    padding: 20px;
+    border: 2px solid #333;
+    border-radius: 10px;
+    background-color: #f4f4f4;
+    text-align: center;
+}
+
+.login-container h2 {
+    margin-bottom: 20px;
+}
+
+.login-container input {
+    width: 90%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #999;
+    border-radius: 5px;
+}
+
+.login-container button {
+    padding: 10px 20px;
+    background-color: #141414;
+    color: #cf1b1b;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.log {
+    color: #cf1b1b;
+}
