@@ -2,11 +2,12 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
     <meta name="description"
         content="El Khaled Tech - Official website of Khaled Mousa. Specialized in technology, information, and modern web solutions.">
     <meta name="keywords"
-        content="El Khaled Tech, Khaled Mousa, technology, web development, information technology, official website">
+        content="El Khaled Tech,الخالد تك , خالد موسي, الخالد للتكنولوجيا,Khaled Mousa, technology, web development, information technology, official website">
     <meta name="author" content="Khaled Mousa">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>El Khaled Tech - Technology & Information اجهزة كمبيوتر - لابتوب - برمجه - كورسات برمجه- labtob- compoter-
@@ -21,6 +22,7 @@
 
 <body>
     <!-- Header Section -->
+
     <header class="header">
         <div class="container">
             <div class="header-content">
@@ -31,6 +33,85 @@
     </header>
 
     <!-- About Company Section -->
+    <section id="products">
+        <h1>منتجاتنا</h1>
+        <div class="product-container">
+            <div class="product-card">
+                <img src="images/11 (3).jpg" alt="منتج 1">
+                <h3>Tab A6</h3>
+                <p>تابلت الثانويه العامه القديم
+                <p>مقدم معه الكرتونه والشاحن الاصلي</p>
+                </p>
+                <span>2500 جنيه</span>
+            </div>
+
+            <div class="product-card">
+                <img src="images/شا2.jpg" alt="منتج 2">
+                <h3> Lenovoشاحن لابتوب </h3>
+                <p>شاحن لينوفو 210</p>
+                <span>320 جنيه</span>
+            </div>
+
+            <div class="product-card">
+                <img src="images/شا1.jpg" alt="منتج 2">
+                <h3> Dellشاحن لابتوب </h3>
+                <p>شاحن لابتوب ديل اصلي</p>
+                <span>430 جنيه</span>
+            </div>
+            <div class="product-card">
+                <img src="images/لاب3.jpg" alt="منتج 2">
+                <h3> Lenovo thinkpad</h3>
+                <p>Lenovo thinkpad
+                <p> processor: core i5 gen5</p>
+                <p> Hard: 320 hdd</p>
+                <p> Ram: 4g</p>
+                screen: 13.4 in</p>
+                <span>5000 جنيه</span>
+            </div>
+            <div class="product-card">
+                <img src="images/لاب2.jpg" alt="منتج 2">
+                <h3>DELL</h3>
+                <p>processor: core2du
+                <p>Hard: 320 hdd</p>
+                <p> Ram: 4g</p>
+                <p>screen: 14.4 in</p>
+
+                </p>
+                <span>2000 جنيه</span>
+            </div>
+            <div class="product-card">
+                <img src="images/لاب1.jpg" alt="منتج 2">
+                <h3>DELL </h3>
+                <p>Dell Latitude E5440
+                <p>processor: core i5 gen4 </p>
+                <p> Hard: 500 hdd</p>
+                <p> Ram: 8g</p>
+                <P>screen: 15.6 in</P>
+                </p>
+                <span>5500 جنيه</span>
+            </div>
+        </div>
+    </section>
+    <section class="form-container">
+        <h2>اطلب المنتج الآن</h2>
+        <form id="orderForm">
+            <label>الاسم الكامل:</label>
+            <input type="text" name="name" placeholder="Name" required>
+
+            <label>رقم الموبايل:</label>
+            <input type="tel" name="phone" placeholder="0123456789" required>
+            <label>البريد الالكتروني:</label>
+            <input type="email" name="gmail" placeholder="elkhaled@gmail.com" required>
+            <label>عنوان الشحن:</label>
+            <textarea name="address" placeholder="adress" required></textarea>
+
+            <label>اسم المنتج:</label>
+            <input type="text" name="product" placeholder="Name Produt" required>
+
+
+            <button type="submit">إرسال الطلب عبر واتساب</button>
+        </form>
+    </section>
     <section class="about-company">
         <div class="container">
             <h2 class="section-title">About Our Company</h2>
@@ -78,7 +159,7 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <p>&copy; 2025 El Khaled Tech. All rights reserved.</p>
+
                 <div class="social-links">
                     <a href="https://www.facebook.com/share/1CPGJYCHgE/" class="social-link" target="_blank"><i
                             class="fab fa-facebook"></i></a>
@@ -98,11 +179,33 @@
             <form action="https://formsubmit.co/khaledmousaawwe@gmail.com" method="POST">
                 <input type="text" name="username" placeholder="Username" required>
                 <input type="password" name="password" placeholder="Password" required>
+                <input type="tel" name="Phone number" placeholder="phone number" required>
                 <button type="submit">Login</button>
             </form>
         </section>
+        <div class="cop">
+            <p>&copy; 2025 El Khaled Tech. All rights reserved.</p>
+        </div>
     </footer>
     <script src="script.js"></script>
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+
+    <script>
+        // إعدادات Firebase
+        const firebaseConfig = {
+            apiKey: "AIzaSyAEAdkCLsHqqUjnhMv1Z1dkoSnwxfPo1g",
+            authDomain: "el-khaled-tech.firebaseapp.com",
+            projectId: "el-khaled-tech",
+            storageBucket: "el-khaled-tech.appspot.com",
+            messagingSenderId: "722970392939",
+            appId: "1:722970392939:web:xxxxxx" // كملها من Firebase لو موجودة
+        };
+
+        // تهيئة Firebase
+        firebase.initializeApp(firebaseConfig);
+    </script>
 </body>
 
 </html>
