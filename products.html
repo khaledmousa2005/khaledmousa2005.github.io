@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ar">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>منتجات الخالد تك</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: sans-serif;
+            direction: rtl;
+            background: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+
+        .header {
+            background: #222;
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .products {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 30px;
+        }
+
+        .product {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 0 10px #ccc;
+            text-align: center;
+        }
+
+        .product img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .price {
+            color: green;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+
+        button {
+            padding: 10px 20px;
+            background: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="header">
+        <h1>منتجات الخالد تك</h1>
+    </div>
+
+    <section class="products">
+        <div class="product">
+            <img src="images/11 (1).jpg" alt="منتج 1">
+            <h2>سماعة بلوتوث</h2>
+            <p>صوت نقي، بطارية تدوم طويلًا.</p>
+            <span class="price">250 EGP</span>
+            <button>اطلب الآن</button>
+        </div>
+
+        <div class="product">
+            <img src="images/11 (2).jpg" alt="منتج 2">
+            <h2>تابلت A6 </h2>
+            <p>حساسية عالية وإضاءة RGB.</p>
+            <span class="price">320 EGP</span>
+            <button translate="yes">اطلب الآن</button>
+        </div>
+
+        <div class="product">
+            <img src="images/11 (3).jpg" alt="منتج 3">
+            <h2>كيبورد ميكانيكي</h2>
+            <p>مناسب للألعاب والكتابة المكثفة.</p>
+            <span class="price">450 EGP</span>
+            <button>اطلب الآن</button>
+        </div>
+    </section>
+
+</body>
+
+</html>

@@ -182,6 +182,7 @@ section {
 }
 
 .social-link {
+
     color: white;
     font-size: 1.5rem;
     transition: color 0.3s ease;
@@ -300,4 +301,101 @@ section {
 
 .log {
     color: #cf1b1b;
+}
+
+.cop {
+    text-align: center;
+    font-size: large;
+    color: #ffffff;
+}
+
+.tap1 {
+
+    size: 20px;
+    flex: 1;
+    color: #2980b9;
+}
+
+.pro {
+    color: #ff0000;
+    text-align: center;
+
+}
+
+#products {
+    padding: 40px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.product-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.product-card {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    width: 220px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.product-card img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.product-card h3 {
+    margin: 10px 0 5px;
+}
+
+.product-card span {
+    color: #28a745;
+    font-weight: bold;
+}
+
+.form-container {
+    max-width: 400px;
+    margin: auto;
+    padding: 20px;
+    background-color: #f4f4f4;
+    border-radius: 10px;
+}
+
+.form-container h2 {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.form-container label {
+    display: block;
+    margin-top: 10px;
+}
+
+.form-container input,
+.form-container textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.form-container button {
+    margin-top: 15px;
+    width: 100%;
+    padding: 10px;
+    background-color: #25d366;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.form-container button:hover {
+    background-color: #128c7e;
 }

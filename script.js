@@ -41,3 +41,19 @@ document.addEventListener('DOMContentLoaded', function () {
         }, 3000);
     });
 });
+document.getElementById("orderForm").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const name = this.name.value;
+    const phone = this.phone.value;
+    const address = this.address.value;
+    const product = this.product.value;
+
+    const message = `طلب جديد:
+  الاسم: ${name}
+  رقم الموبايل: ${phone}
+  العنوان: ${address}
+  المنتج المطلوب: ${product}`;
+
+    const whatsappLink = https://wa.me/201156062656?text=${encodeURIComponent(message)};
+});
