@@ -399,3 +399,13 @@ section {
 .form-container button:hover {
     background-color: #128c7e;
 }
+
+
+.imo {
+    text-align: center;
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    animation: fadeInDown 1.5 ease-out;
+
+}
