@@ -402,10 +402,65 @@ section {
 
 
 .imo {
-    text-align: center;
-    font-size: 3.5rem;
-    font-weight: 700;
-    margin-bottom: 10px;
-    animation: fadeInDown 1.5 ease-out;
+    transition: transform 0.5s ease;
+    opacity: 0;
+    transform: translateY(50px) scale(1);
+    /* هنا ضفنا scale(1) */
+    animation: slideUp 1s forwards;
+    animation-delay: 0.3s;
+}
 
+.lodo {
+
+    position: absolute;
+    top: 15%;
+    right: 2%;
+    transition: transform 0.5s ease;
+    opacity: 0;
+    transform: translateY(50px) scale(1);
+    /* هنا ضفنا scale(1) */
+    animation: slideUp 1s forwards;
+    animation-delay: 0.3s;
+
+    transform: translateY(50px) scale(1.1);
+    /* التكبير مع الحفاظ على الحركة */
+}
+
+@keyframes slideUp {
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.pro {
+    color: #141414;
+    transition: transform 0.5s ease;
+    opacity: 0;
+    transform: translateY(50px) scale(1);
+    /* هنا ضفنا scale(1) */
+    animation: slideUp 1s forwards;
+    animation-delay: 0.3s;
+}
+
+.m1 {
+    font-size: 60px;
+    border: 3px dashed #2b53cb;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+
+    font-size: 60px;
+    font-weight: bold;
+    color: #2980b9;
+}
+
+.not {
+    color: red;
+    border: 3px dashed #ff0000;
+    text-align: center;
+    font-size: 30px;
 }
