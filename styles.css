@@ -455,11 +455,11 @@ section {
 
     font-size: 60px;
     font-weight: bold;
-    color: #2980b9;
+    color: #2689cb;
 }
 
 .not {
-    color: red;
+    color: rgb(249, 12, 12);
     border: 3px dashed #ff0000;
     text-align: center;
     font-size: 30px;
