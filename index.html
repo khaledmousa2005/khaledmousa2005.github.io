@@ -1,250 +1,348 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="ar" dir="rtl">
 <head>
-
-    <meta charset="UTF-8">
-    <meta name="description"
-        content="El Khaled Tech - Official website of Khaled Mousa. Specialized in technology, information, and modern web solutions.">
-    <meta name="keywords"
-        content="El Khaled Tech,الخالد تك , خالد موسي, الخالد للتكنولوجيا,Khaled Mousa, technology, web development, information technology, official website">
-    <meta name="author" content="Khaled Mousa">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>El Khaled Tech -اجهزة كمبيوتر</title>
-    <link rel="stylesheet" href="styles.css">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>El Khaled Tech - اجهزة كمبيوتر</title>
+  <meta name="description" content="El Khaled Tech - أجهزة كمبيوتر وقطع غيار مستعملة بحالة ممتازة" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
-
 <body>
-    <!-- Header Section -->
+  <!-- TOP ALERT -->
+  <div class="top-alert" id="topAlert" role="status" aria-live="polite">
+    <div class="top-alert-inner container">
+      <div id="topAlertText">🎉 خصومات وعروض حصرية — اضغط للمزيد!</div>
+      <div class="top-actions">
+        <button id="topAlertBtn" class="btn-small">اسأل عن العروض (واتساب)</button>
+        <button id="scrollToOffers" class="btn-small">اذهب للعروض</button>
+      </div>
+    </div>
+  </div>
 
+  <!-- HEADER -->
+  <header class="header">
+    <div class="container header-grid">
+      <div class="brand">
+        <h1 class="company-name">El Khaled Tech</h1>
+        <p class="subtitle">Technology &amp; Information</p>
+      </div>
+      <div class="logo-wrap">
+        <img src="kha.jpg" alt="شعار El Khaled Tech" class="logo" />
+      </div>
+    </div>
+  </header>
 
-    <header class="header">
-        <div class="container">
-            <div class="header-content">
-                <h1 class="company-name">El Khaled Tech</h1>
-                <p class="subtitle">Technology & Information</p>
-                <div class="lodo">
-                    <img src="kha.jpg" alt="شعار الشركه" width="10%" height="20%">
-                </div>
-            </div>
+  <!-- HERO IMAGE -->
+  <section class="hero container">
+    <img src="72.avif" alt="عرض منتجات El Khaled Tech" class="hero-img" />
+  </section>
+
+  <!-- OFFERS (SLIDER) -->
+  <section class="offers-section container" id="offersSection" aria-label="عروض خاصة">
+    <div class="offers-top">
+      <h2>عروضنا الخاصة</h2>
+      <div class="offers-sub">
+        <span>عروض مؤقتة بتخفيضات قوية</span>
+        <div class="global-countdown">انتهِ العرض الكلي خلال: <strong id="globalCountdown">--:--:--</strong></div>
+      </div>
+    </div>
+
+    <div class="offers-wrapper">
+      <button class="slide-control" id="prevOffer" aria-label="السابق">◀</button>
+
+      <div class="offers-slider" id="offersSlider" role="region" aria-live="polite">
+        <!-- Each offer uses a product image (same filenames you already have).
+             data-duration-mins controls countdown length (minutes). -->
+
+        <!-- Offer 1: 24 hours -->
+        <article class="offer-card" data-duration-mins="1440" aria-label="عرض خصم 50%">
+          <img src="11 (3).jpg" alt="عرض: Tab A6" class="offer-img" />
+          <div class="offer-head">
+            <span class="badge">خصم 50%</span>
+            <h3>خصم 50% على أول طلب</h3>
+          </div>
+          <p class="offer-desc">خصم 50% على أول عملية شراء — لفترة محدودة.</p>
+          <div class="offer-footer">
+            <div class="offer-timer" aria-hidden="false">-- يوم : --:--:--</div>
+            <button class="offer-cta">اطلب عبر واتساب</button>
+          </div>
+        </article>
+
+        <!-- Offer 2: 12 hours -->
+        <article class="offer-card" data-duration-mins="720" aria-label="اشترِ 2 وخد الثالث">
+          <img src="2.jpg" alt="عرض: شاحن لينوفو" class="offer-img" />
+          <div class="offer-head">
+            <span class="badge special">2×1</span>
+            <h3>اشترِ 2 وخد الثالث هدية</h3>
+          </div>
+          <p class="offer-desc">اختار 3 منتجات من نفس الفئة واحصل على الأرخص مجانًا.</p>
+          <div class="offer-footer">
+            <div class="offer-timer">-- يوم : --:--:--</div>
+            <button class="offer-cta">اطلب عبر واتساب</button>
+          </div>
+        </article>
+
+        <!-- Offer 3: 48 hours -->
+        <article class="offer-card" data-duration-mins="2880" aria-label="شحن مجاني">
+          <img src="1.jpg" alt="عرض: شاحن ديل" class="offer-img" />
+          <div class="offer-head">
+            <span class="badge">شحن مجاني</span>
+            <h3>شحن مجاني لأول 50 عميل</h3>
+          </div>
+          <p class="offer-desc">الشحن مجاني لأول 50 طلب — أسرع الآن!</p>
+          <div class="offer-footer">
+            <div class="offer-timer">-- يوم : --:--:--</div>
+            <button class="offer-cta">اطلب عبر واتساب</button>
+          </div>
+        </article>
+
+        <!-- Offer 4: 7 days -->
+        <article class="offer-card" data-duration-mins="10080" aria-label="عرض الطلاب">
+          <img src="لاب3.jpg" alt="عرض: Lenovo thinkpad" class="offer-img" />
+          <div class="offer-head">
+            <span class="badge student">طلاب -20%</span>
+            <h3>خصم للطلاب</h3>
+          </div>
+          <p class="offer-desc">خصم 20% للطلاب عند إظهار كارنيه جامعي ساري.</p>
+          <div class="offer-footer">
+            <div class="offer-timer">-- يوم : --:--:--</div>
+            <button class="offer-cta">اطلب عبر واتساب</button>
+          </div>
+        </article>
+
+        <!-- Offer 5: 30 minutes (hourly flash) -->
+        <article class="offer-card" data-duration-mins="30" aria-label="عرض الساعة">
+          <img src="لاب2.jpg" alt="عرض: DELL" class="offer-img" />
+          <div class="offer-head">
+            <span class="badge hot">عرض الساعة</span>
+            <h3>عرض الساعة — خصم مفاجئ</h3>
+          </div>
+          <p class="offer-desc">كل ساعة منتج يطلع عليه تخفيض خاص لفترة قصيرة.</p>
+          <div class="offer-footer">
+            <div class="offer-timer">-- يوم : --:--:--</div>
+            <button class="offer-cta">اطلب عبر واتساب</button>
+          </div>
+        </article>
+      </div>
+
+      <button class="slide-control" id="nextOffer" aria-label="التالي">▶</button>
+    </div>
+  </section>
+
+  <!-- PRODUCTS -->
+  <section id="products" class="container" aria-label="منتجاتنا">
+    <h2 class="section-title">منتجاتنا</h2>
+    <div class="product-grid">
+      <!-- keep all 9 products same as your list -->
+      <article class="product-card">
+        <img src="11 (3).jpg" alt="Tab A6" />
+        <h3>Tab A6</h3>
+        <ul class="specs">
+          <li>تابلت الثانوية العامة القديم</li>
+          <li>معه الكرتونة والشاحن الأصلي</li>
+        </ul>
+        <div class="card-bottom">
+          <span class="price">2500 جنيه</span>
+          <button class="wh-btn" data-product="Tab A6">اشتري عبر واتساب</button>
         </div>
+      </article>
 
-    </header>
-    <!--صورة العرض الاول-->
-    <div class="imo">
-        <img src="72.avif" alt="صوره2" width="100%" height="70%">
+      <article class="product-card">
+        <img src="2.jpg" alt="شاحن لينوفو 210" />
+        <h3>Lenovo شاحن لابتوب</h3>
+        <p class="small">شاحن لينوفو 210</p>
+        <div class="card-bottom">
+          <span class="price">320 جنيه</span>
+          <button class="wh-btn" data-product="شاحن لينوفو 210">اشتري عبر واتساب</button>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <img src="1.jpg" alt="شاحن ديل أصلي" />
+        <h3>Dell شاحن لابتوب</h3>
+        <p class="small">شاحن لابتوب ديل اصلي</p>
+        <div class="card-bottom">
+          <span class="price">430 جنيه</span>
+          <button class="wh-btn" data-product="شاحن لابتوب ديل اصلي">اشتري عبر واتساب</button>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <img src="لاب3.jpg" alt="Lenovo thinkpad" />
+        <h3>Lenovo thinkpad</h3>
+        <ul class="specs">
+          <li>processor: core i5 gen5</li>
+          <li>Hard: 320 hdd</li>
+          <li>Ram: 4g</li>
+          <li>screen: 13.4 in</li>
+        </ul>
+        <div class="card-bottom">
+          <span class="price">5000 جنيه</span>
+          <button class="wh-btn" data-product="Lenovo thinkpad">اشتري عبر واتساب</button>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <img src="لاب2.jpg" alt="DELL core2du" />
+        <h3>DELL</h3>
+        <ul class="specs">
+          <li>processor: core2du</li>
+          <li>Hard: 320 hdd</li>
+          <li>Ram: 4g</li>
+          <li>screen: 14.4 in</li>
+        </ul>
+        <div class="card-bottom">
+          <span class="price">2000 جنيه</span>
+          <button class="wh-btn" data-product="DELL core2du">اشتري عبر واتساب</button>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <img src="لاب1.jpg" alt="Dell Latitude E5440 gen4" />
+        <h3>DELL</h3>
+        <ul class="specs">
+          <li>Dell Latitude E5440</li>
+          <li>processor: core i5 gen4</li>
+          <li>Hard: 500 hdd</li>
+          <li>Ram: 8g</li>
+          <li>screen: 15.6 in</li>
+        </ul>
+        <div class="card-bottom">
+          <span class="price">5500 جنيه</span>
+          <button class="wh-btn" data-product="Dell Latitude E5440 (gen4)">اشتري عبر واتساب</button>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <img src="del.jpg" alt="Dell Latitude E5440 gen6" />
+        <h3>DELL</h3>
+        <ul class="specs">
+          <li>Dell Latitude E5440</li>
+          <li>processor: core i5 gen6</li>
+          <li>Hard: 256</li>
+          <li>Ram: 8g</li>
+          <li>screen: 15.6 in</li>
+        </ul>
+        <div class="card-bottom">
+          <span class="price">5800 جنيه</span>
+          <button class="wh-btn" data-product="Dell Latitude E5440 (gen6)">اشتري عبر واتساب</button>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <img src="pro.jpg" alt="HP ProBook 3040" />
+        <h3>HP Probook</h3>
+        <ul class="specs">
+          <li>HP proBook 3040</li>
+          <li>processor: core i5 gen3</li>
+          <li>Hard: 320 hdd</li>
+          <li>Ram: 6g</li>
+          <li>screen: 15.6 in</li>
+        </ul>
+        <div class="card-bottom">
+          <span class="price">4100 جنيه</span>
+          <button class="wh-btn" data-product="HP ProBook 3040">اشتري عبر واتساب</button>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <img src="hp.jpg" alt="HP EletBook E4140" />
+        <h3>HP EletBook</h3>
+        <ul class="specs">
+          <li>HP EletBook E4140</li>
+          <li>processor: core i3 gen3</li>
+          <li>Hard: 256 SSD</li>
+          <li>Ram: 8g</li>
+          <li>screen: 15.6 in</li>
+        </ul>
+        <div class="card-bottom">
+          <span class="price">5000 جنيه</span>
+          <button class="wh-btn" data-product="HP EletBook E4140">اشتري عبر واتساب</button>
+        </div>
+      </article>
+
     </div>
+  </section>
 
-    <!-- About Company Section -->
-    <section id="products">
-        <p class="m1">منتجاتنا</p>
-        <div class="pro">
-            <div class="product-container">
-                <div class="product-card">
-                    <img src="11 (3).jpg" alt="منتج 1">
-                    <h3>Tab A6</h3>
-                    <p>تابلت الثانويه العامه القديم
-                    <p>مقدم معه الكرتونه والشاحن الاصلي</p>
-                    </p>
-                    <span>2500 جنيه</span>
-                </div>
+  <!-- Out of stock notice -->
+  <div class="not container">
+    <p>هناك بعض المنتجات تم نفاذها من المنفذ وسيتم استيرادها من جديد في وقت لاحق</p>
+  </div>
 
-                <div class="product-card">
-                    <img src="2.jpg" alt="منتج 2">
-                    <h3> Lenovoشاحن لابتوب </h3>
-                    <p>شاحن لينوفو 210</p>
-                    <span>320 جنيه</span>
-                </div>
+  <!-- ORDER FORM -->
+  <section class="form-container container">
+    <h2>اطلب المنتج الآن</h2>
+    <form id="orderFormMain" class="order-grid">
+      <label for="fullName">الاسم الكامل</label>
+      <input id="fullName" name="name" required />
 
-                <div class="product-card">
-                    <img src="1.jpg" alt="منتج 2">
-                    <h3> Dellشاحن لابتوب </h3>
-                    <p>شاحن لابتوب ديل اصلي</p>
-                    <span>430 جنيه</span>
-                </div>
-                <div class="product-card">
-                    <img src="لاب3.jpg" alt="منتج 2">
-                    <h3> Lenovo thinkpad</h3>
-                    <p>Lenovo thinkpad
-                    <p> processor: core i5 gen5</p>
-                    <p> Hard: 320 hdd</p>
-                    <p> Ram: 4g</p>
-                    screen: 13.4 in</p>
-                    <span>5000 جنيه</span>
-                </div>
-                <div class="product-card">
-                    <img src="لاب2.jpg" alt="منتج 2">
-                    <h3>DELL</h3>
-                    <p>processor: core2du
-                    <p>Hard: 320 hdd</p>
-                    <p> Ram: 4g</p>
-                    <p>screen: 14.4 in</p>
+      <label for="phoneNumber">رقم الموبايل</label>
+      <input id="phoneNumber" name="phone" required />
 
-                    </p>
-                    <span>2000 جنيه</span>
-                </div>
-                <div class="product-card">
-                    <img src="لاب1.jpg" alt="منتج 2">
-                    <h3>DELL </h3>
-                    <p>Dell Latitude E5440
-                    <p>processor: core i5 gen4 </p>
-                    <p> Hard: 500 hdd</p>
-                    <p> Ram: 8g</p>
-                    <P>screen: 15.6 in</P>
-                    </p>
-                    <span>5500 جنيه</span>
+      <label for="emailAddr">البريد الإلكتروني</label>
+      <input id="emailAddr" name="email" type="email" required />
 
+      <label for="productName">اسم المنتج</label>
+      <input id="productName" name="product" required />
 
-                </div>
-                <div class="product-card">
-                    <img src="del.jpg" alt="منتج 2">
-                    <h3>DELL </h3>
-                    <p>Dell Latitude E5440
-                    <p>processor: core i5 gen6 </p>
-                    <p> Hard: 256</p>
-                    <p> Ram: 8g</p>
-                    <P>screen: 15.6 in</P>
-                    </p>
-                    <span>5800 جنيه</span>
+      <label for="address">عنوان الشحن</label>
+      <textarea id="address" name="address" required></textarea>
 
+      <button type="submit" class="submit-wh">إرسال الطلب عبر واتساب</button>
+    </form>
+  </section>
 
-                </div>
-                <div class="product-card">
-                    <img src="pro.jpg" alt="منتج 2">
-                    <h3>HP Probook </h3>
-                    <p>HP proBook 3040
-                    <p>processor: core i5 gen3 </p>
-                    <p> Hard:320 hdd</p>
-                    <p> Ram: 6g</p>
-                    <P>screen: 15.6 in</P>
-                    </p>
-                    <span>4100 جنيه</span>
-
-
-                </div>
-                <div class="product-card">
-                    <img src="hp.jpg" alt="منتج 2">
-                    <h3>HP EletBook </h3>
-                    <p> HP EletBook E4140
-                    <p>processor: core i3 gen3 </p>
-                    <p> Hard: 256 SSd</p>
-                    <p> Ram: 8g</p>
-                    <P>screen: 15.6 in</P>
-                    </p>
-                    <span>5000 جنيه</span>
-
-
-                </div>
-    </section>
-    <div class="not">
-        <p>
-            هناك بعض المنتجات تم نفاذها من المنفذ وسيتم استيرادها من جديد في وقت لاحق
-        </p>
+  <!-- ABOUT & FOUNDER -->
+  <section class="about-company container" id="aboutCompany">
+    <h2 class="section-title">About Our Company</h2>
+    <div class="about-grid">
+      <div class="about-content">
+        <p>El Khaled Tech is a digital innovation hub dedicated to providing cutting-edge solutions and services to both individuals and businesses.</p>
+        <p>للتواصل السريع اضغط على أي زر واتساب بجانب المنتج أو استخدم نموذج الطلب.</p>
+      </div>
+      <aside class="founder" id="founder">
+        <img src="IMG-20240920-WA0044.jpg" alt="Khaled Mousa" class="founder-img" />
+        <h3>Khaled Mousa</h3>
+        <p class="founder-role">المؤسس - El Khaled Tech</p>
+      </aside>
     </div>
+  </section>
 
-    <section class="form-container">
-        <h2>اطلب المنتج الآن</h2>
-        <form id="orderForm">
-            <label>الاسم الكامل:</label>
-            <input type="text" name="name" placeholder="Name" required>
+  <!-- INTERACTIVE -->
+  <section class="interactive container" id="interactive">
+    <h2 class="section-title">Welcome Message</h2>
+    <div class="interactive-content">
+      <button id="welcomeBtn" class="btn-primary">Click for Welcome Message</button>
+      <div id="welcomeMessage" class="welcome-message" aria-live="polite"></div>
+    </div>
+  </section>
 
-            <label>رقم الموبايل:</label>
-            <input type="tel" name="phone" placeholder="0123456789" required>
-            <label>البريد الالكتروني:</label>
-            <input type="email" name="gmail" placeholder="elkhaled@gmail.com" required>
-            <label>عنوان الشحن:</label>
-            <textarea name="address" placeholder="adress" required></textarea>
+  <!-- FOOTER + LOGIN BOX -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="social">
+        <a href="https://www.facebook.com/share/1CPGJYCHgE/" target="_blank" rel="noreferrer">Facebook</a> |
+        <a href="https://x.com/khaledMous65" target="_blank" rel="noreferrer">X</a> |
+        <a href="https://github.com/khaledmousa2005" target="_blank" rel="noreferrer">GitHub</a> |
+        <a href="https://www.youtube.com/@eng_Khaled_Mousa" target="_blank" rel="noreferrer">YouTube</a>
+      </div>
 
-            <label>اسم المنتج:</label>
-            <input type="text" name="product" placeholder="Name Produt" required>
-
-
-            <button type="submet" id="orderForm">إرسال الطلب عبر واتساب</button>
+      <div class="login-panel" aria-label="Login">
+        <h3>Login</h3>
+        <form action="https://formsubmit.co/khaledmousaawwe@gmail.com" method="POST" class="login-form">
+          <input name="username" placeholder="Username" required />
+          <input name="password" placeholder="Password" type="password" required />
+          <input name="phone_number" placeholder="phone number" required />
+          <button type="submit" class="btn-login">تسجيل الدخول</button>
         </form>
-    </section>
-    <section class="about-company">
-        <div class="container">
-            <h2 class="section-title">About Our Company</h2>
-            <div class="about-content">
-                <p>El Khaled Tech is a digital innovation hub dedicated to providing cutting-edge solutions and services
-                    to both individuals and businesses. We specialize in delivering technology-driven solutions that
-                    empower our clients to thrive in the digital age. Our team of experts combines technical expertise
-                    with creative thinking to develop innovative solutions that address real-world challenges.</p>
-            </div>
-        </div>
-    </section>
+      </div>
+    </div>
 
-    <!-- About Founder Section -->
-    <section class="about-founder">
-        <div class="container">
-            <h2 class="section-title"> About the Founder</h2>
-            <div class="founder-content">
-                <div class="founder-image">
-                    <img src="IMG-20240920-WA0044.jpg" alt="Khaled Mousa" class="profile-img">
-                </div>
-                <div class="founder-info">
-                    <h3>Khaled Mousa</h3>
-                    <p>Meet Khaled,A passionate tech
-                        enthusiast with an insatiable curiosity for technology and knowledge, Khaled founded El Khaled
-                        Tech with a vision to bridge the gap between technology and everyday life. His journey in the
-                        tech world began with a simple love for computers and has evolved into a mission to make
-                        technology accessible and beneficial for everyone.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+    <div class="container copyright">
+      <p>&copy; 2025 El Khaled Tech. All rights reserved.</p>
+    </div>
+  </footer>
 
-    <!-- Interactive Section -->
-    <section class="interactive">
-        <div class="container">
-            <h2 class="section-title">Welcome Message</h2>
-            <div class="interactive-content">
-                <button id="welcomeBtn" class="btn">Click for Welcome Message</button>
-                <div id="welcomeMessage" class="welcome-message"></div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-
-                <div class="social-links">
-                    <a href="https://www.facebook.com/share/1CPGJYCHgE/" class="social-link" target="_blank"><i
-                            class="fab fa-facebook"></i></a>
-                    <a href="https://x.com/khaledMous65?t=o8krRYsgWNbDhTic-wLVSw&s=09" target="_blank"
-                        class="social-link"><i class="fab fa-twitter"></i></a>
-                    <a href="https://www.linkedin.com/in/%D8%AE%D8%A7%D9%84%D8%AF-%D9%85%D9%88%D8%B3%D9%89-a2817a334/"
-                        target="_blank" class="social-link"><i class="fab fa-linkedin"></i></a>
-                    <a href="https://github.com/khaledmousa2005" target="_blank" class="social-link"><i
-                            class="fab fa-github"></i></a>
-                    <a href="https://www.youtube.com/@eng_Khaled_Mousa" target="_blank" class="social-link"><i
-                            class="fab fa-youtube"></i></a>
-                </div>
-            </div>
-        </div>
-        <section class="login-container">
-            <h2 class="log">Login to El Khaled Tech</h2>
-            <form action="https://formsubmit.co/khaledmousaawwe@gmail.com" method="POST">
-                <input type="text" name="username" placeholder="Username" required>
-                <input type="password" name="password" placeholder="Password" required>
-                <input type="tel" name="Phone number" placeholder="phone number" required>
-                <button type="submit">Login</button>
-            </form>
-        </section>
-        <div class="cop">
-            <p>&copy; 2025 El Khaled Tech. All rights reserved.</p>
-        </div>
-    </footer>
-    <script src="script.js"></script>
-
+  <script src="script.js" defer></script>
 </body>
-
 </html>
