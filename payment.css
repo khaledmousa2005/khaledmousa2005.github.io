@@ -1,0 +1,16 @@
+.pay-btn {
+  display: inline-block;
+  padding: 12px 25px;
+  background: linear-gradient(45deg, #4CAF50, #45a049);
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.pay-btn:hover {
+  background: linear-gradient(45deg, #45a049, #4CAF50);
+  transform: scale(1.05);
+}

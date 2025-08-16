@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <title>صفحة الدفع</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 50px;
+      background: #f9f9f9;
+    }
+    .box {
+      background: #fff;
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+      display: inline-block;
+    }
+    h1 {
+      color: #333;
+      margin-bottom: 20px;
+    }
+    .loading {
+      font-size: 18px;
+      color: #555;
+      margin-top: 15px;
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <h1>جاري تحويلك لبوابة الدفع...</h1>
+    <p class="loading">انتظر من فضلك</p>
+  </div>
+
+  <script>
+    setTimeout(() => {
+      window.location.href = "https://www.fawry.com"; // هنا لينك الدفع الحقيقي أو صفحة وهمية
+    }, 40000); // بعد 40 ثانية
+  </script>
+</body>
+</html>

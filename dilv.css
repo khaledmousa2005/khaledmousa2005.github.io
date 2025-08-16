@@ -1,0 +1,82 @@
+/* الخط العام */
+body {
+  font-family: 'Cairo', sans-serif;
+  background: #f4f6f9;
+  margin: 0;
+  padding: 0;
+  direction: rtl;
+}
+
+/* الكونتينر */
+.container {
+  width: 90%;
+  max-width: 500px;
+  margin: 50px auto;
+  background: #fff;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+/* العناوين */
+h1 {
+  color: #2c3e50;
+  margin-bottom: 10px;
+}
+p {
+  color: #555;
+  margin-bottom: 20px;
+}
+
+/* الفورم */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  text-align: right;
+}
+
+label {
+  font-weight: bold;
+  color: #333;
+}
+
+input, textarea {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  outline: none;
+  font-size: 14px;
+  transition: border 0.3s;
+}
+
+input:focus, textarea:focus {
+  border: 1px solid #3498db;
+}
+
+/* الزر */
+button {
+  background: #3498db;
+  color: #fff;
+  padding: 12px;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background: #2980b9;
+}
+
+/* رسالة الشكر */
+.thank-you {
+  display: none;
+  padding: 20px;
+}
+
+.thank-you h2 {
+  color: #27ae60;
+}

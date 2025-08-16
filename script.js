@@ -145,3 +145,32 @@
   reveal();
 
 })();
+
+let slides = document.querySelectorAll(".slide");
+let dots = document.querySelectorAll(".dot");
+let index = 0;
+
+function showSlide(n) {
+  slides.forEach((slide, i) => {
+    slide.classList.remove("active");
+    dots[i].classList.remove("active");
+    if (i === n) {
+      slide.classList.add("active");
+      dots[i].classList.add("active");
+    }
+  });
+}
+
+// function nextSlide() {
+//   index = (index + 1) % slides.length;
+//   showSlide(index);
+// }
+
+// setInterval(nextSlide, 4000); // كل 4 ثواني يتغير السلايد
+
+// dots.forEach((dot, i) => {
+//   dot.addEventListener("click", () => {
+//     index = i;
+//     showSlide(index);
+//   });
+// });

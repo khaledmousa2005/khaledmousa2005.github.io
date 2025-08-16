@@ -292,6 +292,125 @@
     </form>
   </section>
 
+
+ <a class="delv" href="delv.html" target="_blank"> خدمات اخري  </a>
+
+<!-- ✅ قسم آراء العملاء -->
+<section id="testimonials" class="py-16 bg-gray-100">
+  <div class="max-w-6xl mx-auto text-center">
+    <h2 class="text-3xl font-bold mb-8 text-gray-800">آراء عملائنا</h2>
+    <!-- ✅ سلايدر Swiper -->
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+
+        <!-- رأي العميل -->
+        <div class="swiper-slide p-6 bg-white rounded-2xl shadow-lg">
+          <p class="text-gray-600 italic mb-4">"الخدمة ممتازة جداً، تم استلام اللاب بسرعة وجودة عالية."</p>
+          <h3 class="font-semibold text-gray-800">أحمد محمد</h3>
+        </div>
+
+        <div class="swiper-slide p-6 bg-white rounded-2xl shadow-lg">
+          <p class="text-gray-600 italic mb-4">"سعر مناسب وخدمة ما بعد البيع رائعة 👌."</p>
+          <h3 class="font-semibold text-gray-800">سارة علي</h3>
+        </div>
+
+        <div class="swiper-slide p-6 bg-white rounded-2xl shadow-lg">
+          <p class="text-gray-600 italic mb-4">"أول مرة أتعامل معاهم بس فعلاً ناس محترمة."</p>
+          <h3 class="font-semibold text-gray-800">كريم حسن</h3>
+        </div>
+
+        <div class="swiper-slide p-6 bg-white rounded-2xl shadow-lg">
+          <p class="text-gray-600 italic mb-4">"التغليف ممتاز واللاب وصل زي ما هو في الصور 👍."</p>
+          <h3 class="font-semibold text-gray-800">منى إبراهيم</h3>
+        </div>
+
+        <div class="swiper-slide p-6 bg-white rounded-2xl shadow-lg">
+          <p class="text-gray-600 italic mb-4">"التعامل سريع وخدمة العملاء متجاوبة جداً."</p>
+          <h3 class="font-semibold text-gray-800">إسلام أحمد</h3>
+        </div>
+
+        <div class="swiper-slide p-6 bg-white rounded-2xl shadow-lg">
+          <p class="text-gray-600 italic mb-4">"ناس صادقين وبيشرحوا كل حاجة قبل الشراء."</p>
+          <h3 class="font-semibold text-gray-800">هدى محمود</h3>
+        </div>
+
+        <div class="swiper-slide p-6 bg-white rounded-2xl shadow-lg">
+          <p class="text-gray-600 italic mb-4">"اشتريت منهم جهازين والاتنين زي الفل 👏."</p>
+          <h3 class="font-semibold text-gray-800">محمود فؤاد</h3>
+        </div>
+
+        <div class="swiper-slide p-6 bg-white rounded-2xl shadow-lg">
+          <p class="text-gray-600 italic mb-4">"التسليم في المعاد والدعم الفني ساعدني كتير."</p>
+          <h3 class="font-semibold text-gray-800">نورا عماد</h3>
+        </div>
+
+        <div class="swiper-slide p-6 bg-white rounded-2xl shadow-lg">
+          <p class="text-gray-600 italic mb-4">"تجربة ممتازة وأنصح أي حد يشتري من عندهم."</p>
+          <h3 class="font-semibold text-gray-800">عبدالرحمن خالد</h3>
+        </div>
+
+        <div class="swiper-slide p-6 bg-white rounded-2xl shadow-lg">
+          <p class="text-gray-600 italic mb-4">"أفضل مكان اشتريت منه أجهزة مستعملة بحالة ممتازة."</p>
+          <h3 class="font-semibold text-gray-800">ليلى حسن</h3>
+        </div>
+
+      </div>
+      <!-- ✅ أزرار التحكم -->
+      <div class="swiper-pagination"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ✅ استدعاء مكتبة Swiper -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
+<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+
+<!-- ✅ تشغيل السلايدر -->
+<script>
+  var swiper = new Swiper(".mySwiper", {
+    slidesPerView: 6, 
+    spaceBetween: 20,
+    loop: true,
+    autoplay: {
+      delay: 3000,
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    breakpoints: {
+      0: { slidesPerView: 1 },
+      768: { slidesPerView: 2 },
+      1024: { slidesPerView: 3 },
+    }
+  });
+</script>
+
+      
+
+  <!-- <h2>آراء عملائنا</h2>
+  <div class="slider">
+    <div class="slide active">
+      <p>"التعامل ممتاز والتوصيل سريع جداً.. شكراً <b>Elkhaled Tech</b>!"</p>
+      <h4>- محمد أحمد</h4>
+    </div>
+    <div class="slide">
+      <p>"اشتريت لابتوب بحالة ممتازة وخدمة عملاء رائعة 👌"</p>
+      <h4>- سارة علي</h4>
+    </div>
+    <div class="slide">
+      <p>"من أفضل التجارب اللي مرت عليا في الشراء أونلاين."</p>
+      <h4>- أحمد يوسف</h4>
+    </div>
+  </div>
+  <div class="dots">
+    <span class="dot active"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+  </div>
+</section> -->
+
+
   <!-- ABOUT & FOUNDER -->
   <section class="about-company container" id="aboutCompany">
     <h2 class="section-title">About Our Company</h2>
@@ -325,6 +444,7 @@
         <a href="https://x.com/khaledMous65" target="_blank" rel="noreferrer">X</a> |
         <a href="https://github.com/khaledmousa2005" target="_blank" rel="noreferrer">GitHub</a> |
         <a href="https://www.youtube.com/@eng_Khaled_Mousa" target="_blank" rel="noreferrer">YouTube</a>
+        <a href="faq.html" class="fa-solid fa-circle-question" target="_blank">FAQ</a>
       </div>
 
       <div class="login-panel" aria-label="Login">
@@ -341,6 +461,7 @@
     <div class="container copyright">
       <p>&copy; 2025 El Khaled Tech. All rights reserved.</p>
     </div>
+   
   </footer>
 
   <script src="script.js" defer></script>

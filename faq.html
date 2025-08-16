@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>الأسئلة الشائعة - Elkhaled Tech</title>
+  <link rel="stylesheet" href="faq.css">
+</head>
+<body dir="rtl">
+  <header class="header">
+    <h1>الأسئلة الشائعة</h1>
+    <p>كل اللي محتاج تعرفه عن خدماتنا</p>
+  </header>
+
+  <main class="faq-container">
+    <div class="faq-item">
+      <button class="faq-question">هل بتوفروا خدمة التوصيل؟</button>
+      <div class="faq-answer">
+        <p>أيوه، بنوصل لأي مكان داخل مصر برسوم رمزية.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">هل في ضمان على الأجهزة؟</button>
+      <div class="faq-answer">
+        <p>طبعًا، كل الأجهزة عليها ضمان رسمي حسب نوع المنتج.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">إزاي أقدر أطلب لابتوب معين؟</button>
+      <div class="faq-answer">
+        <p>ممكن تطلب من صفحة خدمة التوصيل أو تتواصل معانا مباشرة.</p>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    // أكورديون FAQ
+    const questions = document.querySelectorAll(".faq-question");
+    questions.forEach(q => {
+      q.addEventListener("click", () => {
+        q.classList.toggle("active");
+        const answer = q.nextElementSibling;
+        if (answer.style.display === "block") {
+          answer.style.display = "none";
+        } else {
+          answer.style.display = "block";
+        }
+      });
+    });
+  </script>
+</body>
+</html>

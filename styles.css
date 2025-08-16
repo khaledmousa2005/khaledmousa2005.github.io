@@ -117,3 +117,105 @@ body{
   .offers-slider{height:auto}
 }
 @media (max-width:380px){ .product-grid{grid-template-columns:1fr} }
+
+.delv{
+  text-decoration: none;
+  color: rgb(255, 153, 0);
+  padding: 10px;
+  background-color: rgb(0, 0, 0);
+  border-radius: 8px;
+  font-size: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+     animation-name: change-color;
+    animation-duration: 9s;
+    animation-iteration-count: infinite; position: sticky;
+  top: 0;
+  background-color: orange;
+  
+
+  font-weight: bold;
+
+}
+
+
+  
+
+@keyframes change-color{
+    0%{
+background-color: #141414;
+    }
+    25%{
+background-color: #28a745;
+    }
+     50%{
+        background-color: #2b53cb;
+    }
+     75%{
+        background-color: #cf1b1b;
+    }
+     100%{
+        background-color: #141414;
+    }
+/* .testimonials {
+  text-align: center;
+  padding: 60px 20px;
+  background: #f8f9fa;
+}
+
+.testimonials h2 {
+  font-size: 28px;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+.slider {
+  position: relative;
+  max-width: 600px;
+  margin: auto;
+}
+
+.slide {
+  display: none;
+  padding: 20px;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.slide.active {
+  display: block;
+  animation: fade 1s ease-in-out;
+}
+
+@keyframes fade {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+.slide h4 {
+  margin-top: 15px;
+  font-weight: bold;
+  color: #555;
+}
+
+.dots {
+  margin-top: 15px;
+}
+
+.dot {
+  height: 12px;
+  width: 12px;
+  margin: 0 5px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.dot.active {
+

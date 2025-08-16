@@ -1,0 +1,70 @@
+body {
+  font-family: "Cairo", sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f9f9f9;
+  color: #333;
+}
+
+.service-section {
+  text-align: center;
+  padding: 60px 20px;
+  margin: 20px;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.service-section h2 {
+  font-size: 28px;
+  margin-bottom: 15px;
+  color: #0077cc;
+}
+
+.service-section p {
+  font-size: 18px;
+  margin-bottom: 25px;
+}
+
+.service-section button {
+  background: #0077cc;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  font-size: 16px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.service-section button:hover {
+  background: #005fa3;
+}
+/* .delv{
+display: flex;
+justify-content: center;
+align-items: center;
+margin: 0;
+} */
+ .payment{
+  background: #0077cc;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  font-size: 16px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+  text-decoration:none;
+ }
+ .dilv{
+  background: #0077cc;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  font-size: 16px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+  text-decoration:none;
+ }
