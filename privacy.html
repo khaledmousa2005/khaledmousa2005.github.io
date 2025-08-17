@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>سياسة الخصوصية | Privacy Policy</title>
+  <style>
+    body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f5f6fa;
+      color: #333;
+      line-height: 1.8;
+    }
+    header {
+      background: #4a90e2;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+      position: relative;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 24px;
+    }
+    #langToggle {
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      background: #fff;
+      color: #4a90e2;
+      border: none;
+      padding: 8px 14px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+    #langToggle:hover {
+      background: #e6e6e6;
+    }
+    .container {
+      max-width: 900px;
+      margin: 30px auto;
+      background: #fff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+    h2 {
+      color: #4a90e2;
+      margin-top: 20px;
+      font-size: 20px;
+    }
+    p {
+      margin: 10px 0;
+    }
+    .emoji {
+      margin-right: 5px;
+    }
+    footer {
+      text-align: center;
+      padding: 15px;
+      background: #eee;
+      font-size: 14px;
+      margin-top: 30px;
+      border-top: 1px solid #ccc;
+    }
+    footer a {
+      color: #4a90e2;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+    footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>🔒 سياسة الخصوصية | Privacy Policy</h1>
+    <button id="langToggle">English</button>
+  </header>
+
+  <div class="container" id="arabic">
+    <h2>🔒 مقدمة</h2>
+    <p>نحن في <strong>الخالد تك</strong> نهتم بخصوصيتك ونلتزم بحماية بياناتك الشخصية عند استخدامك لموقعنا.</p>
+
+    <h2>📊 جمع المعلومات</h2>
+    <p>قد نقوم بجمع بعض البيانات مثل: الاسم، البريد الإلكتروني، ورقم الهاتف، وذلك فقط لتحسين خدماتنا.</p>
+
+    <h2>⚖ استخدام المعلومات</h2>
+    <p>تُستخدم المعلومات لتقديم الدعم الفني، تحسين تجربة المستخدم، والتواصل معك عند الحاجة.</p>
+
+    <h2>🔐 حماية البيانات</h2>
+    <p>نطبق معايير أمان عالية لحماية بياناتك من الوصول غير المصرح به.</p>
+
+    <h2>📞 تواصل معنا</h2>
+    <p>للاستفسارات يمكنك التواصل عبر البريد: 
+      <a href="mailto:khaledmousaawwe@gmail.com">khaledmousaawwe@gmail.com</a> 
+      أو الهاتف: 
+      <a href="tel:01156062656">01156062656</a>.
+    </p>
+  </div>
+
+  <div class="container" id="english" style="display:none;" dir="ltr">
+    <h2>🔒 Introduction</h2>
+    <p>At <strong>Elkhaled Tech</strong>, we value your privacy and are committed to protecting your personal data while using our website.</p>
+
+    <h2>📊 Information Collection</h2>
+    <p>We may collect certain information such as your name, email address, and phone number, solely to improve our services.</p>
+
+    <h2>⚖ Use of Information</h2>
+    <p>The collected information is used for technical support, enhancing user experience, and contacting you when needed.</p>
+
+    <h2>🔐 Data Protection</h2>
+    <p>We apply strong security standards to protect your data from unauthorized access.</p>
+
+    <h2>📞 Contact Us</h2>
+    <p>For inquiries, you can reach us via email: 
+      <a href="mailto:khaledmousaawwe@gmail.com">khaledmousaawwe@gmail.com</a> 
+      or phone: 
+      <a href="tel:01156062656">01156062656</a>.
+    </p>
+  </div>
+
+  <footer>
+    <p>© 2025 Elkhaled Tech | 
+      <a href="mailto:khaledmousaawwe@gmail.com">📧 Email</a> | 
+      <a href="tel:01156062656">📞 Phone</a>
+    </p>
+  </footer>
+
+  <script>
+    const toggleBtn = document.getElementById("langToggle");
+    const arabic = document.getElementById("arabic");
+    const english = document.getElementById("english");
+
+    toggleBtn.addEventListener("click", () => {
+      if (arabic.style.display !== "none") {
+        arabic.style.display = "none";
+        english.style.display = "block";
+        toggleBtn.textContent = "عربي";
+      } else {
+        arabic.style.display = "block";
+        english.style.display = "none";
+        toggleBtn.textContent = "English";
+      }
+    });
+  </script>
+
+</body>
+</html>

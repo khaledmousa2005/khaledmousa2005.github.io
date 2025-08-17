@@ -174,3 +174,23 @@ function showSlide(n) {
 //     showSlide(index);
 //   });
 // });
+const toggleBtn = document.getElementById("darkModeToggle");
+const body = document.body;
+
+// لو فيه اختيار محفوظ قبل كده
+if (localStorage.getItem("theme") === "dark") {
+  body.classList.add("dark-mode");
+  toggleBtn.textContent = "☀";
+}
+
+toggleBtn.addEventListener("click", () => {
+  body.classList.toggle("dark-mode");
+
+  if (body.classList.contains("dark-mode")) {
+    toggleBtn.textContent = "☀";
+    localStorage.setItem("theme", "dark");
+  } else {
+    toggleBtn.textContent = "🌙";
+    localStorage.setItem("theme", "light");
+  }
+});

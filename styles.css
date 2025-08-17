@@ -167,3 +167,47 @@ background-color: #28a745;
 .subtitle{
   font-size: large;
 }
+
+:root {
+  --bg-color: #ffffff;
+  --text-color: #000000;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: 0.3s ease-in-out;
+}
+
+body.dark-mode {
+  --bg-color: #121212;
+  --text-color: #ffffff;
+}
+
+#darkModeToggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  font-size: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.privacy-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  text-decoration: none;
+  font-weight: bold;
+  color: #0077ff;
+text-align: center;
+  transition: 0.3s ease;
+}
+
+.privacy-link:hover {
+  
+  color: #ff6600;
+
+}
