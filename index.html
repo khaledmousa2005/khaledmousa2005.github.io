@@ -1,23 +1,89 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>El Khaled Tech - اجهزة كمبيوتر</title>
-  <meta name="description" content="El Khaled Tech - أجهزة كمبيوتر وقطع غيار مستعملة بحالة ممتازة" />
+  <meta name="description"
+    content="khaled Tech - khaled mousa - خالد موسي - خالد عبدالعليم - khaled tec - El Khaled Tech - أجهزة كمبيوتر وقطع غيار مستعملة بحالة ممتازة" />
+
+
+  <!-- Basic SEO Meta Tags -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Title -->
+  <title>الخالد تك | بيع وشراء لابتوبات كمبيوتر مستعملة وجديدة</title>
+
+  <!-- Meta Description -->
+  <meta name="description"
+    content="الخالد تك | بيع وشراء أفضل أجهزة الكمبيوتر واللابتوبات المستعملة والجديدة بأفضل الأسعار. اكتشف منتجاتنا من الجيل الثاني حتى الجيل الخامس بجودة مضمونة وخدمة توصيل سريعة." />
+
+  <!-- Keywords -->
+  <meta name="keywords"
+    content="الخالد تك, لابتوب مستعمل, كمبيوتر, بيع لابتوبات, شراء لابتوبات, لاب جيل رابع, لاب جيل خامس, مستعمل زيرو, laptop Egypt, used laptops" />
+
+  <!-- Author -->
+  <meta name="author" content="Elkhaled Tech" />
+
+  <!-- Open Graph (Social Media Preview) -->
+  <meta property="og:title" content="الخالد تك | بيع وشراء لابتوبات كمبيوتر مستعملة وجديدة" />
+  <meta property="og:description"
+    content="أفضل أجهزة الكمبيوتر واللابتوبات المستعملة والجديدة بأسعار مناسبة وخدمة توصيل حتى باب بيتك." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://khaledmousa2005.github.io/" />
+  <meta property="og:image" content="https://khaledmousa2005.github.io/assets/logo.png" />
+
+  <!-- Twitter Cards -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="الخالد تك | بيع وشراء لابتوبات كمبيوتر مستعملة وجديدة" />
+  <meta name="twitter:description"
+    content="أفضل أجهزة الكمبيوتر واللابتوبات المستعملة والجديدة بأسعار مناسبة وخدمة توصيل حتى باب بيتك." />
+  <meta name="twitter:image" content="https://khaledmousa2005.github.io/assets/logo.png" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/favicon.png" />
   <link rel="stylesheet" href="styles.css" />
 </head>
+
 <body>
-  <!-- TOP ALERT -->
-  <div class="top-alert" id="topAlert" role="status" aria-live="polite">
-    <div class="top-alert-inner container">
-      <div id="topAlertText">🎉 خصومات وعروض حصرية — اضغط للمزيد!</div>
-      <div class="top-actions">
-        <button id="topAlertBtn" class="btn-small">اسأل عن العروض (واتساب)</button>
-        <button id="scrollToOffers" class="btn-small">اذهب للعروض</button>
-      </div>
+
+  <!-- Font Awesome للأيقونات (إن ماكنتش ضايفه) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <!-- NAVBAR -->
+  <nav class="ek-navbar" role="navigation" aria-label="شريط التنقل">
+    <div class="ek-container">
+      <a href="#top" class="ek-brand">
+        <img src="kha.jpg" alt="El Khaled Tech" class="ek-logo">
+        <span class="ek-name">El Khaled Tech</span>
+      </a>
+
+      <button class="ek-burger" id="ekBurger" aria-label="فتح القائمة">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+
+      <ul class="ek-menu" id="ekMenu">
+        <li><a href="#top" class="ek-link active">الرئيسية</a></li>
+        <li><a href="#products" class="ek-link">منتجاتنا</a></li>
+        <li><a href="#offers" class="ek-link">العروض</a></li>
+        <li><a href="Services .html" class="ek-link">الخدمات</a></li>
+        <li><a href="faq.html" class="ek-link">الأسئلة</a></li>
+        <li><a href="#contact" class="ek-link">تواصل</a></li>
+        <li><a href="#about" class="ek-link">عن الشركه</a></li>
+        <li>
+          <a href="https://wa.me/201148223698" target="_blank" class="ek-whats">
+            <i class="fa-brands fa-whatsapp"></i> واتساب
+          </a>
+        </li>
+        <li>
+          <!-- زر وضع الليل/النهار بتاعك لو عايز تنقله هنا -->
+          <button id="darkModeToggleNav" class="ek-dark-btn" title="تبديل الوضع">🌙</button>
+        </li>
+      </ul>
     </div>
-  </div>
+  </nav>
 
   <!-- HEADER -->
   <header class="header">
@@ -30,254 +96,452 @@
         <img src="kha.jpg" alt="شعار El Khaled Tech" class="logo" />
       </div>
     </div>
-    <button id="darkModeToggle">🌙</button>
+
   </header>
 
-  <!-- HERO IMAGE -->
+
+
+  <!-- Out of stock notice -->
+  <div class="not container">
+    <h3>المنتجات الساريه الان عروض المولد النبوي فقط</h3>
+  </div>
+
+
   <section class="hero container">
     <img src="website desktop banner.webp" alt="عرض منتجات El Khaled Tech" class="hero-img" />
   </section>
 
-  <!-- OFFERS (SLIDER) -->
-  <section class="offers-section container" id="offersSection" aria-label="عروض خاصة">
-    <div class="offers-top">
-      <h2>عروضنا الخاصة</h2>
-      <div class="offers-sub">
-        <span>عروض مؤقتة بتخفيضات قوية</span>
-        <div class="global-countdown">انتهِ العرض الكلي خلال: <strong id="globalCountdown">--:--:--</strong></div>
-      </div>
-    </div>
 
-    <div class="offers-wrapper">
-      <button class="slide-control" id="prevOffer" aria-label="السابق">◀</button>
 
-      <div class="offers-slider" id="offersSlider" role="region" aria-live="polite">
-        <!-- Each offer uses a product image (same filenames you already have).
-             data-duration-mins controls countdown length (minutes). -->
+  <section id="products" class="products">
+    <h2>منتجات الخالد تك - الفئة المتوسطة</h2>
+    <div class="product-grid">
 
-        <!-- Offer 1: 24 hours -->
-        <article class="offer-card" data-duration-mins="1440" aria-label="عرض خصم 50%">
-          <img src="11 (3).jpg" alt="عرض: Tab A6" class="offer-img" />
-          <div class="offer-head">
-            <span class="badge">خصم 50%</span>
-            <h3>خصم 50% على أول طلب</h3>
-          </div>
-          <p class="offer-desc">خصم 50% على أول عملية شراء — لفترة محدودة.</p>
-          <div class="offer-footer">
-            <div class="offer-timer" aria-hidden="false">-- يوم : --:--:--</div>
-            <button class="offer-cta">اطلب عبر واتساب</button>
-          </div>
-        </article>
-
-        <!-- Offer 2: 12 hours -->
-        <article class="offer-card" data-duration-mins="720" aria-label="اشترِ 2 وخد الثالث">
-          <img src="2.jpg" alt="عرض: شاحن لينوفو" class="offer-img" />
-          <div class="offer-head">
-            <span class="badge special">2×1</span>
-            <h3>اشترِ 2 وخد الثالث هدية</h3>
-          </div>
-          <p class="offer-desc">اختار 3 منتجات من نفس الفئة واحصل على الأرخص مجانًا.</p>
-          <div class="offer-footer">
-            <div class="offer-timer">-- يوم : --:--:--</div>
-            <button class="offer-cta">اطلب عبر واتساب</button>
-          </div>
-        </article>
-
-        <!-- Offer 3: 48 hours -->
-        <article class="offer-card" data-duration-mins="2880" aria-label="شحن مجاني">
-          <img src="1.jpg" alt="عرض: شاحن ديل" class="offer-img" />
-          <div class="offer-head">
-            <span class="badge">شحن مجاني</span>
-            <h3>شحن مجاني لأول 50 عميل</h3>
-          </div>
-          <p class="offer-desc">الشحن مجاني لأول 50 طلب — أسرع الآن!</p>
-          <div class="offer-footer">
-            <div class="offer-timer">-- يوم : --:--:--</div>
-            <button class="offer-cta">اطلب عبر واتساب</button>
-          </div>
-        </article>
-
-        <!-- Offer 4: 7 days -->
-        <article class="offer-card" data-duration-mins="10080" aria-label="عرض الطلاب">
-          <img src="لاب3.jpg" alt="عرض: Lenovo thinkpad" class="offer-img" />
-          <div class="offer-head">
-            <span class="badge student">طلاب -20%</span>
-            <h3>خصم للطلاب</h3>
-          </div>
-          <p class="offer-desc">خصم 20% للطلاب عند إظهار كارنيه جامعي ساري.</p>
-          <div class="offer-footer">
-            <div class="offer-timer">-- يوم : --:--:--</div>
-            <button class="offer-cta">اطلب عبر واتساب</button>
-          </div>
-        </article>
-
-        <!-- Offer 5: 30 minutes (hourly flash) -->
-        <article class="offer-card" data-duration-mins="30" aria-label="عرض الساعة">
-          <img src="لاب2.jpg" alt="عرض: DELL" class="offer-img" />
-          <div class="offer-head">
-            <span class="badge hot">عرض الساعة</span>
-            <h3>عرض الساعة — خصم مفاجئ</h3>
-          </div>
-          <p class="offer-desc">كل ساعة منتج يطلع عليه تخفيض خاص لفترة قصيرة.</p>
-          <div class="offer-footer">
-            <div class="offer-timer"></div>
-            <button class="offer-cta">اطلب عبر واتساب</button>
-          </div>
-        </article>
+      <!-- منتج 1 -->
+      <div class="product-card">
+        <img src="images/dell ins.jpg" alt="Dell Inspiron 3567">
+        <h3>Dell Inspiron 3567</h3>
+        <p>Core i5-7200U | RAM 8GB | 1TB HDD</p>
+        <span class="price">11,500 جنيه</span>
+        <a href="dilv.html" class="btn">اطلب الآن</a>
       </div>
 
-      <button class="slide-control" id="nextOffer" aria-label="التالي">▶</button>
+      <!-- منتج 2 -->
+      <div class="product-card">
+        <img src="images/g3 4.webp" alt="HP ProBook 450 G3">
+        <h3>HP ProBook 450 G3</h3>
+        <p>Core i5-6300U | RAM 8GB | 256GB SSD</p>
+        <span class="price">12,200 جنيه</span>
+        <a href="dilv.html" class="btn">اطلب الآن</a>
+      </div>
+
+      <!-- منتج 3 -->
+      <div class="product-card">
+        <img src="images/t440.webp" alt="Lenovo ThinkPad T440">
+        <h3>Lenovo ThinkPad T440</h3>
+        <p>Core i5-4300U | RAM 8GB | 500GB HDD</p>
+        <span class="price">9,800 جنيه</span>
+        <a href="dilv.html" class="btn">اطلب الآن</a>
+      </div>
+
+      <!-- منتج 4 -->
+      <div class="product-card">
+        <img src="images/Dell-E5440-1.jpg" alt="Dell Latitude E5440">
+        <h3>Dell Latitude E5440</h3>
+        <p>Core i5-4210U | RAM 8GB | 240GB SSD</p>
+        <span class="price">10,200 جنيه</span>
+        <a href="dilv.html" class="btn">اطلب الآن</a>
+      </div>
+
+      <!-- منتج 5 -->
+      <div class="product-card">
+        <img src="images/hp-elitebook-840-g1-touchscreen-laptops.jpg" alt="HP EliteBook 840 G1">
+        <h3>HP EliteBook 840 G1</h3>
+        <p>Core i5-4300U | RAM 8GB | 500GB HDD</p>
+        <span class="price">9,600 جنيه</span>
+        <a href="dilv.html" class="btn">اطلب الآن</a>
+      </div>
+
+      <!-- منتج 6 -->
+      <div class="product-card">
+        <img src="images/x240.jpg" alt="Lenovo ThinkPad X240">
+        <h3>Lenovo ThinkPad X240</h3>
+        <p>Core i5-4300U | RAM 8GB | 256GB SSD</p>
+        <span class="price">10,000 جنيه</span>
+        <a href="dilv.html" class="btn">اطلب الآن</a>
+      </div>
+
+      <!-- منتج 7 -->
+      <div class="product-card">
+        <img src="images/e5450.jpg" alt="Dell Latitude E5450">
+        <h3>Dell Latitude E5450</h3>
+        <p>Core i5-5300U | RAM 8GB | 500GB HDD</p>
+        <span class="price">11,000 جنيه</span>
+        <a href="dilv.html" class="btn">اطلب الآن</a>
+      </div>
+
+      <!-- منتج 8 -->
+      <div class="product-card">
+        <img src="images/480g2.webp" alt="HP EliteBook 840 G2">
+        <h3>HP EliteBook 840 G2</h3>
+        <p>Core i5-5300U | RAM 8GB | 256GB SSD</p>
+        <span class="price">11,800 جنيه</span>
+        <a href="dilv.html" class="btn">اطلب الآن</a>
+      </div>
+
+      <!-- منتج 9 -->
+      <div class="product-card">
+        <img src="images/laptop9.jpg" alt="Lenovo ThinkPad T450">
+        <h3>Lenovo ThinkPad T450</h3>
+        <p>Core i5-5300U | RAM 8GB | 500GB HDD</p>
+        <span class="price">11,200 جنيه</span>
+        <a href="dilv.html" class="btn">اطلب الآن</a>
+      </div>
+
+      <!-- منتج 10 -->
+      <div class="product-card">
+        <img src="images/laptop10.jpg" alt="Dell Latitude E7470">
+        <h3>Dell Latitude E7470</h3>
+        <p>Core i5-6300U | RAM 8GB | 256GB SSD</p>
+        <span class="price">12,500 جنيه</span>
+        <a href="dilv.html" class="btn">اطلب الآن</a>
+      </div>
+
+      <!-- منتج 11 -->
+      <div class="product-card">
+        <img src="images/laptop11.jpg" alt="HP ProBook 640 G1">
+        <h3>HP ProBook 640 G1</h3>
+        <p>Core i5-4200M | RAM 4GB | 500GB HDD</p>
+        <span class="price">8,700 جنيه</span>
+        <a href="dilv.html" class="btn">اطلب الآن</a>
+      </div>
+
+      <!-- منتج 12 -->
+      <div class="product-card">
+        <img src="images/laptop12.jpg" alt="Lenovo ThinkPad L450">
+        <h3>Lenovo ThinkPad L450</h3>
+        <p>Core i5-5200U | RAM 8GB | 240GB SSD</p>
+        <span class="price">10,900 جنيه</span>
+        <a href="dilv.html" class="btn">اطلب الآن</a>
+      </div>
+
+      <!-- منتج 13 -->
+      <div class="product-card">
+        <img src="images/laptop13.jpg" alt="Dell Latitude E6430">
+        <h3>Dell Latitude E6430</h3>
+        <p>Core i5-3320M | RAM 6GB | 500GB HDD</p>
+        <span class="price">8,200 جنيه</span>
+        <a href="dilv.html" class="btn">اطلب الآن</a>
+      </div>
+
+      <!-- منتج 14 -->
+      <div class="product-card">
+        <img src="images/laptop14.jpg" alt="HP EliteBook 8470p">
+        <h3>HP EliteBook 8470p</h3>
+        <p>Core i5-3340M | RAM 8GB | 240GB SSD</p>
+        <span class="price">9,300 جنيه</span>
+        <a href="dilv.html" class="btn">اطلب الآن</a>
+      </div>
+
+      <!-- منتج 15 -->
+      <div class="product-card">
+        <img src="images/laptop15.jpg" alt="Lenovo ThinkPad T430">
+        <h3>Lenovo ThinkPad T430</h3>
+        <p>Core i5-3320M | RAM 8GB | 500GB HDD</p>
+        <span class="price">8,600 جنيه</span>
+        <a href="dilv.html" class="btn">اطلب الآن</a>
+      </div>
+
+      <!-- منتج 16 -->
+      <div class="product-card">
+        <img src="images/laptop16.jpg" alt="Dell Latitude E5440">
+        <h3>Dell Latitude E5440</h3>
+        <p>Core i5-4300U | RAM 8GB | 256GB SSD</p>
+        <span class="price">10,300 جنيه</span>
+        <a href="dilv.html" class="btn">اطلب الآن</a>
+      </div>
+
+      <!-- منتج 17 -->
+      <div class="product-card">
+        <img src="images/laptop17.jpg" alt="HP ProBook 650 G1">
+        <h3>HP ProBook 650 G1</h3>
+        <p>Core i5-4210M | RAM 8GB | 500GB HDD</p>
+        <span class="price">9,900 جنيه</span>
+        <a href="dilv.html" class="btn">اطلب الآن</a>
+      </div>
+
+      <!-- منتج 18 -->
+      <div class="product-card">
+        <img src="images/laptop18.jpg" alt="Lenovo ThinkPad L440">
+        <h3>Lenovo ThinkPad L440</h3>
+        <p>Core i5-4300M | RAM 4GB | 500GB HDD</p>
+        <span class="price">8,500 جنيه</span>
+        <a href="dilv.html" class="btn">اطلب الآن</a>
+      </div>
+
+      <!-- منتج 19 -->
+      <div class="product-card">
+        <img src="images/laptop19.jpg" alt="Dell Latitude E6440">
+        <h3>Dell Latitude E6440</h3>
+        <p>Core i5-4300M | RAM 8GB | 256GB SSD</p>
+        <span class="price">10,800 جنيه</span>
+        <a href="dilv.html" class="btn">اطلب الآن</a>
+      </div>
+
+      <!-- منتج 20 -->
+      <div class="product-card">
+        <img src="images/laptop20.jpg" alt="HP EliteBook 850 G1">
+        <h3>HP EliteBook 850 G1</h3>
+        <p>Core i5-4200U | RAM 8GB | 500GB HDD</p>
+        <span class="price">9,700 جنيه</span>
+        <a href="dilv.html" class="btn">اطلب الآن</a>
+      </div>
+
+      <!-- منتج 21 -->
+      <div class="product-card">
+        <img src="images/laptop21.jpg" alt="Lenovo ThinkPad T440p">
+        <h3>Lenovo ThinkPad T440p</h3>
+        <p>Core i5-4300M | RAM 8GB | 256GB SSD</p>
+        <span class="price">10,400 جنيه</span>
+        <a href="dilv.html" class="btn">اطلب الآن</a>
+      </div>
+
+      <!-- منتج 22 -->
+      <div class="product-card">
+        <img src="images/laptop22.jpg" alt="Dell Latitude E7450">
+        <h3>Dell Latitude E7450</h3>
+        <p>Core i5-5300U | RAM 8GB | 500GB HDD</p>
+        <span class="price">11,600 جنيه</span>
+        <a href="dilv.html" class="btn">اطلب الآن</a>
+      </div>
+
+      <!-- منتج 23 -->
+      <div class="product-card">
+        <img src="images/laptop23.jpg" alt="HP ProBook 640 G2">
+        <h3>HP ProBook 640 G2</h3>
+        <p>Core i5-6200U | RAM 8GB | 256GB SSD</p>
+        <span class="price">11,900 جنيه</span>
+        <a href="dilv.html" class="btn">اطلب الآن</a>
+      </div>
+
+      <!-- منتج 24 -->
+      <div class="product-card">
+        <img src="images/laptop24.jpg" alt="Lenovo ThinkPad X250">
+        <h3>Lenovo ThinkPad X250</h3>
+        <p>Core i5-5200U | RAM 8GB | 256GB SSD</p>
+        <span class="price">10,600 جنيه</span>
+        <a href="dilv.html" class="btn">اطلب الآن</a>
+      </div>
+
+      <!-- منتج 25 -->
+      <div class="product-card">
+        <img src="images/laptop25.jpg" alt="Dell Latitude E7470">
+        <h3>Dell Latitude E7470</h3>
+        <p>Core i5-6300U | RAM 8GB | 500GB HDD</p>
+        <span class="price">12,000 جنيه</span>
+        <a href="dilv.html" class="btn">اطلب الآن</a>
+      </div>
+
+      <!-- منتج 26 -->
+      <div class="product-card">
+        <img src="images/laptop26.jpg" alt="HP EliteBook 820 G2">
+        <h3>HP EliteBook 820 G2</h3>
+        <p>Core i5-5300U | RAM 8GB | 240GB SSD</p>
+        <span class="price">11,100 جنيه</span>
+        <a href="dilv.html" class="btn">اطلب الآن</a>
+      </div>
+
+      <!-- منتج 27 -->
+      <div class="product-card">
+        <img src="images/laptop27.jpg" alt="Lenovo ThinkPad T440s">
+        <h3>Lenovo ThinkPad T440s</h3>
+        <p>Core i5-4300U | RAM 8GB | 500GB HDD</p>
+        <span class="price">10,200 جنيه</span>
+        <a href="dilv.html" class="btn">اطلب الآن</a>
+      </div>
+
+      <!-- منتج 28 -->
+      <div class="product-card">
+        <img src="images/laptop28.jpg" alt="Dell Latitude E7250">
+        <h3>Dell Latitude E7250</h3>
+        <p>Core i5-5300U | RAM 8GB | 256GB SSD</p>
+        <span class="price">11,400 جنيه</span>
+        <a href="dilv.html" class="btn">اطلب الآن</a>
+      </div>
+
+      <!-- منتج 29 -->
+      <div class="product-card">
+        <img src="images/laptop29.jpg" alt="HP ProBook 450 G2">
+        <h3>HP ProBook 450 G2</h3>
+        <p>Core i5-5200U | RAM 8GB | 500GB HDD</p>
+        <span class="price">10,700 جنيه</span>
+        <a href="dilv.html" class="btn">اطلب الآن</a>
+      </div>
+
+      <!-- منتج 30 -->
+      <div class="product-card">
+        <img src="images/laptop30.jpg" alt="Lenovo ThinkPad L450">
+        <h3>Lenovo ThinkPad L450</h3>
+        <p>Core i5-5300U | RAM 8GB | 256GB SSD</p>
+        <span class="price">11,000 جنيه</span>
+        <a href="dilv.html" class="btn">اطلب الآن</a>
+      </div>
+
     </div>
   </section>
+
+
+
 
   <!-- PRODUCTS -->
-  <section id="products" class="container" aria-label="منتجاتنا">
-    <h2 class="section-title">منتجاتنا</h2>
+  <section id="offers" class="container" aria-label="عروض المولد النبوي">
+    <h2 class="section-title">🎉 عروض المولد النبوي 🎉</h2>
     <div class="product-grid">
-      <!-- keep all 9 products same as your list -->
+
+      <!-- تابلت A6 -->
       <article class="product-card">
-        <img src="11 (3).jpg" alt="Tab A6" />
-        <h3>Tab A6</h3>
+        <img src="t6.jpg" alt="Samsung Tab A6" />
+        <h3>Samsung Tab A6</h3>
         <ul class="specs">
-          <li>تابلت الثانوية العامة القديم</li>
-          <li>معه الكرتونة والشاحن الأصلي</li>
+          <li>المساحة: 32GB</li>
+          <li>الرام: 2GB</li>
+          <li>مع الكرتونة والشاحن الأصلي</li>
         </ul>
         <div class="card-bottom">
-          <span class="price">2500 جنيه</span>
-            <a href="delv.html" target="_blank" class="wh-btn">اطلب الان</a>
-          <!-- <button class="wh-btn" data-product="Tab A6">اشتري عبر واتساب</button> -->
+          <span class="price"><del>3000</del> 2700 جنيه</span>
+          <a href="delv.html" target="_blank" class="wh-btn">اطلب الان</a>
         </div>
       </article>
 
+      <!-- تابلت A7 T509 -->
       <article class="product-card">
-        <img src="2.jpg" alt="شاحن لينوفو 210" />
-        <h3>Lenovo شاحن لابتوب</h3>
-        <p class="small">شاحن لينوفو 210</p>
-        <div class="card-bottom">
-          <span class="price">320 جنيه</span>
-            <a href="dilv.html" target="_blank" class="wh-btn">اطلب الان</a>
-          <!-- <button class="wh-btn" data-product="شاحن لينوفو 210">اشتري عبر واتساب</button> -->
-        </div>
-      </article>
-
-      <article class="product-card">
-        <img src="1.jpg" alt="شاحن ديل أصلي" />
-        <h3>Dell شاحن لابتوب</h3>
-        <p class="small">شاحن لابتوب ديل اصلي</p>
-        <div class="card-bottom">
-          <span class="price">430 جنيه</span>
-            <a href="dilv.html" target="_blank" class="wh-btn">اطلب الان</a>
-          <!-- <button class="wh-btn" data-product="شاحن لابتوب ديل اصلي">اشتري عبر واتساب</button> -->
-        </div>
-      </article>
-
-      <article class="product-card">
-        <img src="لاب3.jpg" alt="Lenovo thinkpad" />
-        <h3>Lenovo thinkpad</h3>
+        <img src="t7.jpg" alt="Samsung A7 T509" />
+        <h3>Samsung Tab A7 T509</h3>
         <ul class="specs">
-          <li>processor: core i5 gen5</li>
-          <li>Hard: 320 hdd</li>
-          <li>Ram: 4g</li>
-          <li>screen: 13.4 in</li>
+          <li>المساحة: 32GB</li>
+          <li>الرام: 3GB</li>
+          <li>حالة ممتازة</li>
         </ul>
         <div class="card-bottom">
-          <span class="price">5000 جنيه</span>
-            <a href="dilv.html" target="_blank" class="wh-btn">اطلب الان</a>
-          <!-- <button class="wh-btn" data-product="Lenovo thinkpad">اشتري عبر واتساب</button> -->
+          <span class="price"><del>4000</del> 3600 جنيه</span>
+          <a href="dilv.html" target="_blank" class="wh-btn">اطلب الان</a>
         </div>
       </article>
 
+      <!-- تابلت A7 T505 -->
       <article class="product-card">
-        <img src="لاب2.jpg" alt="DELL core2du" />
-        <h3>DELL</h3>
+        <img src="t75.jpg" alt="Samsung A7 T505" />
+        <h3>Samsung Tab A7 T505</h3>
         <ul class="specs">
-          <li>processor: core2du</li>
-          <li>Hard: 320 hdd</li>
-          <li>Ram: 4g</li>
-          <li>screen: 14.4 in</li>
+          <li>المساحة: 32GB</li>
+          <li>الرام: 3GB</li>
+          <li>بطارية قوية</li>
         </ul>
         <div class="card-bottom">
-          <span class="price">2000 جنيه</span>
-            <a href="dilv.html" target="_blank" class="wh-btn">اطلب الان</a>
-          <!-- <button class="wh-btn" data-product="DELL core2du">اشتري عبر واتساب</button> -->
+          <span class="price"><del>3900</del> 3550 جنيه</span>
+          <a href="dilv.html" target="_blank" class="wh-btn">اطلب الان</a>
         </div>
       </article>
 
+      <!-- لابتوب Dell i5 gen3 -->
       <article class="product-card">
-        <img src="لاب1.jpg" alt="Dell Latitude E5440 gen4" />
-        <h3>DELL</h3>
+        <img src="del.jpg" alt="Dell Laptop" />
+        <h3>Dell Latitude</h3>
         <ul class="specs">
-          <li>Dell Latitude E5440</li>
-          <li>processor: core i5 gen4</li>
-          <li>Hard: 500 hdd</li>
-          <li>Ram: 8g</li>
-          <li>screen: 15.6 in</li>
+          <li>Core i5 - Gen3</li>
+          <li>رام: 6GB</li>
+          <li>هارد: 500GB HDD</li>
+          <li>شاشة: 15.6 بوصة</li>
         </ul>
         <div class="card-bottom">
-          <span class="price">5500 جنيه</span>
-            <a href="dilv.html" target="_blank" class="wh-btn">اطلب الان</a>
-          <!-- <button class="wh-btn" data-product="Dell Latitude E5440 (gen4)">اشتري عبر واتساب</button> -->
+          <span class="price"><del>5200</del> 4400 جنيه</span>
+          <a href="dilv.html" target="_blank" class="wh-btn">اطلب الان</a>
         </div>
       </article>
 
+      <!-- لابتوب Dell i5 gen4 -->
       <article class="product-card">
-        <img src="del.jpg" alt="Dell Latitude E5440 gen6" />
-        <h3>DELL</h3>
+        <img src="images/440.jpg" alt="Dell Latitude E5440" />
+
+        <h3>Dell Latitude E5440</h3>
         <ul class="specs">
-          <li>Dell Latitude E5440</li>
-          <li>processor: core i5 gen6</li>
-          <li>Hard: 256</li>
-          <li>Ram: 8g</li>
-          <li>screen: 15.6 in</li>
+          <li>Core i5 - Gen4</li>
+          <li>رام: 8GB</li>
+          <li>هارد: 500GB</li>
+          <li>شاشة: 15.6 بوصة</li>
         </ul>
         <div class="card-bottom">
-          <span class="price">5800 جنيه</span>
-            <a href="dilv.html" target="_blank" class="wh-btn">اطلب الان</a>
-          <!-- <button class="wh-btn" data-product="Dell Latitude E5440 (gen6)">اشتري عبر واتساب</button> -->
+          <span class="price"><del>6000</del> 5500 جنيه</span>
+          <a href="dilv.html" target="_blank" class="wh-btn">اطلب الان</a>
         </div>
       </article>
 
+      <!-- لابتوب Dell i5 gen6 -->
       <article class="product-card">
-        <img src="pro.jpg" alt="HP ProBook 3040" />
-        <h3>HP Probook</h3>
+        <img src="images/Dell-E5440-1.jpg" alt="Dell Latitude E5440 gen6" />
+        <h3>Dell Latitude E5440</h3>
         <ul class="specs">
-          <li>HP proBook 3040</li>
-          <li>processor: core i5 gen3</li>
-          <li>Hard: 320 hdd</li>
-          <li>Ram: 6g</li>
-          <li>screen: 15.6 in</li>
+          <li>Core i5 - Gen6</li>
+          <li>رام: 8GB</li>
+          <li>هارد: 256GB SSD</li>
+          <li>شاشة: 15.6 بوصة</li>
         </ul>
         <div class="card-bottom">
-          <span class="price">4100 جنيه</span>
-            <a href="dilv.html" target="_blank" class="wh-btn">اطلب الان</a>
-          <!-- <button class="wh-btn" data-product="HP ProBook 3040">اشتري عبر واتساب</button> -->
+          <span class="price"><del>6500</del> 5800 جنيه</span>
+          <a href="dilv.html" target="_blank" class="wh-btn">اطلب الان</a>
         </div>
       </article>
 
+      <!-- HP Probook -->
       <article class="product-card">
-        <img src="hp.jpg" alt="HP EletBook E4140" />
-        <h3>HP EletBook</h3>
+        <img src="images/probook_.jpg" alt="HP ProBook" />
+        <h3>HP ProBook 3040</h3>
         <ul class="specs">
-          <li>HP EletBook E4140</li>
-          <li>processor: core i3 gen3</li>
-          <li>Hard: 256 SSD</li>
-          <li>Ram: 8g</li>
-          <li>screen: 15.6 in</li>
+          <li>Core i5 - Gen3</li>
+          <li>رام: 6GB</li>
+          <li>هارد: 320GB HDD</li>
+          <li>شاشة: 15.6 بوصة</li>
         </ul>
         <div class="card-bottom">
-          <span class="price">5000 جنيه</span>
-            <a href="dilv.html" target="_blank" class="wh-btn">اطلب الان</a>
-          <!-- <button class="wh-btn" data-product="HP EletBook E4140">اشتري عبر واتساب</button> -->
+          <span class="price"><del>4700</del> 4100 جنيه</span>
+          <a href="dilv.html" target="_blank" class="wh-btn">اطلب الان</a>
+        </div>
+      </article>
+
+      <!-- HP EliteBook -->
+      <article class="product-card">
+        <img src="images/745.jpg" alt="HP EliteBook" />
+        <h3>HP EliteBook E740</h3>
+        <ul class="specs">
+          <li>Core i3 - Gen3</li>
+          <li>رام: 8GB</li>
+          <li>هارد: 256GB SSD</li>
+          <li>شاشة: 15.6 بوصة</li>
+        </ul>
+        <div class="card-bottom">
+          <span class="price"><del>5700</del> 5000 جنيه</span>
+          <a href="dilv.html" target="_blank" class="wh-btn">اطلب الان</a>
+        </div>
+      </article>
+
+      <!-- كيسة كمبيوتر -->
+      <article class="product-card">
+        <img src="c3.avif" alt="Desktop PC" />
+        <h3>كيسة كمبيوتر</h3>
+        <ul class="specs">
+          <li>Core i3 - Gen2</li>
+          <li>رام: 4GB</li>
+          <li>هارد: 500GB</li>
+          <li>كارت شاشة داخلي</li>
+        </ul>
+        <div class="card-bottom">
+          <span class="price"><del>4200</del> 3700 جنيه</span>
+          <a href="dilv.html" target="_blank" class="wh-btn">اطلب الان</a>
         </div>
       </article>
 
     </div>
   </section>
-
-  <!-- Out of stock notice -->
-  <div class="not container">
-    <p>هناك بعض المنتجات تم نفاذها من المنفذ وسيتم استيرادها من جديد في وقت لاحق</p>
-  </div>
 
   <!-- ORDER FORM -->
   <section class="form-container container">
@@ -303,169 +567,83 @@
   </section>
 
 
- <a class="delv" href="delv.html" target="_blank"> خدمات اخري  </a>
+  <a class="delv" href="delv.html" target="_blank"> خدمات اخري </a><br><br>
 
-<!-- ✅ قسم آراء العملاء -->
-<section id="testimonials" class="py-16 bg-gray-100">
-  <div class="max-w-6xl mx-auto text-center">
-    <h2 class="text-3xl font-bold mb-8 text-gray-800">آراء عملائنا</h2>
-    <!-- ✅ سلايدر Swiper -->
-    <div class="swiper mySwiper">
-      <div class="swiper-wrapper">
 
-        <!-- رأي العميل -->
-        <div class="swiper-slide p-6 bg-white rounded-2xl shadow-lg">
-          <p class="text-gray-600 italic mb-4">"الخدمة ممتازة جداً، تم استلام اللاب بسرعة وجودة عالية."</p>
-          <h3 class="font-semibold text-gray-800">أحمد محمد</h3>
-        </div>
 
-        <div class="swiper-slide p-6 bg-white rounded-2xl shadow-lg">
-          <p class="text-gray-600 italic mb-4">"سعر مناسب وخدمة ما بعد البيع رائعة 👌."</p>
-          <h3 class="font-semibold text-gray-800">سارة علي</h3>
-        </div>
 
-        <div class="swiper-slide p-6 bg-white rounded-2xl shadow-lg">
-          <p class="text-gray-600 italic mb-4">"أول مرة أتعامل معاهم بس فعلاً ناس محترمة."</p>
-          <h3 class="font-semibold text-gray-800">كريم حسن</h3>
-        </div>
 
-        <div class="swiper-slide p-6 bg-white rounded-2xl shadow-lg">
-          <p class="text-gray-600 italic mb-4">"التغليف ممتاز واللاب وصل زي ما هو في الصور 👍."</p>
-          <h3 class="font-semibold text-gray-800">منى إبراهيم</h3>
-        </div>
 
-        <div class="swiper-slide p-6 bg-white rounded-2xl shadow-lg">
-          <p class="text-gray-600 italic mb-4">"التعامل سريع وخدمة العملاء متجاوبة جداً."</p>
-          <h3 class="font-semibold text-gray-800">إسلام أحمد</h3>
-        </div>
 
-        <div class="swiper-slide p-6 bg-white rounded-2xl shadow-lg">
-          <p class="text-gray-600 italic mb-4">"ناس صادقين وبيشرحوا كل حاجة قبل الشراء."</p>
-          <h3 class="font-semibold text-gray-800">هدى محمود</h3>
-        </div>
 
-        <div class="swiper-slide p-6 bg-white rounded-2xl shadow-lg">
-          <p class="text-gray-600 italic mb-4">"اشتريت منهم جهازين والاتنين زي الفل 👏."</p>
-          <h3 class="font-semibold text-gray-800">محمود فؤاد</h3>
-        </div>
 
-        <div class="swiper-slide p-6 bg-white rounded-2xl shadow-lg">
-          <p class="text-gray-600 italic mb-4">"التسليم في المعاد والدعم الفني ساعدني كتير."</p>
-          <h3 class="font-semibold text-gray-800">نورا عماد</h3>
-        </div>
 
-        <div class="swiper-slide p-6 bg-white rounded-2xl shadow-lg">
-          <p class="text-gray-600 italic mb-4">"تجربة ممتازة وأنصح أي حد يشتري من عندهم."</p>
-          <h3 class="font-semibold text-gray-800">عبدالرحمن خالد</h3>
-        </div>
+  <div style="display:flex; flex-direction:column; gap:12px; max-width:250px; margin:auto;">
 
-        <div class="swiper-slide p-6 bg-white rounded-2xl shadow-lg">
-          <p class="text-gray-600 italic mb-4">"أفضل مكان اشتريت منه أجهزة مستعملة بحالة ممتازة."</p>
-          <h3 class="font-semibold text-gray-800">ليلى حسن</h3>
-        </div>
+    <!-- زرار الاتصال -->
+    <a href="tel:+201156062656"
+      style="background:#007BFF; color:white; padding:14px; border-radius:30px; text-align:center; font-weight:bold; text-decoration:none;">
+      📞 اتصل بنا
+    </a>
 
-      </div>
-      <!-- ✅ أزرار التحكم -->
-      <div class="swiper-pagination"></div>
-    </div>
+
+
   </div>
-</section>
 
-<!-- ✅ استدعاء مكتبة Swiper -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
-<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
-
-<!-- ✅ تشغيل السلايدر -->
-<script>
-  var swiper = new Swiper(".mySwiper", {
-    slidesPerView: 6, 
-    spaceBetween: 20,
-    loop: true,
-    autoplay: {
-      delay: 3000,
-    },
-    pagination: {
-      el: ".swiper-pagination",
-      clickable: true,
-    },
-    breakpoints: {
-      0: { slidesPerView: 1 },
-      768: { slidesPerView: 2 },
-      1024: { slidesPerView: 3 },
-    }
-  });
-</script>
-
-  
-  <!-- <h2>آراء عملائنا</h2>
-  <div class="slider">
-    <div class="slide active">
-      <p>"التعامل ممتاز والتوصيل سريع جداً.. شكراً <b>Elkhaled Tech</b>!"</p>
-      <h4>- محمد أحمد</h4>
-    </div>
-    <div class="slide">
-      <p>"اشتريت لابتوب بحالة ممتازة وخدمة عملاء رائعة 👌"</p>
-      <h4>- سارة علي</h4>
-    </div>
-    <div class="slide">
-      <p>"من أفضل التجارب اللي مرت عليا في الشراء أونلاين."</p>
-      <h4>- أحمد يوسف</h4>
-    </div>
-  </div>
-  <div class="dots">
-    <span class="dot active"></span>
-    <span class="dot"></span>
-    <span class="dot"></span>
-  </div>
-</section> -->
-
-<div style="display:flex; flex-direction:column; gap:12px; max-width:250px; margin:auto;">
-
-  <!-- زرار الاتصال -->
-  <a href="tel:+201156062656" 
-     style="background:#007BFF; color:white; padding:14px; border-radius:30px; text-align:center; font-weight:bold; text-decoration:none;">
-     📞 اتصل بنا
-  </a>
-
-  <!-- زرار FAQ -->
-  <a href="faq.html" target="_blank"
-     style="background:#ffc107; color:black; padding:14px; border-radius:30px; text-align:center; font-weight:bold; text-decoration:none;">
-     ❓ الأسئلة الشائعة (FAQ)
-  </a>
-
-</div>
-
-<a href="https://wa.me/201148223698" target="_blank" 
-   style="position: fixed; bottom: 20px; right: 20px; 
+  <a href="https://wa.me/201148223698" target="_blank" style="position: fixed; bottom: 20px; right: 20px; 
           background: #25d366; color: white; padding: 15px 20px; 
           border-radius: 50px; text-decoration: none; font-weight: bold; 
           box-shadow: 0 4px 10px rgba(0,0,0,0.2);">
-   💬 تواصل عبر واتساب
-</a>
-  <!-- ABOUT & FOUNDER -->
-  <section class="about-company container" id="aboutCompany">
-    <h2 class="section-title">About Our Company</h2>
-    <div class="about-grid">
-      <div class="about-content">
-        <p>El Khaled Tech is a digital innovation hub dedicated to providing cutting-edge solutions and services to both individuals and businesses.</p>
-        <p>للتواصل السريع اضغط على أي زر واتساب بجانب المنتج أو استخدم نموذج الطلب.</p>
+    💬 تواصل عبر واتساب
+  </a>
+
+
+
+
+
+
+
+
+
+  <!-- About Section -->
+  <section id="about" class="about">
+    <h2>عن الشركة</h2>
+    <p>
+      شركة <strong>الخالد تك</strong> متخصصة في بيع وشراء أجهزة الكمبيوتر واللاب توب،
+      وتعمل حاليًا على تقديم أفضل الحلول للعملاء بأسعار مناسبة وجودة مضمونة.
+    </p>
+    <p>
+      الشركة الآن في المرحلة الثانية من التطوير، حيث تستعد لإطلاق
+      <strong>قسم خاص بالصيانة والدعم الفني</strong> لخدمة العملاء بشكل متكامل.
+    </p>
+
+    <div class="vision-mission">
+      <div class="vision">
+        <h3>رؤيتنا</h3>
+        <p>أن نكون الشركة الرائدة في مجال الكمبيوتر واللاب توب في مصر والوطن العربي.</p>
       </div>
-      <aside class="founder" id="founder">
-        <img src="IMG-20240920-WA0044.jpg" alt="Khaled Mousa" class="founder-img" />
-        <h3>Khaled Mousa</h3>
-        <p class="founder-role">المؤسس - El Khaled Tech</p>
-      </aside>
+      <div class="mission">
+        <h3>رسالتنا</h3>
+        <p>تقديم منتجات وخدمات تقنية عالية الجودة تلبي احتياجات العملاء وتفوق توقعاتهم.</p>
+      </div>
+    </div>
+
+    <div class="founder">
+      <h3>مؤسس الشركة</h3>
+      <p>
+        تأسست الشركة على يد <strong>المهندس خالد موسى</strong>، بشغف
+        ورؤية واضحة لتطوير سوق الكمبيوتر وتقديم حلول تقنية مبتكرة.
+      </p>
+      <img src="IMG-20240920-WA0044.jpg" alt="Khaled Mousa" class="founder-img" />
+      <h3>Khaled Mousa</h3>
+      <p class="founder-role">المؤسس - El Khaled Tech</p>
     </div>
   </section>
 
-  <!-- INTERACTIVE -->
-  <section class="interactive container" id="interactive">
-    <h2 class="section-title">Welcome Message</h2>
-    <div class="interactive-content">
-      <button id="welcomeBtn" class="btn-primary">Click for Welcome Message</button>
-      <div id="welcomeMessage" class="welcome-message" aria-live="polite"></div>
-    </div>
-  </section>
+
+
+
+
 
   <!-- FOOTER + LOGIN BOX -->
   <footer class="footer">
@@ -474,8 +652,11 @@
         <a href="https://www.facebook.com/share/1CPGJYCHgE/" target="_blank" rel="noreferrer">Facebook</a> |
         <a href="https://x.com/khaledMous65" target="_blank" rel="noreferrer">X</a> |
         <a href="https://github.com/khaledmousa2005" target="_blank" rel="noreferrer">GitHub</a> |
-        <a href="https://www.youtube.com/@eng_Khaled_Mousa" target="_blank" rel="noreferrer">YouTube</a>
-        <a href="faq.html" class="fa-solid fa-circle-question" target="_blank">FAQ</a>
+        <a href="https://www.youtube.com/@eng_Khaled_Mousa" target="_blank" rel="noreferrer">YouTube</a> |
+        <a href="faq.html" class="fa-solid fa-circle-question" target="_blank">FAQ</a> |
+        <a href="Services .html" class="services" target="_blank">Services </a> |
+        <a href="abut.html">
+          <a href="abut.html" class="about_company" target="_blank"> about-company</a>
       </div>
 
       <div class="login-panel" aria-label="Login">
@@ -489,15 +670,17 @@
       </div>
     </div>
 
+
     <div class="container copyright">
       <p>&copy; 2025 El Khaled Tech. All rights reserved.</p>
     </div>
- <!-- في الفوتر -->
+    <!-- في الفوتر -->
 
-  <p><a href="privacy.html" class="privacy-link">سياسة الخصوصية</a></p>
+    <p><a href="privacy.html" class="privacy-link">سياسة الخصوصية</a></p>
 
   </footer>
 
   <script src="script.js" defer></script>
 </body>
+
 </html>
