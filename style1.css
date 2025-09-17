@@ -332,3 +332,90 @@ body {
     text-decoration: none;
     color: #ffc107;
 }
+
+/* 📱 للموبايل */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .product-card {
+        width: 100%;
+    }
+
+    footer {
+        flex-direction: column;
+    }
+}
+
+/* 📱 للتابلت */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .product-card {
+        width: 48%;
+    }
+}
+
+/* إصلاح عام للموبايل */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* أي ديفات جنب بعض تبقى مرنة */
+div {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+/* الموبايل */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
+    nav,
+    footer,
+    header {
+        text-align: center;
+    }
+
+    nav ul,
+    footer ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    section,
+    article {
+        width: 100% !important;
+    }
+}
+
+/* إصلاح مشكلة المساحة البيضاء الجانبية */
+html,
+body {
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+/* نخلي كل العناصر تلتزم بعرض الشاشة */
+* {
+    box-sizing: border-box;
+    max-width: 100%;
+}
