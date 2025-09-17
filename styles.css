@@ -1320,3 +1320,17 @@ div {
     width: 100% !important;
   }
 }
+
+/* إصلاح مشكلة المساحة البيضاء الجانبية */
+html,
+body {
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+/* نخلي كل العناصر تلتزم بعرض الشاشة */
+* {
+  box-sizing: border-box;
+  max-width: 100%;
+}
