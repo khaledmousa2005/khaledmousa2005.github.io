@@ -1185,3 +1185,88 @@ nav ul li a:hover {
   transform: scale(1.2);
   color: #ff6600;
 }
+
+
+
+
+/* خلي كل حاجة مرنة وتتناسب مع الشاشة */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* الصور ما تخرجش بره الشاشة */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* النصوص تبقى مقروءة على الموبايل */
+body {
+  font-size: 16px;
+  line-height: 1.6;
+  font-family: Arial, sans-serif;
+}
+
+/* النافبار */
+nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  list-style: none;
+}
+
+nav ul li {
+  margin: 5px 10px;
+}
+
+/* الكروت بتاعت المنتجات */
+.product-card {
+  width: 30%;
+  margin: 15px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  text-align: center;
+  transition: 0.3s;
+}
+
+.product-card:hover {
+  transform: scale(1.05);
+}
+
+/* الفوتر */
+footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 20px;
+  background: #222;
+  color: #fff;
+  text-align: center;
+}
+
+/* 📱 للموبايل */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .product-card {
+    width: 100%;
+  }
+
+  footer {
+    flex-direction: column;
+  }
+}
+
+/* 📱 للتابلت */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .product-card {
+    width: 48%;
+  }
+}
