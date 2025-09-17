@@ -1270,3 +1270,53 @@ footer {
     width: 48%;
   }
 }
+
+/* إصلاح عام للموبايل */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* أي ديفات جنب بعض تبقى مرنة */
+div {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* الموبايل */
+@media (max-width: 768px) {
+  body {
+    padding: 10px;
+  }
+
+  nav,
+  footer,
+  header {
+    text-align: center;
+  }
+
+  nav ul,
+  footer ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  section,
+  article {
+    width: 100% !important;
+  }
+}
