@@ -1,0 +1,337 @@
+/* خط خاص بصفحة الخدمات (لو عايز توحّد الخط مع باقي الموقع ممكن تشيله وتعتمد على styles.css) */
+body {
+  font-family: "Cairo", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* هيدر الخدمات / الهيرو */
+.services-header {
+  text-align: center;
+  padding: 40px 20px;
+  background: linear-gradient(135deg, #0f2027, #2c5364);
+  color: white;
+}
+
+.services-hero-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.services-hero-text {
+  flex: 1.2;
+  text-align: right;
+}
+
+.services-hero-text h1 {
+  font-size: 2.3rem;
+  margin-bottom: 10px;
+}
+
+.services-hero-text span {
+  color: #ffcc00;
+}
+
+.services-hero-text p {
+  font-size: 1.1rem;
+  opacity: 0.9;
+  margin-bottom: 12px;
+}
+
+.services-usp-list {
+  list-style: none;
+  margin: 12px 0 16px;
+  padding: 0;
+}
+
+.services-usp-list li {
+  margin-bottom: 6px;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.services-usp-list i {
+  color: #2ecc71;
+}
+
+.services-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.services-hero-media {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.services-hero-card {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 20px;
+  max-width: 320px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.services-hero-card i {
+  font-size: 2.4rem;
+  margin-bottom: 10px;
+  color: #ffcc00;
+}
+
+.services-hero-card h2 {
+  margin-bottom: 8px;
+  font-size: 1.2rem;
+}
+
+/* شريط البادجات */
+.services-badges {
+  background: #f6f8fb;
+  padding: 16px 18px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+}
+
+.services-badge {
+  background: #ffffff;
+  border-radius: 999px;
+  padding: 8px 16px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+  font-size: 0.9rem;
+}
+
+.services-badge i {
+  color: #256ea8;
+}
+
+/* الجسم الرئيسي */
+.services-main {
+  padding: 32px 0 40px;
+}
+
+.services-intro {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 24px;
+  color: #555;
+}
+
+/* جريد الخدمات (الكروت الأصلية) */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  padding: 0 0 40px;
+}
+
+.service-card {
+  background: white;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  font-size: 1.05rem;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    background 0.3s ease,
+    border 0.3s ease;
+  cursor: pointer;
+}
+
+.service-card:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.18);
+  background: #f0f8ff;
+}
+
+/* الكارت المختار */
+.service-card.selected {
+  border: 2px solid #256ea8;
+  box-shadow: 0 10px 22px rgba(37, 110, 168, 0.25);
+  transform: translateY(-4px);
+}
+
+/* بانِل اختيار الخدمة */
+.service-contact-panel {
+  max-width: 700px;
+  margin: 0 auto 40px;
+  padding: 18px 16px 22px;
+  border-radius: 16px;
+  background: #ffffff;
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.06);
+  text-align: center;
+}
+
+.service-contact-panel h3 {
+  margin-bottom: 8px;
+  font-size: 1.2rem;
+}
+
+.service-contact-panel p {
+  margin-bottom: 12px;
+  font-size: 0.95rem;
+  color: #555;
+}
+
+#serviceWhatsAppBtn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* خطوات الخدمة */
+.services-steps {
+  padding: 30px 0 40px;
+}
+
+.services-steps-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 18px;
+}
+
+.step-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 16px 16px 18px;
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.04);
+  position: relative;
+}
+
+.step-number {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: #256ea8;
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.step-card h3 {
+  margin: 8px 0 6px;
+  font-size: 1rem;
+}
+
+.step-card p {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+/* CTA */
+.services-cta {
+  background: linear-gradient(135deg, #256ea8, #2c3e50);
+  color: #fff;
+  padding: 30px 16px 40px;
+  margin-top: 10px;
+}
+
+.services-cta-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.services-cta-inner h2 {
+  font-size: 1.7rem;
+  margin-bottom: 10px;
+}
+
+.services-cta-inner p {
+  margin-bottom: 14px;
+  opacity: 0.9;
+}
+
+/* أنيميشن ظهور */
+.service-card,
+.step-card,
+.services-hero-card {
+  opacity: 0;
+  transform: translateY(15px);
+  transition: 0.35s ease;
+}
+
+.service-card.visible,
+.step-card.visible,
+.services-hero-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* موبايل */
+@media (max-width: 768px) {
+  .services-hero-inner {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+
+  .services-hero-text {
+    text-align: center;
+  }
+
+  .services-hero-text h1 {
+    font-size: 1.8rem;
+  }
+
+  .services-hero-text p {
+    font-size: 1rem;
+  }
+
+  .services-hero-actions {
+    justify-content: center;
+  }
+
+  .services-hero-card {
+    max-width: 260px;
+  }
+}
+
+/* شاشات صغيرة جداً */
+@media (max-width: 430px) {
+  .services-hero-text h1 {
+    font-size: 1.5rem;
+  }
+
+  .service-card {
+    font-size: 1rem;
+    padding: 16px;
+  }
+}
+
+
+.service-card,
+.step-card,
+.services-hero-card {
+  opacity: 1;
+  transform: none;
+}
+
+.service-card {
+  cursor: pointer;
+}
+
+.service-card.selected {
+  border: 2px solid #256ea8;
+  box-shadow: 0 10px 22px rgba(37, 110, 168, 0.25);
+  transform: translateY(-4px);
+}
