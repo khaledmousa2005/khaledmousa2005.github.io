@@ -1,36 +1,332 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>خدماتنا - الخالد تك</title>
-    <link rel="stylesheet" href="services.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>خدماتنا - الخالد تك</title>
+
+  <!-- SEO -->
+  <meta name="description"
+    content="خدمات الخالد تك: بيع وشراء وصيانة لابتوبات وكمبيوترات، ترقية رامات وهاردات، تغيير شاشات وبطاريات، تنظيف وصيانة تبريد، عروض للطلاب والشركات." />
+
+  <!-- استايل العام للموقع -->
+  <link rel="stylesheet" href="styles.css" />
+  <!-- استايل خاص بصفحة الخدمات -->
+  <link rel="stylesheet" href="services.css" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    // رقم الواتساب بالمفتاح الدولي
+    var WA = '201156062656';
 
-<body>
-    <header class="services-header">
+    var serviceCards = document.querySelectorAll('.service-card[data-service]');
+    var titleEl = document.getElementById('selectedServiceTitle');
+    var textEl = document.getElementById('selectedServiceText');
+    var waBtn = document.getElementById('serviceWhatsAppBtn');
+    var panel = document.getElementById('serviceContactPanel');
+
+    if (!serviceCards.length || !titleEl || !textEl || !waBtn) {
+      return;
+    }
+
+    var selectedService = null;
+
+    // لما تضغط على كارت خدمة
+    serviceCards.forEach(function (card) {
+      card.addEventListener('click', function () {
+        selectedService = card.dataset.service || card.textContent.trim();
+
+        // شيل التحديد من كل الكروت
+        serviceCards.forEach(function (c) {
+          c.classList.remove('selected');
+        });
+
+        // حدّد الكارت اللي اتداس عليه
+        card.classList.add('selected');
+
+        // حدّث نص البانِل
+        titleEl.textContent = 'الخدمة المختارة: ' + selectedService;
+        textEl.textContent = 'اضغط على الزر بالأسفل للتواصل معنا مباشرة على واتساب بخصوص هذه الخدمة.';
+
+        // فعّل الزر
+        waBtn.disabled = false;
+
+        // انزل للبانِل عشان يبان
+        if (panel && typeof panel.scrollIntoView === 'function') {
+          panel.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+      });
+    });
+
+    // لما تضغط زر الواتساب
+    waBtn.addEventListener('click', function (e) {
+      e.preventDefault();
+      if (!selectedService) return;
+
+      var msg = 'مرحبًا، أريد الاستفسار أو حجز خدمة: ' + selectedService;
+
+      // 🔁 استخدمنا api.whatsapp.com علشان متوافق أكتر
+      var url = 'https://api.whatsapp.com/send?phone=' + WA + '&text=' + encodeURIComponent(msg);
+
+      window.open(url, '_blank');
+    });
+  });
+</script>
+
+
+
+
+<body id="top">
+
+  <!-- NAVBAR -->
+  <nav class="ek-navbar" role="navigation" aria-label="شريط التنقل">
+    <div class="ek-container">
+      <a href="index.html#hero" class="ek-brand">
+        <img src="kha.jpg" alt="El Khaled Tech" class="ek-logo" loading="lazy" />
+        <span class="ek-name">El Khaled Tech</span>
+        <div class="brand">
+          ابتكر براحتك.. والتجربة على راحتك
+        </div>
+      </a>
+
+      <button class="ek-burger" id="ekBurger" aria-label="فتح القائمة">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+
+      <ul class="ek-menu" id="ekMenu">
+        <li><a href="index.html#hero" class="ek-link">الرئيسية</a></li>
+        <li><a href="index.html#offers" class="ek-link">العروض</a></li>
+        <li><a href="index.html#products" class="ek-link">منتجاتنا</a></li>
+        <li><a href="Services.html" class="ek-link active">الخدمات</a></li>
+        <li><a href="faq.html" class="ek-link">الأسئلة</a></li>
+        <li><a href="index.html#contact" class="ek-link">اطلب الآن</a></li>
+        <li><a href="index.html#about" class="ek-link">عن الشركة</a></li>
+        <li>
+          <a href="https://wa.me/201148223698" target="_blank" class="ek-whats">
+            <i class="fa-brands fa-whatsapp"></i> واتساب
+          </a>
+        </li>
+        <li>
+          <button id="darkModeToggleNav" class="ek-dark-btn" title="تبديل الوضع">🌙</button>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- هيرو الخدمات -->
+  <header class="services-header">
+    <div class="services-hero-inner">
+      <div class="services-hero-text">
         <h1>خدمات <span>الخالد تك</span></h1>
-        <p>نوفر لك كل ما تحتاجه من بيع، شراء وصيانة لابتوباتك</p>
-    </header>
+        <p>نوفر لك كل ما تحتاجه من بيع، شراء وصيانة لابتوباتك وأجهزة الكمبيوتر.</p>
 
-    <section class="services-grid">
-        <div class="service-card">💻 بيع لابتوبات جديدة</div>
-        <div class="service-card">💻 بيع لابتوبات مستعملة بحالة ممتازة</div>
-        <div class="service-card">💰 شراء لابتوبات مستعملة</div>
-        <div class="service-card">🔄 استبدال وترقية الأجهزة</div>
-        <div class="service-card">🛠 صيانة أعطال الهاردوير</div>
-        <div class="service-card">🖥 صيانة السوفت وير</div>
-        <div class="service-card">⚡ تركيب وتغيير SSD/HDD</div>
-        <div class="service-card">🚀 ترقية الرامات</div>
-        <div class="service-card">❄ تنظيف وصيانة التبريد</div>
-        <div class="service-card">📺 تغيير شاشات اللابتوب</div>
-        <div class="service-card">🔋 تغيير بطاريات اللابتوبات</div>
-        <div class="service-card">🎧 بيع إكسسوارات أصلية</div>
-        <div class="service-card">🔧 بيع قطع غيار لابتوبات</div>
-        <div class="service-card">📊 استشارات قبل الشراء</div>
-        <div class="service-card">🎓 عروض للطلاب والشركات</div>
+        <ul class="services-usp-list">
+          <li><i class="fa-solid fa-screwdriver-wrench"></i> فحص مبدئي دقيق قبل أي إصلاح</li>
+          <li><i class="fa-solid fa-shield-halved"></i> قطع غيار مضمونة مع ضمان على الخدمة</li>
+          <li><i class="fa-solid fa-truck-fast"></i> استلام وتسليم من الباب للباب في بعض المناطق</li>
+        </ul>
+
+        <div class="services-hero-actions">
+          <a href="#services" class="btn btn-primary">شوف كل الخدمات</a>
+          <a href="https://wa.me/2011556062656?text=%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%AD%D8%AC%D8%B2%20%D8%AE%D8%AF%D9%85%D8%A9"
+            target="_blank" class="btn btn-outline">
+            احجز خدمة الآن
+          </a>
+        </div>
+      </div>
+
+      <div class="services-hero-media">
+        <div class="services-hero-card">
+          <i class="fa-solid fa-laptop-medical"></i>
+          <h2>تشخيص احترافي</h2>
+          <p>تشخيص أعطال الهاردوير والسوفت وير بدقة، مع توضيح الحل والتكلفة قبل التنفيذ.</p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- شريط مزايا سريع -->
+  <section class="services-badges">
+    <div class="services-badge">
+      <i class="fa-solid fa-user-graduate"></i>
+      خصومات خاصة للطلاب
+    </div>
+    <div class="services-badge">
+      <i class="fa-solid fa-building"></i>
+      حلول مخصصة للشركات والمكاتب
+    </div>
+    <div class="services-badge">
+      <i class="fa-solid fa-clock"></i>
+      مواعيد مرنة واستلام سريع
+    </div>
+  </section>
+
+  <!-- جسم صفحة الخدمات -->
+  <main class="services-main container">
+    <h2 class="section-title">كل خدماتنا في مكان واحد</h2>
+    <p class="services-intro">
+      سواء حابب تشتري جهاز جديد، تبيع جهازك القديم، تصلحه، أو ترقّي إمكانياته،
+      هتلاقي في <strong>الخالد تك</strong> خدمة مناسبة ليك.
+    </p>
+
+    <!-- كروت الخدمات الأصلية (مع data-service بس) -->
+    <section class="services-grid" id="services">
+      <div class="service-card" data-service="بيع لابتوبات جديدة">💻 بيع لابتوبات جديدة</div>
+      <div class="service-card" data-service="بيع لابتوبات مستعملة بحالة ممتازة">💻 بيع لابتوبات مستعملة بحالة ممتازة</div>
+      <div class="service-card" data-service="شراء لابتوبات مستعملة">💰 شراء لابتوبات مستعملة</div>
+      <div class="service-card" data-service="استبدال وترقية الأجهزة">🔄 استبدال وترقية الأجهزة</div>
+      <div class="service-card" data-service="صيانة أعطال الهاردوير">🛠 صيانة أعطال الهاردوير</div>
+      <div class="service-card" data-service="صيانة السوفت وير">🖥 صيانة السوفت وير</div>
+      <div class="service-card" data-service="تركيب وتغيير SSD/HDD">⚡ تركيب وتغيير SSD/HDD</div>
+      <div class="service-card" data-service="ترقية الرامات">🚀 ترقية الرامات</div>
+      <div class="service-card" data-service="تنظيف وصيانة التبريد">❄ تنظيف وصيانة التبريد</div>
+      <div class="service-card" data-service="تغيير شاشات اللابتوب">📺 تغيير شاشات اللابتوب</div>
+      <div class="service-card" data-service="تغيير بطاريات اللابتوبات">🔋 تغيير بطاريات اللابتوبات</div>
+      <div class="service-card" data-service="بيع إكسسوارات أصلية">🎧 بيع إكسسوارات أصلية</div>
+      <div class="service-card" data-service="بيع قطع غيار لابتوبات">🔧 بيع قطع غيار لابتوبات</div>
+      <div class="service-card" data-service="استشارات قبل الشراء">📊 استشارات قبل الشراء</div>
+      <div class="service-card" data-service="عروض للطلاب والشركات">🎓 عروض للطلاب والشركات</div>
     </section>
+
+    <!-- بانِل اختيار خدمة + زر واتساب -->
+    <section class="service-contact-panel" id="serviceContactPanel">
+      <h3 id="selectedServiceTitle">اختر خدمة من القائمة</h3>
+      <p id="selectedServiceText">
+        اضغط على أي خدمة من الخدمات بالأعلى علشان يظهر لك زر مخصص للتواصل عبر واتساب بخصوص الخدمة المختارة.
+      </p>
+      <button id="serviceWhatsAppBtn" class="btn btn-primary" type="button" disabled>
+        تواصل عبر واتساب بخصوص هذه الخدمة
+      </button>
+    </section>
+  </main>
+
+  <!-- خطوات تنفيذ الخدمة -->
+  <section class="services-steps container">
+    <h2 class="section-title">إزاي بنشتغل على جهازك؟</h2>
+    <div class="services-steps-grid">
+      <div class="step-card">
+        <span class="step-number">1</span>
+        <h3>استلام وفتح طلب خدمة</h3>
+        <p>بنستلم الجهاز أو تفاصيل المشكلة عن طريق الواتساب أو في الفرع، وبنفتح طلب خدمة باسمك.</p>
+      </div>
+      <div class="step-card">
+        <span class="step-number">2</span>
+        <h3>تشخيص وتحديد التكلفة</h3>
+        <p>فني متخصص بيشخص العطل وبيحدد الحل المناسب والتكلفة، وبيتم التواصل معاك قبل أي خطوة.</p>
+      </div>
+      <div class="step-card">
+        <span class="step-number">3</span>
+        <h3>الإصلاح والتجربة</h3>
+        <p>بننفّذ الإصلاح أو الترقية باستخدام قطع غيار مضمونة، وبنجرّب الجهاز كويس قبل التسليم.</p>
+      </div>
+      <div class="step-card">
+        <span class="step-number">4</span>
+        <h3>التسليم وضمان الخدمة</h3>
+        <p>بتستلم جهازك مع شرح اللي اتعمل فيه، وضمان على الخدمة حسب نوع الإصلاح.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA واتساب -->
+  <section class="services-cta">
+    <div class="services-cta-inner">
+      <h2>عايز تصلّح أو ترقّي جهازك؟</h2>
+      <p>ابعتلنا تفاصيل المشكلة أو مواصفات جهازك على الواتساب، وفريق الخالد تك هيرشحلك أفضل حل يناسب استخدامك.</p>
+      <a href="https://wa.me/2011556062656?text=%D8%B9%D9%86%D8%AF%D9%8A%20%D8%AC%D9%87%D8%A7%D8%B2%20%D8%B9%D8%A7%D9%8A%D8%B2%20%D8%A7%D8%B5%D9%84%D8%AD%D9%87%20%D8%A3%D9%88%20%D8%A7%D8%B1%D9%82%D9%8A%D9%87"
+        target="_blank" class="btn btn-primary">
+        احجز خدمة على واتساب
+      </a>
+    </div>
+  </section>
+
+  <!-- زر واتساب عائم -->
+  <a href="https://wa.me/201148223698" target="_blank" class="floating-whatsapp">
+    💬 تواصل عبر واتساب
+  </a>
+
+  <!-- FOOTER (نفس تصميم الهوم) -->
+  <footer class="footer">
+    <div class="footer-container">
+      <!-- عمود 1 -->
+      <div class="footer-col">
+        <h3>الخالد تك</h3>
+        <p><strong>بيع وشراء اللابتوبات وأجهزة الكمبيوتر بأفضل جودة وأسعار منافسة.</strong></p>
+      </div>
+
+      <!-- عمود 2 -->
+      <div class="footer-col">
+        <h2>روابط هامة</h2>
+        <ul>
+          <li><a href="index.html#hero">الرئيسية</a></li>
+          <li><a href="abut.html">من نحن</a></li>
+          <li><a href="faq.html">الأسئلة الشائعة</a></li>
+        </ul>
+      </div>
+
+      <!-- عمود 3 -->
+      <div class="footer-col">
+        <ul>
+          <li><a href="policy.html">سياسة الاسترجاع والاستبدال</a></li>
+          <li><a href="privacy.html">سياسة الخصوصية</a></li>
+          <li><a href="addres.html">العنوان</a></li>
+          <li><a href="contact.html">تواصل معنا</a></li>
+        </ul>
+      </div>
+
+      <!-- عمود 4 -->
+      <div class="footer-col">
+        <div class="footer-social">
+          <h3>تابعنا</h3>
+          <div class="social-icons">
+            <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+            <a href="https://github.com/khaledmousa2005" target="_blank"><i class="fab fa-github"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <h2 class="footer-title">طرق الدفع</h2>
+    <div class="footer-logos">
+      <img src="Visadebitcardpng-1599584312349.png" alt="Visa" loading="lazy" />
+      <img src="mas.jpeg" alt="MasterCard" loading="lazy" />
+      <img src="PayPal-Logo.jpg" alt="PayPal" loading="lazy" />
+      <img src="bank-misr-750x430.jpg" alt="Bank Misr" loading="lazy" />
+      <img src="QNB-AlAhli-بنك-QNB-مصر-Copy-1.webp" alt="QNB" loading="lazy" />
+      <img src="cib.jpg" alt="CIB" loading="lazy" />
+      <img src="aman.jpeg" alt="Aman" loading="lazy" />
+      <img src="wepay.jpg" alt="WePay" loading="lazy" />
+      <img src="vodafoncach.png" alt="Vodafone Cash" loading="lazy" />
+      <img src="etsalat.jpg" alt="Etisalat" loading="lazy" />
+      <img src="orange.webp" alt="Orange" loading="lazy" />
+      <img src="kha.jpg" alt="Elkhaled Tech" loading="lazy" />
+    </div>
+
+    <br />
+    <p><a href="privacy.html" class="privacy-link">سياسة الخصوصية</a></p>
+
+    <div class="footer-bottom">
+      <h1>© 2025 الخالد تك | جميع الحقوق محفوظة</h1>
+    </div>
+  </footer>
+
+  <!-- زر تغيير الوضع -->
+  <button id="darkModeToggle" class="dark-toggle" aria-label="تبديل الوضع">🌙</button>
+
+  <!-- Scroll To Top -->
+  <button id="scrollTopBtn" class="scroll-top" aria-label="الرجوع لأعلى">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <!-- سكربت عام الموقع -->
+  <script src="script.js" defer></script>
 </body>
 
 </html>
