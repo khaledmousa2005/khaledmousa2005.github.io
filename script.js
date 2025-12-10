@@ -169,3 +169,28 @@
   // أول ما الصفحة تفتح
   handleScroll();
 })();
+
+
+// رقم الواتساب (عدّله لو محتاج)
+const WA = "2011556062656";
+
+/* ========== NAVBAR BURGER ========== */
+const burger = document.getElementById("ekBurger");
+const menu = document.getElementById("ekMenu");
+
+if (burger && menu) {
+  burger.addEventListener("click", () => {
+    menu.classList.toggle("show");
+  });
+
+  // قفل المنيو لما تختار لينك في الموبايل
+  menu.querySelectorAll(".ek-link").forEach((link) => {
+    link.addEventListener("click", () => {
+      if (window.innerWidth <= 980) {
+        menu.classList.remove("show");
+      }
+    });
+  });
+}
+
+/* باقي الأكواد بتاعت الواتساب / الفورم / الدارك مود حطها تحت عادي */
