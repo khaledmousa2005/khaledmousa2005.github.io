@@ -1,230 +1,558 @@
 body {
-    font-family: 'Tajawal', sans-serif;
-    margin: 0;
-    padding: 0;
-    background: #f8f9fa;
-    color: #333;
+  font-family: "Tajawal", "Cairo", sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f4f5f7;
+  color: #333;
 }
 
-/* ناف بار */
-.navbar {
-    background: #111;
-    color: #fff;
-    padding: 15px 0;
+/* ===== هيرو صفحة التواصل ===== */
+.contact-hero {
+  background: linear-gradient(135deg, #0f2027, #2c5364);
+  color: #fff;
+  padding: 30px 16px 40px;
 }
 
-.navbar .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.contact-hero-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
 
-.nav-links {
-    list-style: none;
-    display: flex;
-    gap: 20px;
+.contact-hero-text {
+  flex: 1.5;
 }
 
-.nav-links li a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: bold;
-    transition: 0.3s;
+.contact-hero-text h1 {
+  font-size: 2rem;
+  margin-bottom: 10px;
 }
 
-.nav-links li a:hover,
-.nav-links li a.active {
-    color: #ffc107;
+.contact-hero-text h1 span {
+  color: #ffdd00;
 }
 
-/* تواصل معنا */
-.contact {
-    padding: 40px 20px;
-    background: #fff;
-    margin: 20px auto;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+.contact-hero-text p {
+  opacity: 0.95;
+  font-size: 0.98rem;
+  margin-bottom: 10px;
 }
 
-.contact h2 {
-    text-align: center;
-    margin-bottom: 20px;
+.contact-hero-points {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.contact-hero-points li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.94rem;
+  margin-bottom: 4px;
+}
+
+.contact-hero-points i {
+  color: #2ecc71;
+}
+
+/* كارت جانبي */
+.contact-hero-card {
+  flex: 1;
+  max-width: 320px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 18px 14px 20px;
+  text-align: center;
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.18);
+}
+
+.contact-hero-card i {
+  font-size: 2.4rem;
+  margin-bottom: 8px;
+  color: #ffdd00;
+}
+
+.contact-hero-card h2 {
+  margin: 0 0 6px;
+}
+
+.hero-hours {
+  margin-top: 8px;
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+/* نصك الأصلي */
+.contacts {
+  text-align: center;
+  font-size: 1.05rem;
+  margin: 16px auto 0;
+}
+
+/* ===== صفحة التواصل الرئيسية ===== */
+.contact-page {
+  max-width: 1100px;
+  margin: 18px auto 30px;
+  padding: 0 16px;
+}
+
+/* شبكة (فورم + معلومات) */
+.contact-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 1.5fr);
+  gap: 18px;
+  align-items: flex-start;
+}
+
+.contact-card {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 18px 16px 20px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+}
+
+/* فورم */
+.contact-form-wrap h2 {
+  margin-top: 0;
+  margin-bottom: 8px;
+}
+
+.contact-desc {
+  font-size: 0.9rem;
+  margin-top: 0;
+  margin-bottom: 10px;
+  color: #555;
 }
 
 .contact-form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.contact-form label {
+  font-size: 0.9rem;
 }
 
 .contact-form input,
+.contact-form textarea,
+.contact-form select {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #d0d0d0;
+  font-family: inherit;
+  font-size: 0.95rem;
+}
+
 .contact-form textarea {
-    padding: 12px;
-    border-radius: 8px;
-    border: 1px solid #ccc;
+  min-height: 110px;
+  resize: vertical;
 }
 
-.contact-form button {
-    background: #ffc107;
-    border: none;
-    padding: 12px;
-    border-radius: 8px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: 0.3s;
+.contact-methods {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  font-size: 0.9rem;
 }
 
-.contact-form button:hover {
-    background: #e0a800;
+.contact-methods label {
+  display: flex;
+  align-items: center;
+  gap: 4px;
 }
 
-.contact-info {
-    margin-top: 30px;
-    background: #f1f1f1;
-    padding: 20px;
-    border-radius: 8px;
+/* أزرار عامة */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 0.95rem;
+  text-decoration: none;
 }
 
-.contact-info h3 {
-    margin-bottom: 10px;
+.main-btn {
+  background: linear-gradient(90deg, #25d366, #128c7e);
+  color: #fff;
+  margin-top: 4px;
+}
+
+.main-btn i {
+  font-size: 1.1rem;
+}
+
+.main-btn:hover {
+  filter: brightness(0.95);
+}
+
+.secondary-btn {
+  background: #111;
+  color: #fff;
+}
+
+.secondary-btn:hover {
+  opacity: 0.9;
+}
+
+.form-note {
+  font-size: 0.85rem;
+  opacity: 0.8;
+  margin-top: 4px;
+}
+
+/* معلومات التواصل */
+.contact-info h2 {
+  margin-top: 0;
+  margin-bottom: 8px;
 }
 
 .contact-info p {
-    margin: 8px 0;
+  margin: 6px 0;
+  font-size: 0.95rem;
 }
 
 .contact-info i {
-    color: #ffc107;
-    margin-left: 10px;
+  color: #ffc107;
+  margin-left: 8px;
 }
 
-/* الخريطة */
+.info-block {
+  margin-top: 10px;
+  padding-top: 8px;
+  border-top: 1px dashed #ddd;
+}
+
+.info-block h3 {
+  margin: 0 0 4px;
+  font-size: 0.95rem;
+}
+
+.info-block p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.contact-actions {
+  margin-top: 14px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+/* ===== ليه تتواصل معانا؟ ===== */
+.contact-reasons {
+  margin-top: 24px;
+  padding: 18px 0 4px;
+}
+
+.contact-reasons h2 {
+  margin-bottom: 12px;
+  font-size: 1.3rem;
+}
+
+.reasons-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 14px;
+}
+
+.reason-card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 14px 12px 14px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.04);
+  position: relative;
+}
+
+.reason-card h3 {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 0 0 6px;
+  font-size: 1rem;
+}
+
+.reason-card h3 i {
+  color: #3498db;
+}
+
+.reason-card p {
+  font-size: 0.9rem;
+  margin: 0 0 8px;
+}
+
+.reason-btn {
+  background: #3498db;
+  color: #fff;
+  font-size: 0.85rem;
+  padding-inline: 10px;
+}
+
+.reasons-note {
+  margin-top: 8px;
+  font-size: 0.85rem;
+  color: #666;
+}
+
+/* ===== FAQ صغير ===== */
+.faq-section {
+  margin-top: 26px;
+  padding-bottom: 4px;
+}
+
+.faq-section h2 {
+  margin-bottom: 10px;
+  font-size: 1.3rem;
+}
+
+.faq-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 12px;
+}
+
+.faq-item {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 12px 12px 10px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+}
+
+.faq-item h3 {
+  font-size: 0.98rem;
+  margin: 0 0 4px;
+}
+
+.faq-item p {
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.faq-link-note {
+  margin-top: 8px;
+  font-size: 0.88rem;
+}
+
+.faq-link-note a {
+  color: #3498db;
+  text-decoration: none;
+}
+
+.faq-link-note a:hover {
+  text-decoration: underline;
+}
+
+/* ===== الخريطة ===== */
+.map-card {
+  margin-top: 22px;
+  background: #fff;
+  border-radius: 14px;
+  padding: 16px 14px 18px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+}
+
+.map-card h2 {
+  margin-top: 0;
+  margin-bottom: 8px;
+}
+
 .map {
-    margin-top: 30px;
-    border-radius: 10px;
-    overflow: hidden;
+  border-radius: 10px;
+  overflow: hidden;
 }
 
-/* ====== Footer Style ====== */
+/* ===== زر واتساب عائم + Scroll Top ===== */
+.floating-whatsapp {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  background: #25d366;
+  color: #fff;
+  padding: 10px 16px;
+  border-radius: 40px;
+  text-decoration: none;
+  font-weight: 700;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+  z-index: 999;
+  font-size: 0.9rem;
+}
+
+.floating-whatsapp:hover {
+  filter: brightness(0.95);
+}
+
+.scroll-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: none;
+  background: #111;
+  color: #fff;
+  cursor: pointer;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  z-index: 999;
+}
+
+.scroll-top.show {
+  display: flex;
+}
+
+/* زر الداكن لو محتاج */
+.dark-toggle {
+  position: fixed;
+  top: 80px;
+  left: 20px;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 1px solid #ddd;
+  background: #fff;
+  cursor: pointer;
+  z-index: 999;
+}
+
+/* ===== Footer (إعادة استخدام ستايلك) ===== */
 .footer {
-    background: #111;
-    color: #eee;
-    padding: 40px 20px 10px;
-    font-family: Arial, sans-serif;
+  background: #111;
+  color: #eee;
+  padding: 40px 20px 10px;
+  font-family: Arial, sans-serif;
 }
 
 .footer-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 30px;
-    margin-bottom: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+  margin-bottom: 20px;
 }
 
 .footer-col h3,
 .footer-col h4 {
-    margin-bottom: 15px;
-    color: #fff;
+  margin-bottom: 15px;
+  color: #fff;
 }
 
 .footer-col p {
-    font-size: 14px;
-    line-height: 1.6;
-    color: #ccc;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #ccc;
 }
 
 .footer-col ul {
-    list-style: none;
-    padding: 0;
+  list-style: none;
+  padding: 0;
 }
 
 .footer-col ul li {
-    margin-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 .footer-col ul li a {
-    text-decoration: none;
-    color: #ccc;
-    transition: color 0.3s ease;
+  text-decoration: none;
+  color: #ccc;
+  transition: color 0.3s ease;
 }
 
 .footer-col ul li a:hover {
-    color: #00bcd4;
+  color: #00bcd4;
 }
-
-
-
-.social-icons img:hover {
-    transform: scale(1.2);
-}
-
-.footer-bottom {
-    text-align: center;
-    border-top: 1px solid #333;
-    padding-top: 10px;
-    font-size: 13px;
-    color: #aaa;
-}
-
 
 .social-icons {
-    display: flex;
-    gap: 15px;
-    margin-top: 10px;
+  display: flex;
+  gap: 15px;
+  margin-top: 10px;
 }
 
 .social-icons a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
-    background: #222;
-    color: #1835f5;
-    font-size: 20px;
-    transition: 0.3s ease-in-out;
-    box-shadow: 0 0 10px rgba(245, 197, 24, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background: #222;
+  color: #1835f5;
+  font-size: 20px;
+  transition: 0.3s ease-in-out;
+  box-shadow: 0 0 10px rgba(245, 197, 24, 0.3);
 }
 
 .social-icons a:hover {
-    background: #f5c518;
-    color: #111;
-    transform: translateY(-5px) scale(1.1);
-    box-shadow: 0 0 20px rgba(24, 24, 245, 0.8);
-}
-
-
-
-.contacts {
-    text-align: center;
-    text-transform: lowercase;
-    font-size: larger;
+  background: #f5c518;
+  color: #111;
+  transform: translateY(-5px) scale(1.1);
+  box-shadow: 0 0 20px rgba(24, 24, 245, 0.8);
 }
 
 .footer-logos {
-    display: flex;
-    justify-content: center;
-    /* يخليهم في النص */
-    align-items: center;
-    gap: 20px;
-    /* مسافة بين اللوجوهات */
-    margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin-top: 15px;
 }
 
 .footer-logos img {
-    height: 35px;
-    /* حجم موحّد وصغير */
-    object-fit: contain;
-    transition: transform 0.3s ease;
-    border-radius: 12%;
+  height: 35px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+  border-radius: 12%;
 }
 
 .footer-logos img:hover {
-    transform: scale(2.0);
-    /* تكبير بسيط عند المرور */
+  transform: scale(2);
 }
 
-.logo {
-    text-decoration: none;
-    color: #ffc107;
+.footer-bottom {
+  text-align: center;
+  border-top: 1px solid #333;
+  padding-top: 10px;
+  font-size: 13px;
+  color: #aaa;
+}
+
+.privacy-link {
+  text-align: center;
+  display: inline-block;
+}
+
+/* ===== موبايل ===== */
+@media (max-width: 768px) {
+  .contact-hero-inner {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+
+  .contact-hero-text {
+    text-align: center;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-page {
+    padding-inline: 12px;
+  }
+
+  .contact-hero-text h1 {
+    font-size: 1.6rem;
+  }
 }

@@ -2,132 +2,369 @@
 <html lang="ar" dir="rtl">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>تواصل معنا - Elkhale Tech</title>
-    <link rel="stylesheet" href="contact.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>تواصل معنا - El Khaled Tech</title>
+
+  <!-- وصف للصفحة -->
+  <meta name="description"
+    content="تواصل مع الخالد تك للاستفسار عن شراء أو بيع أو صيانة أجهزة الكمبيوتر واللابتوبات. نموذج تواصل سريع، بيانات الاتصال، وأسئلة شائعة." />
+
+  <!-- استايل عام + استايل الصفحة -->
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="contact.css" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 
-<body>
+<body id="top">
 
-    <!-- ناف بار -->
-    <header class="navbar">
-        <div class="container">
-            <a class="logo" href="index.html">
-                <h1>Elkhaled Tech </h1>
-            </a>
-
-
-            <nav>
-                <ul class="nav-links">
-                    <li><a href="index.html">الرئيسية</a></li>
-                    <li><a href="products.html">المنتجات</a></li>
-                    <li><a href="service.html">الخدمات</a></li>
-                    <li><a href="contact.html" class="active">تواصل معنا</a></li>
-                </ul>
-            </nav>
+  <!-- ===== NAVBAR الرئيسي (نفس روح الهوم) ===== -->
+  <nav class="ek-navbar" role="navigation" aria-label="شريط التنقل">
+    <div class="ek-container">
+      <a href="index.html#hero" class="ek-brand">
+        <img src="kha.jpg" alt="El Khaled Tech" class="ek-logo" loading="lazy" />
+        <span class="ek-name">El Khaled Tech</span>
+        <div class="brand">
+          ابتكر براحتك.. والتجربة على راحتك
         </div>
-    </header>
+      </a>
 
-    <!-- تواصل معنا -->
-    <div>
-        <p class="contacts">يسعدنا تواصلك معنا في أي وقت من خلال النموذج التالي:</p>
+      <button class="ek-burger" id="ekBurger" aria-label="فتح القائمة">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+
+      <ul class="ek-menu" id="ekMenu">
+        <li><a href="index.html#hero" class="ek-link">الرئيسية</a></li>
+        <li><a href="index.html#products" class="ek-link">المنتجات</a></li>
+        <li><a href="Services.html" class="ek-link">حلول الخالد تك</a></li>
+        <li><a href="abut.html" class="ek-link">من نحن</a></li>
+        <li><a href="addres.html" class="ek-link">العنوان</a></li>
+        <li><a href="contact.html" class="ek-link active">تواصل معنا</a></li>
+        <li>
+          <a href="https://api.whatsapp.com/send?phone=201156062656"
+            target="_blank" class="ek-whats">
+            <i class="fa-brands fa-whatsapp"></i> واتساب
+          </a>
+        </li>
+        <li>
+          <button id="darkModeToggleNav" class="ek-dark-btn" title="تبديل الوضع">🌙</button>
+        </li>
+      </ul>
     </div>
-    <section class="contact container">
-        <h2>تواصل معنا 📩</h2>
+  </nav>
 
+  <!-- ===== هيرو للتواصل ===== -->
+  <header class="contact-hero">
+    <div class="container contact-hero-inner">
+      <div class="contact-hero-text">
+        <h1>تواصل معنا <span>في أي وقت</span></h1>
+        <p>
+          سواء كنت عايز تستفسر عن جهاز، تطلب عرض أسعار، أو عندك مشكلة في لابتوبك،
+          فريق <strong>الخالد تك</strong> موجود يساعدك بأسرع وقت.
+        </p>
+        <ul class="contact-hero-points">
+          <li><i class="fa-solid fa-check-circle"></i> رد سريع خلال مواعيد العمل.</li>
+          <li><i class="fa-solid fa-check-circle"></i> دعم فني واستشارات قبل الشراء.</li>
+          <li><i class="fa-solid fa-check-circle"></i> إمكانية إرسال صور ومواصفات جهازك عبر الواتساب.</li>
+        </ul>
+      </div>
+      <div class="contact-hero-card">
+        <i class="fa-solid fa-headset"></i>
+        <h2>دعم وخدمة عملاء</h2>
+        <p>نخدم عملائنا من بني سويف، القاهرة، والمحافظات القريبة مع إمكانية الشحن لباقي المحافظات.</p>
+        <p class="hero-hours"><i class="fa-regular fa-clock"></i> مواعيد العمل: 10 ص - 10 م (ما عدا الجمعة)</p>
+      </div>
+    </div>
+  </header>
 
-        <form class="contact-form">
-            <label>الاسم الكامل</label>
-            <input type="text" placeholder="اكتب اسمك" required>
+  <!-- جملةك الأصلية محفوظة -->
+  <div>
+    <p class="contacts">يسعدنا تواصلك معنا في أي وقت من خلال النموذج التالي:</p>
+  </div>
 
-            <label>البريد الإلكتروني</label>
-            <input type="email" placeholder="example@email.com" required>
+  <!-- ===== قسم التواصل الرئيسي ===== -->
+  <main class="contact-page container">
 
-            <label>رقم الهاتف</label>
-            <input type="tel" placeholder="01xxxxxxxxx" required>
+    <section class="contact-grid">
 
-            <label>الرسالة</label>
-            <textarea placeholder="اكتب رسالتك هنا..." required></textarea>
+      <!-- نموذج التواصل -->
+      <div class="contact-card contact-form-wrap">
+        <h2>📩 ابعتلنا رسالة</h2>
+        <p class="contact-desc">
+          املأ البيانات التالية، وسنستقبل رسالتك مباشرة على واتساب عشان نقدر نرد عليك أسرع.
+        </p>
 
-            <button type="submit" class="btn">إرسال</button>
+        <form class="contact-form" id="contactForm">
+          <label for="contactName">الاسم الكامل</label>
+          <input id="contactName" type="text" placeholder="اكتب اسمك" required />
+
+          <label for="contactEmail">البريد الإلكتروني</label>
+          <input id="contactEmail" type="email" placeholder="example@email.com" required />
+
+          <label for="contactPhone">رقم الهاتف</label>
+          <input id="contactPhone" type="tel" placeholder="01xxxxxxxxx" required />
+
+          <label for="contactSubject">نوع الاستفسار</label>
+          <select id="contactSubject">
+            <option value="استفسار عن منتج">استفسار عن منتج</option>
+            <option value="طلب عرض أسعار">طلب عرض أسعار لأكثر من جهاز</option>
+            <option value="دعم فني وصيانة">دعم فني وصيانة</option>
+            <option value="شراء جهازك المستعمل">عرض لبيع لابتوب مستعمل</option>
+            <option value="أخرى">أخرى</option>
+          </select>
+
+          <label>طريقة التواصل المفضلة</label>
+          <div class="contact-methods">
+            <label><input type="radio" name="preferredContact" value="واتساب" checked /> واتساب</label>
+            <label><input type="radio" name="preferredContact" value="مكالمة هاتفية" /> مكالمة هاتفية</label>
+            <label><input type="radio" name="preferredContact" value="بريد إلكتروني" /> بريد إلكتروني</label>
+          </div>
+
+          <label for="contactMessage">الرسالة</label>
+          <textarea id="contactMessage" placeholder="اكتب رسالتك هنا..." required></textarea>
+
+          <button type="submit" class="btn main-btn">
+            إرسال عبر واتساب
+            <i class="fa-brands fa-whatsapp"></i>
+          </button>
+
+          <p class="form-note">📌 سيتم فتح واتساب تلقائيًا وبداخله الرسالة الجاهزة للإرسال على رقم الخالد تك.</p>
         </form>
+      </div>
 
-        <!-- معلومات مباشرة -->
-        <div class="contact-info">
-            <h3>معلومات التواصل</h3>
-            <p><i class="fas fa-map-marker-alt"></i> بني سويف - الواسطي - هرم ميدوم</p>
-            <p><i class="fas fa-phone"></i> 01156062656</p>
-            <p><i class="fas fa-envelope"></i> khaledmousaawwe@gmail.com</p>
+      <!-- معلومات التواصل (محتواك + تفاصيل إضافية) -->
+      <div class="contact-card contact-info">
+        <h2>معلومات التواصل</h2>
+
+        <p><i class="fas fa-map-marker-alt"></i> بني سويف - الواسطي - هرم ميدوم</p>
+        <p><i class="fas fa-phone"></i> 01156062656</p>
+        <p><i class="fas fa-envelope"></i> khaledmousaawwe@gmail.com</p>
+
+        <div class="info-block">
+          <h3><i class="fa-regular fa-clock"></i> مواعيد العمل</h3>
+          <p>يومياً من <strong>10 صباحًا</strong> حتى <strong>10 مساءً</strong> (الجمعة إجازة أو حسب الاتفاق).</p>
         </div>
 
-        <!-- خريطة -->
-        <div class="map">
-            <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d227514.61132543165!2d30.6457!3d29.3216!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x145995c2817e9eeb%3A0xa38d5cfacdcb6c4!2z2KfZhNiz2YjZhNin2YXZitip!5e0!3m2!1sar!2seg!4v1693749243077"
-                width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        <div class="info-block">
+          <h3><i class="fa-solid fa-bolt"></i> زمن الاستجابة</h3>
+          <p>غالباً يتم الرد خلال <strong>30 دقيقة</strong> داخل مواعيد العمل، وقد يتأخر الرد قليلاً في أوقات الضغط.</p>
         </div>
+
+        <div class="contact-actions">
+          <a href="tel:01156062656" class="btn secondary-btn">
+            <i class="fa-solid fa-phone"></i> اتصال مباشر
+          </a>
+          <a href="https://api.whatsapp.com/send?phone=201156062656"
+            target="_blank" class="btn secondary-btn">
+            <i class="fa-brands fa-whatsapp"></i> محادثة واتساب
+          </a>
+        </div>
+      </div>
     </section>
 
-    <!-- ====== الفوتر ====== -->
-    <footer class="footer">
-        <div class="footer-container">
-
-            <!-- عمود 1 -->
-            <div class="footer-col">
-                <h3>الخالد تك</h3>
-                <p><strong>بيع وشراء اللابتوبات وأجهزة الكمبيوتر بأفضل جودة وأسعار منافسة.</strong></p>
-            </div>
-
-            <!-- عمود 2 -->
-            <div class="footer-col">
-                <h4>روابط هامة</h4>
-                <ul>
-                    <li><a href="index.html">الرئيسية</a></li>
-                    <li><a href="abut.html">من نحن</a></li>
-                    <li><a href="faq.html">الأسئلة الشائعة</a></li>
-                    <li><a href="policy.html">سياسة الاسترجاع والاستبدال</a></li>
-                    <li><a href="privacy.html">سياسة الخصوصية</a></li>
-                    <li><a href="addres.html">العنوان</a></li>
-                    <li><a href="contact.html">تواصل معنا</a></li>
-                </ul>
-            </div>
-
-
-
-            <!-- عمود 3 -->
-            <div class="footer-col">
-                <div class="footer-social">
-                    <h3>تابعنا</h3>
-                    <div class="social-icons">
-                        <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                        <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
-                        <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
-                        <a href="https://youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
-                        <a href="https://github.com/khaledmousa2005" target="_blank"><i class="fab fa-github"></i></a>
-                    </div>
-                </div>
-            </div>
-
+    <!-- ===== ليه تتواصل معانا؟ (كروت تجهز الرسالة) ===== -->
+    <section class="contact-reasons">
+      <h2>ليه تتواصل مع الخالد تك؟</h2>
+      <div class="reasons-grid">
+        <div class="reason-card" data-template="أريد استفسر عن مواصفات وسعر جهاز معين.">
+          <h3><i class="fa-solid fa-laptop"></i> استفسار عن جهاز</h3>
+          <p>مش متأكد تختار أنهي موديل؟ ابعتلنا استخدامك والميزانية، واحنا نرشحلك المناسب.</p>
+          <button type="button" class="btn reason-btn">استخدام هذا السبب</button>
         </div>
-        <div class="footer-logos">
-            <img src="Visadebitcardpng-1599584312349.png" alt="Visa">
-            <img src="mas.jpeg" alt="MasterCard">
-            <img src="PayPal-Logo.jpg" alt="PayPal">
-            <img src="bank-misr-750x430.jpg" alt="bankmisr">
-            <img src="QNB-AlAhli-بنك-QNB-مصر-Copy-1.webp" alt="qnb">
-            <img src="cib.jpg" alt="PayPal">
-            <img src="aman.jpeg" alt="aman">
-            <img src="kha.jpg" alt="Elkhaled Tech">
-        </div>
-        <br>
-        <p><a href="privacy.html" class="privacy-link">سياسة الخصوصية</a></p>
-        <div class="footer-bottom">
-            <h1>© 2025 الخالد تك | جميع الحقوق محفوظة</h1>
-        </div>
-    </footer>
 
+        <div class="reason-card" data-template="أريد عرض أسعار لأكثر من جهاز للمقارنة والشراء.">
+          <h3><i class="fa-solid fa-tags"></i> طلب عرض أسعار</h3>
+          <p>لو شركة أو طالب وعايز أكتر من جهاز، نقدر نبعتلك قائمة بأسعار مناسبة.</p>
+          <button type="button" class="btn reason-btn">استخدام هذا السبب</button>
+        </div>
+
+        <div class="reason-card" data-template="لدي مشكلة في لابتوب وأريد معرفة تكلفة الصيانة تقريبياً.">
+          <h3><i class="fa-solid fa-screwdriver-wrench"></i> صيانة ودعم فني</h3>
+          <p>جهازك بيفصل؟ بيسخن؟ بطارية ضعيفة؟ ابعت المشكلة بالتفصيل أو فيديو قصير.</p>
+          <button type="button" class="btn reason-btn">استخدام هذا السبب</button>
+        </div>
+      </div>
+      <p class="reasons-note">عند الضغط على أي سبب، هنجهزلك نص في حقل الرسالة تقدر تعدّل عليه قبل الإرسال.</p>
+    </section>
+
+    <!-- ===== أسئلة سريعة (Mini FAQ) ===== -->
+    <section class="faq-section">
+      <h2>أسئلة سريعة قبل ما تبعت</h2>
+      <div class="faq-grid">
+        <div class="faq-item">
+          <h3>هل أقدر أشتري أونلاين ويتبعتلي لحد البيت؟</h3>
+          <p>أيوه، تقدر تطلب الجهاز من الموقع أو الواتساب، وبيتم الشحن عن طريق شركات شحن موثوقة مع تأمين للجهاز.</p>
+        </div>
+        <div class="faq-item">
+          <h3>هل في ضمان على الأجهزة المستعملة؟</h3>
+          <p>نعم، في ضمان تجربة واستلام، وفي بعض الأجهزة عليها ضمان فني حسب الاتفاق وقت الشراء.</p>
+        </div>
+        <div class="faq-item">
+          <h3>هل أقدر أعاين الجهاز في مقر الخالد تك؟</h3>
+          <p>أكيد، تقدر تزورنا في مقرنا في بني سويف - الواسطي - هرم ميدوم بعد التنسيق معانا على الواتساب أو الاتصال.</p>
+        </div>
+      </div>
+      <p class="faq-link-note">
+        لمزيد من الأسئلة، تقدر تزور صفحة
+        <a href="faq.html">الأسئلة الشائعة</a>.
+      </p>
+    </section>
+
+    <!-- ===== خريطة (نفس اللي عندك) ===== -->
+    <section class="map-card">
+      <h2>موقعنا على الخريطة</h2>
+      <div class="map">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d227514.61132543165!2d30.6457!3d29.3216!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x145995c2817e9eeb%3A0xa38d5cfacdcb6c4!2z2KfZhNiz2YjZhNin2YXZitip!5e0!3m2!1sar!2seg!4v1693749243077"
+          width="100%"
+          height="300"
+          style="border:0;"
+          allowfullscreen=""
+          loading="lazy">
+        </iframe>
+      </div>
+    </section>
+  </main>
+
+  <!-- زر واتساب عائم -->
+  <a href="https://api.whatsapp.com/send?phone=201156062656"
+    target="_blank" class="floating-whatsapp">
+    💬 تواصل سريع عبر واتساب
+  </a>
+
+  <!-- Scroll To Top -->
+  <button id="scrollTopBtn" class="scroll-top" aria-label="الرجوع لأعلى">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <!-- ====== الفوتر (نفس محتواك) ====== -->
+  <footer class="footer">
+    <div class="footer-container">
+
+      <!-- عمود 1 -->
+      <div class="footer-col">
+        <h3>الخالد تك</h3>
+        <p><strong>بيع وشراء اللابتوبات وأجهزة الكمبيوتر بأفضل جودة وأسعار منافسة.</strong></p>
+      </div>
+
+      <!-- عمود 2 -->
+      <div class="footer-col">
+        <h4>روابط هامة</h4>
+        <ul>
+          <li><a href="index.html">الرئيسية</a></li>
+          <li><a href="abut.html">من نحن</a></li>
+          <li><a href="faq.html">الأسئلة الشائعة</a></li>
+          <li><a href="policy.html">سياسة الاسترجاع والاستبدال</a></li>
+          <li><a href="privacy.html">سياسة الخصوصية</a></li>
+          <li><a href="addres.html">العنوان</a></li>
+          <li><a href="contact.html">تواصل معنا</a></li>
+        </ul>
+      </div>
+
+      <!-- عمود 3 -->
+      <div class="footer-col">
+        <div class="footer-social">
+          <h3>تابعنا</h3>
+          <div class="social-icons">
+            <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+            <a href="https://github.com/khaledmousa2005" target="_blank"><i class="fab fa-github"></i></a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="footer-logos">
+      <img src="Visadebitcardpng-1599584312349.png" alt="Visa" />
+      <img src="mas.jpeg" alt="MasterCard" />
+      <img src="PayPal-Logo.jpg" alt="PayPal" />
+      <img src="bank-misr-750x430.jpg" alt="bankmisr" />
+      <img src="QNB-AlAhli-بنك-QNB-مصر-Copy-1.webp" alt="qnb" />
+      <img src="cib.jpg" alt="cib" />
+      <img src="aman.jpeg" alt="aman" />
+      <img src="kha.jpg" alt="Elkhaled Tech" />
+    </div>
+    <br />
+    <p><a href="privacy.html" class="privacy-link">سياسة الخصوصية</a></p>
+    <div class="footer-bottom">
+      <h1>© 2025 الخالد تك | جميع الحقوق محفوظة</h1>
+    </div>
+  </footer>
+
+  <!-- زر تغيير الوضع (لو شغال في باقي الموقع من script.js) -->
+  <button id="darkModeToggle" class="dark-toggle" aria-label="تبديل الوضع">🌙</button>
+
+  <!-- سكربت الموقع العام (لو عندك) -->
+  <script src="script.js" defer></script>
+
+  <!-- سكربت خاص بصفحة التواصل -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const WA = "201156062656"; // رقم الواتساب الصحيح
+
+      const form = document.getElementById("contactForm");
+      const messageField = document.getElementById("contactMessage");
+      const subjectField = document.getElementById("contactSubject");
+
+      // 1) لما أختار سبب من كروت "ليه تتواصل معانا؟" يجهّز الرسالة
+      document.querySelectorAll(".reason-card").forEach((card) => {
+        const btn = card.querySelector(".reason-btn");
+        const template = card.dataset.template;
+
+        btn.addEventListener("click", () => {
+          if (template && messageField) {
+            messageField.value = template;
+            messageField.focus();
+            messageField.scrollIntoView({ behavior: "smooth", block: "center" });
+          }
+        });
+      });
+
+      // 2) إرسال الفورم على واتساب
+      if (form) {
+        form.addEventListener("submit", function (e) {
+          e.preventDefault();
+
+          const name = document.getElementById("contactName").value.trim();
+          const email = document.getElementById("contactEmail").value.trim();
+          const phone = document.getElementById("contactPhone").value.trim();
+          const subject = subjectField ? subjectField.value : "استفسار";
+          const message = messageField ? messageField.value.trim() : "";
+
+          const preferred = document.querySelector("input[name='preferredContact']:checked");
+          const preferredContact = preferred ? preferred.value : "واتساب";
+
+          if (!name || !phone || !message) {
+            alert("من فضلك املأ الاسم، رقم الهاتف، والرسالة.");
+            return;
+          }
+
+          const text =`
+            رسالة تواصل جديدة من موقع الخالد تك:\n +
+            الاسم: ${name}\n +
+            الهاتف: ${phone}\n +
+            البريد: ${email}\n +
+            نوع الاستفسار: ${subject}\n +
+            طريقة التواصل المفضلة: ${preferredContact}\n +
+            --------------------------\n +
+            نص الرسالة:\n${message};`
+
+          const url =
+            "https://api.whatsapp.com/send?phone=" +
+            WA +
+            "&text=" +
+            encodeURIComponent(text);
+
+          window.open(url, "_blank");
+        });
+      }
+    });
+  </script>
 </body>
 
 </html>
