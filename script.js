@@ -1,170 +1,34 @@
-// script.js - slider, per-offer countdowns, WhatsApp handlers, UX
+// script.js - UX, واتساب، داكن/فاتح، Scroll، Active Nav
 (function () {
-  // رقم الواتساب (دولي) - رقمك: 01156062656 -> +20 1156062656 (مكتوب في الكومنت بتاعك)
+  // رقم الواتساب الرئيسي
   const WA = "2011556062656";
 
-  /* TOP ALERT (لو موجودة في الصفحة) */
-  const topAlertText = document.getElementById("topAlertText");
-  const topAlertBtn = document.getElementById("topAlertBtn");
-  const scrollToOffersBtn = document.getElementById("scrollToOffers");
+  /* ================== NAVBAR BURGER ================== */
+  const burger = document.getElementById("ekBurger");
+  const menu = document.getElementById("ekMenu");
 
-  const topMessages = [
-    "🎉 خصم 20% على بعض الأجهزة — سارع الآن!",
-    "🚚 شحن مجاني لأول 50 طلب كل يوم!",
-    "🎓 خصم خاص للطلاب 20% (مع الكارنيه)!",
-  ];
-
-  if (topAlertText) {
-    let topIdx = 0;
-    setInterval(() => {
-      topIdx = (topIdx + 1) % topMessages.length;
-      topAlertText.textContent = topMessages[topIdx];
-    }, 4500);
-  }
-
-  if (topAlertBtn) {
-    topAlertBtn.addEventListener("click", () => {
-      const msg = encodeURIComponent(
-        "مرحبًا، أريد معرفة أحدث العروض المتاحة الآن."
-      );
-      window.open(https://wa.me/${WA}?text=${msg}, "_blank");
+  if (burger && menu) {
+    burger.addEventListener("click", () => {
+      menu.classList.toggle("show");
     });
-  }
 
-  if (scrollToOffersBtn) {
-    scrollToOffersBtn.addEventListener("click", () => {
-      const offersSection = document.getElementById("offersSection");
-      if (offersSection) {
-        offersSection.scrollIntoView({ behavior: "smooth", block: "start" });
-      }
-    });
-  }
-
-  /* OFFERS SLIDER (لو استخدمت عنصر offersSlider و offer-card) */
-  const offersSlider = document.getElementById("offersSlider");
-
-  if (offersSlider) {
-    const offerCards = Array.from(
-      offersSlider.querySelectorAll(".offer-card")
-    );
-    const prevBtn = document.getElementById("prevOffer");
-    const nextBtn = document.getElementById("nextOffer");
-    let current = 0;
-
-    function showOffer(i) {
-      current = (i + offerCards.length) % offerCards.length;
-      offerCards.forEach((c, idx) => {
-        c.classList.toggle("visible", idx === current);
-        c.style.order = idx - current;
-      });
-    }
-
-    if (offerCards.length > 0) {
-      showOffer(0);
-    }
-
-    function resetAuto() {
-      clearInterval(autoSlide);
-      autoSlide = setInterval(() => showOffer(current + 1), 7000);
-    }
-
-    if (prevBtn) {
-      prevBtn.addEventListener("click", () => {
-        showOffer(current - 1);
-        resetAuto();
-      });
-    }
-
-    if (nextBtn) {
-      nextBtn.addEventListener("click", () => {
-        showOffer(current + 1);
-        resetAuto();
-      });
-    }
-
-    let autoSlide = setInterval(() => showOffer(current + 1), 7000);
-
-    /* Per-offer countdowns */
-    const countdownIntervals = [];
-    offerCards.forEach((card, idx) => {
-      const attr =
-        card.getAttribute("data-duration-mins") ||
-        card.getAttribute("data-duration-minutes") ||
-        card.dataset.durationMins ||
-        card.dataset.durationMinutes;
-
-      const minutes = parseInt(attr || 1440, 10); // default 24h
-      const endTime = Date.now() + minutes * 60 * 1000;
-      const timerEl = card.querySelector(".offer-timer");
-
-      if (!timerEl) return;
-
-      function update() {
-        const diff = endTime - Date.now();
-        if (diff <= 0) {
-          timerEl.textContent = "انتهى العرض";
-          clearInterval(countdownIntervals[idx]);
-          return;
+    // إغلاق المنيو عند الضغط على لينك
+    menu.querySelectorAll(".ek-link").forEach((link) => {
+      link.addEventListener("click", () => {
+        if (window.innerWidth <= 980) {
+          menu.classList.remove("show");
         }
-
-        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-        const hrs = Math.floor(
-          (diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
-        );
-        const mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-        const secs = Math.floor((diff % (1000 * 60)) / 1000);
-
-        timerEl.textContent = `${days} يوم : ${String(hrs).padStart(
-          2,
-          "0"
-        )}:${String(mins).padStart(2, "0")}:${String(secs).padStart(2, "0")}`;
-      }
-
-      update();
-      countdownIntervals[idx] = setInterval(update, 1000);
-    });
-
-    /* Offer CTA buttons -> open WA with offer title */
-    document.querySelectorAll(".offer-cta").forEach((btn, idx) => {
-      btn.addEventListener("click", () => {
-        const offerCard = offerCards[idx];
-        const title =
-          offerCard?.querySelector("h3")?.textContent || "عرض خاص";
-        const msg = encodeURIComponent(
-          مرحبًا، أريد الاستفادة من العرض: ${title}
-        );
-        window.open(https://wa.me/${WA}?text=${msg}, "_blank");
       });
     });
-
-    /* Global countdown (24h مثال) */
-    (function globalCountdown() {
-      const el = document.getElementById("globalCountdown");
-      if (!el) return;
-      const end = Date.now() + 24 * 60 * 60 * 1000;
-      const iv = setInterval(() => {
-        const diff = end - Date.now();
-        if (diff <= 0) {
-          el.textContent = "00:00:00";
-          clearInterval(iv);
-          return;
-        }
-        const hrs = Math.floor(diff / 3600000);
-        const mins = Math.floor((diff % 3600000) / 60000);
-        const secs = Math.floor((diff % 60000) / 1000);
-        el.textContent = `${String(hrs).padStart(2, "0")}:${String(
-          mins
-        ).padStart(2, "0")}:${String(secs).padStart(2, "0")}`;
-      }, 1000);
-    })();
   }
 
-  /* Product WA buttons (اللي عليها كلاس wh-btn) */
-  document.querySelectorAll(".wh-btn").forEach((btn) => {
+  /* ================== PRODUCT WHATSAPP BUTTONS ================== */
+  // كل .wh-btn و كمان .btn.btn-primary لو عليها data-product
+  const waButtons = document.querySelectorAll(".wh-btn, .btn.btn-primary[data-product]");
+
+  waButtons.forEach((btn) => {
     btn.addEventListener("click", (e) => {
-      // لو الزرار رابط خارجي ما نمنعش دايفولت
       e.preventDefault();
-
       const product =
         btn.dataset.product ||
         btn.getAttribute("data-product") ||
@@ -174,13 +38,13 @@
       const phone = prompt("رقم للتواصل (مهم):") || "";
 
       const msg = encodeURIComponent(
-        مرحبًا، أريد طلب ${product}\nالاسم: ${name}\nالهاتف: ${phone}
+        مرحبًا، أريد طلب: ${product}\nالاسم: ${name}\nالهاتف: ${phone}
       );
       window.open(https://wa.me/${WA}?text=${msg}, "_blank");
     });
   });
 
-  /* Order form -> WhatsApp summary */
+  /* ================== ORDER FORM -> WhatsApp ================== */
   const orderForm = document.getElementById("orderFormMain");
   if (orderForm) {
     orderForm.addEventListener("submit", function (e) {
@@ -191,31 +55,28 @@
       const email = document.getElementById("emailAddr").value.trim();
       const address = document.getElementById("address").value.trim();
       const product = document.getElementById("productName").value.trim();
+      const productType = document.getElementById("productType").value;
+      const contactMethod = document.getElementById("contactMethod").value;
 
       const msg = encodeURIComponent(
-        طلب من الموقع:\nالمنتج: ${product}\nالاسم: ${name}\nالهاتف: ${phone}\nالبريد: ${email}\nالعنوان: ${address}
+        طلب من موقع الخالد تك:\n +
+        المنتج: ${product} (${productType})\n +
+        الاسم: ${name}\n +
+        الهاتف: ${phone}\n +
+        البريد: ${email}\n +
+        طريقة التواصل المفضلة: ${contactMethod}\n +
+        العنوان: ${address}
       );
 
       window.open(https://wa.me/${WA}?text=${msg}, "_blank");
     });
   }
 
-  /* Welcome message (لو استخدمته) */
-  const welcomeBtn = document.getElementById("welcomeBtn");
-  const welcomeMessage = document.getElementById("welcomeMessage");
-
-  if (welcomeBtn && welcomeMessage) {
-    welcomeBtn.addEventListener("click", () => {
-      welcomeMessage.textContent =
-        "أهلاً! لو محتاج أي مساعدة ابعتلنا على الواتساب أو اختار منتج واطلبه فوراً!";
-      welcomeMessage.classList.add("show");
-      setTimeout(() => welcomeMessage.classList.remove("show"), 6000);
-    });
-  }
-
-  /* Reveal on scroll (للكروت + صورة المؤسس) */
+  /* ================== REVEAL ON SCROLL ================== */
   const revealList = Array.from(
-    document.querySelectorAll(".product-card, .offer-card, .about-content, .founder-img")
+    document.querySelectorAll(
+      ".product-card, .offer-card, .about-content, .founder-img, .why-card, .testimonial-card"
+    )
   );
 
   function reveal() {
@@ -225,45 +86,59 @@
     });
   }
 
-  window.addEventListener("scroll", reveal);
-  reveal();
+  /* ================== NAV ACTIVE ON SCROLL ================== */
+  const sections = document.querySelectorAll("section[id], header[id]");
+  const navLinks = document.querySelectorAll(".ek-menu .ek-link[href^='#']");
 
-  /* Slider (لو ضفت elements باسم slide / dot) */
-  let slides = document.querySelectorAll(".slide");
-  let dots = document.querySelectorAll(".dot");
-  let index = 0;
+  function updateActiveNav() {
+    let currentId = null;
+    const scrollPos = window.scrollY || window.pageYOffset;
 
-  function showSlide(n) {
-    slides.forEach((slide, i) => {
-      slide.classList.remove("active");
-      if (dots[i]) dots[i].classList.remove("active");
-      if (i === n) {
-        slide.classList.add("active");
-        if (dots[i]) dots[i].classList.add("active");
+    sections.forEach((sec) => {
+      const offsetTop = sec.offsetTop - 120; // شوية عشان الهيدر
+      const offsetBottom = offsetTop + sec.offsetHeight;
+      if (scrollPos >= offsetTop && scrollPos < offsetBottom) {
+        currentId = sec.id;
+      }
+    });
+
+    navLinks.forEach((link) => {
+      const href = link.getAttribute("href");
+      const targetId = href && href.startsWith("#") ? href.slice(1) : null;
+      if (targetId && targetId === currentId) {
+        link.classList.add("active");
+      } else {
+        link.classList.remove("active");
       }
     });
   }
 
-  // جاهز لو حبيت تفعله بعدين
-  // function nextSlide() {
-  //   index = (index + 1) % slides.length;
-  //   showSlide(index);
-  // }
-  // setInterval(nextSlide, 4000);
+  /* ================== SCROLL TO TOP BUTTON ================== */
+  const scrollTopBtn = document.getElementById("scrollTopBtn");
 
-  // dots.forEach((dot, i) => {
-  //   dot.addEventListener("click", () => {
-  //     index = i;
-  //     showSlide(index);
-  //   });
-  // });
+  function handleScrollTop() {
+    if (!scrollTopBtn) return;
+    const scrollPos = window.scrollY || window.pageYOffset;
+    if (scrollPos > 300) {
+      scrollTopBtn.classList.add("show");
+    } else {
+      scrollTopBtn.classList.remove("show");
+    }
+  }
 
-  /* Dark Mode (يدعم الزر الأساسي وزر النافبار) */
+  if (scrollTopBtn) {
+    scrollTopBtn.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  }
+
+  /* ================== DARK MODE (Nav + Floating) ================== */
   const bodyEl = document.body;
   const themeButtons = document.querySelectorAll(
     "#darkModeToggle, #darkModeToggleNav"
   );
 
+  // تطبيق الثيم المحفوظ
   if (localStorage.getItem("theme") === "dark") {
     bodyEl.classList.add("dark-mode");
     themeButtons.forEach((btn) => (btn.textContent = "☀"));
@@ -282,4 +157,15 @@
       }
     });
   });
+
+  /* ================== SCROLL EVENTS ================== */
+  function handleScroll() {
+    reveal();
+    updateActiveNav();
+    handleScrollTop();
+  }
+
+  window.addEventListener("scroll", handleScroll);
+  // أول ما الصفحة تفتح
+  handleScroll();
 })();

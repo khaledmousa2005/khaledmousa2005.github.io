@@ -1,1055 +1,664 @@
 <!DOCTYPE html>
-
 <html lang="ar" dir="rtl">
-
 <head>
-
   <!-- Basic Meta -->
-
   <meta charset="UTF-8" />
-
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-
-
   <!-- Title -->
-
   <title>الخالد تك | بيع وشراء لابتوبات كمبيوتر مستعملة وجديدة</title>
 
-
-
   <!-- Meta Description -->
-
   <meta name="description"
-
         content="الخالد تك | بيع وشراء أفضل أجهزة الكمبيوتر واللابتوبات المستعملة والجديدة بأفضل الأسعار. اكتشف منتجاتنا من الجيل الثاني حتى الجيل الخامس بجودة مضمونة وخدمة توصيل سريعة." />
 
-
-
   <!-- Keywords -->
-
   <meta name="keywords"
-
         content="الخالد تك, لابتوب مستعمل, كمبيوتر, بيع لابتوبات, شراء لابتوبات, لاب جيل رابع, لاب جيل خامس, مستعمل زيرو, laptop Egypt, used laptops" />
 
-
-
   <!-- Author -->
-
   <meta name="author" content="Elkhaled Tech" />
 
-
-
   <!-- Open Graph -->
-
   <meta property="og:title" content="الخالد تك | بيع وشراء لابتوبات كمبيوتر مستعملة وجديدة" />
-
   <meta property="og:description"
-
         content="أفضل أجهزة الكمبيوتر واللابتوبات المستعملة والجديدة بأسعار مناسبة وخدمة توصيل حتى باب بيتك." />
-
   <meta property="og:type" content="website" />
-
   <meta property="og:url" content="https://khaledmousa2005.github.io/" />
-
   <meta property="og:image" content="https://khaledmousa2005.github.io/assets/logo.png" />
 
-
-
   <!-- Twitter Cards -->
-
   <meta name="twitter:card" content="summary_large_image" />
-
   <meta name="twitter:title" content="الخالد تك | بيع وشراء لابتوبات كمبيوتر مستعملة وجديدة" />
-
   <meta name="twitter:description"
-
         content="أفضل أجهزة الكمبيوتر واللابتوبات المستعملة والجديدة بأسعار مناسبة وخدمة توصيل حتى باب بيتك." />
-
   <meta name="twitter:image" content="https://khaledmousa2005.github.io/assets/logo.png" />
 
-
-
   <!-- Favicon -->
-
   <link rel="icon" type="image/png" href="assets/favicon.png" />
 
-
-
   <!-- Font Awesome -->
-
   <link rel="stylesheet"
-
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
-
-
   <!-- Main Styles -->
-
   <link rel="stylesheet" href="styles.css" />
 
+  <!-- Structured Data (بسيط) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "El Khaled Tech",
+    "image": "https://khaledmousa2005.github.io/assets/logo.png",
+    "url": "https://khaledmousa2005.github.io/",
+    "description": "الخالد تك متخصص في بيع وشراء أجهزة الكمبيوتر واللابتوبات المستعملة والجديدة بحالة ممتازة وخدمة توصيل داخل مصر.",
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "EG"
+    }
+  }
+  </script>
 </head>
-
-
 
 <body id="top">
 
-
-
   <!-- NAVBAR -->
-
   <nav class="ek-navbar" role="navigation" aria-label="شريط التنقل">
-
     <div class="ek-container">
-
-      <a href="#top" class="ek-brand">
-
-        <img src="kha.jpg" alt="El Khaled Tech" class="ek-logo" />
-
+      <a href="#hero" class="ek-brand">
+        <img src="kha.jpg" alt="El Khaled Tech" class="ek-logo" loading="lazy" />
         <span class="ek-name">El Khaled Tech</span>
-
         <div class="brand">
-
           ابتكر براحتك.. والتجربة على راحتك
-
         </div>
-
       </a>
 
-
-
       <button class="ek-burger" id="ekBurger" aria-label="فتح القائمة">
-
         <i class="fa-solid fa-bars"></i>
-
       </button>
 
-
-
       <ul class="ek-menu" id="ekMenu">
-
-        <li><a href="#top" class="ek-link active">الرئيسية</a></li>
-
-        <li><a href="#products" class="ek-link">منتجاتنا</a></li>
-
+        <li><a href="#hero" class="ek-link active">الرئيسية</a></li>
         <li><a href="#offers" class="ek-link">العروض</a></li>
-
-        <li><a href="Services.html" class="ek-link">الخدمات</a></li>
-
-        <li><a href="faq.html" class="ek-link">الأسئلة</a></li>
-
-        <li><a href="#contact" class="ek-link">تواصل</a></li>
-
+        <li><a href="#products" class="ek-link">منتجاتنا</a></li>
+        <li><a href="#why-us" class="ek-link">ليه الخالد تك؟</a></li>
+        <li><a href="#testimonials" class="ek-link">آراء العملاء</a></li>
+        <li><a href="#contact" class="ek-link">اطلب الآن</a></li>
         <li><a href="#about" class="ek-link">عن الشركة</a></li>
-
         <li>
-
           <a href="https://wa.me/201148223698" target="_blank" class="ek-whats">
-
             <i class="fa-brands fa-whatsapp"></i> واتساب
-
           </a>
-
         </li>
-
         <li>
-
-          <!-- زر الوضع الليلي -->
-
           <button id="darkModeToggleNav" class="ek-dark-btn" title="تبديل الوضع">🌙</button>
-
         </li>
-
       </ul>
-
     </div>
-
   </nav>
 
+  <!-- HERO + HEADER -->
+  <header class="header" id="hero">
+    <div class="container hero-main">
+      <div class="hero-text">
+        <h1>لابتوبات وكمبيوتر مستعمل بحالة الزيرو داخل مصر</h1>
+        <p class="hero-subtitle">
+          أجهزة من الجيل الثاني حتى السادس بحالة ممتازة، ضمان حقيقي، فحص فني كامل،
+          وشحن لحد باب البيت في كل المحافظات.
+        </p>
 
+        <ul class="hero-bullets">
+          <li><i class="fa-solid fa-circle-check"></i> فحص قبل التسليم + تجربة قبل الدفع</li>
+          <li><i class="fa-solid fa-circle-check"></i> ضمان استبدال في حالة عيب صناعة</li>
+          <li><i class="fa-solid fa-circle-check"></i> خصومات خاصة للطلاب وأصحاب المشاريع</li>
+        </ul>
 
-  <!-- HEADER -->
+        <div class="hero-actions">
+          <a href="#offers" class="btn btn-primary">شوف العروض الحالية</a>
+          <a href="https://wa.me/201148223698?text=%D8%A7%D8%B1%D9%8A%D8%AF%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%B9%D8%B1%D9%88%D8%B6%20%D8%A7%D9%84%D8%A7%D8%AC%D9%87%D8%B2%D9%87"
+             target="_blank"
+             class="btn btn-outline">
+            تواصل على واتساب
+          </a>
+        </div>
+      </div>
 
-  <header class="header">
-
-    <div class="container header-grid">
-
-      <!-- محتوى الهيدر لو حابب تضيفه بعدين -->
-
+      <div class="hero-media">
+        <img src="website desktop banner.webp"
+             alt="عرض منتجات El Khaled Tech"
+             class="hero-img" />
+      </div>
     </div>
-
   </header>
 
-
-
   <!-- إشعار أعلى المنتجات -->
-
   <div class="not container">
-
-    <h3>المنتجات السارية الآن عروووووض الصيف</h3>
-
+    <h3>المنتجات السارية الآن - عرووووض الصيف 🔥</h3>
   </div>
 
-
-
-  <!-- HERO -->
-
-  <section class="hero container">
-
-    <img src="website desktop banner.webp"
-
-         alt="عرض منتجات El Khaled Tech"
-
-         class="hero-img" />
-
-  </section>
-
-
-
-  <!-- PRODUCTS (فئة متوسطة) -->
-
-  <section id="products" class="products">
-
-    <h2>منتجات الخالد تك - الفئة المتوسطة</h2>
-
-
-
-    <div class="product-grid">
-
-
-
-      <!-- منتج 1 -->
-
-      <div class="product-card">
-
-        <a href="product1.html">
-
-          <img src="dellinsprean.webp" alt="Dell Inspiron 3567" />
-
-        </a>
-
-        <h3>Dell Inspiron 3567</h3>
-
-        <p>Core 6200U | RAM 8GB | 500GB HDD</p>
-
-        <span class="price">6200 جنيه</span>
-
-        <a href="dilv.html" class="btn">اطلب الآن</a><br />
-
-        <a href="product1.html" class="btn1">تفاصيل أكتر</a>
-
-      </div>
-
-
-
-      <!-- منتج 2 -->
-
-      <div class="product-card">
-
-        <a href="product2.html">
-
-          <img src="hpPro450g2_1.webp" alt="HP ProBook 450 G3" />
-
-        </a>
-
-        <h3>HP ProBook 450 G3</h3>
-
-        <p>Core i5-6300U | RAM 8GB | 256GB SSD</p>
-
-        <span class="price">7800 جنيه</span>
-
-        <a href="dilv.html" class="btn">اطلب الآن</a><br />
-
-        <a href="product2.html" class="btn1">تفاصيل أكتر</a>
-
-      </div>
-
-
-
-      <!-- منتج 3 -->
-
-      <div class="product-card">
-
-        <a href="product3.html">
-
-          <img src="lenovothinkpad t4.jpg" alt="Lenovo ThinkPad T440" />
-
-        </a>
-
-        <h3>Lenovo ThinkPad T440</h3>
-
-        <p>Core i5-4300U | RAM 8GB | 500GB HDD</p>
-
-        <span class="price">9,800 جنيه</span>
-
-        <a href="dilv.html" class="btn">اطلب الآن</a><br />
-
-        <a href="product3.html" class="btn1">تفاصيل أكتر</a>
-
-      </div>
-
-
-
-      <!-- منتج 4 -->
-
-      <div class="product-card">
-
-        <a href="product4.html">
-
-          <img src="dell e5440.webp" alt="Dell Latitude E5440" />
-
-        </a>
-
-        <h3>Dell Latitude E5440</h3>
-
-        <p>Core i5-4210U | RAM 8GB | 240GB SSD</p>
-
-        <span class="price">10,200 جنيه</span>
-
-        <a href="dilv.html" class="btn">اطلب الآن</a><br />
-
-        <a href="product4.html" class="btn1">تفاصيل أكتر</a>
-
-      </div>
-
-
-
-      <!-- منتج 5 -->
-
-      <div class="product-card">
-
-        <img src="hp-elitebook-840-g1-touchscreen-laptops.jpg"
-
-             alt="HP EliteBook 840 G1" />
-
-        <h3>HP EliteBook 840 G1</h3>
-
-        <p>Core i5-4300U | RAM 8GB | 500GB HDD</p>
-
-        <span class="price">9,600 جنيه</span>
-
-        <a href="dilv.html" class="btn">اطلب الآن</a><br />
-
-        <a href="product1.html" class="btn1">تفاصيل أكتر</a>
-
-      </div>
-
-
-
-      <!-- منتج 6 -->
-
-      <div class="product-card">
-
-        <img src="x240.jpg" alt="Lenovo ThinkPad X240" />
-
-        <h3>Lenovo ThinkPad X240</h3>
-
-        <p>Core i5-4300U | RAM 8GB | 256GB SSD</p>
-
-        <span class="price">10,000 جنيه</span>
-
-        <a href="dilv.html" class="btn">اطلب الآن</a><br />
-
-        <a href="product1.html" class="btn1">تفاصيل أكتر</a>
-
-      </div>
-
-
-
-      <!-- منتج 7 -->
-
-      <div class="product-card">
-
-        <img src="e5450.jpg" alt="Dell Latitude E5450" />
-
-        <h3>Dell Latitude E5450</h3>
-
-        <p>Core i5-5300U | RAM 8GB | 500GB HDD</p>
-
-        <span class="price">11,000 جنيه</span>
-
-        <a href="dilv.html" class="btn">اطلب الآن</a><br />
-
-        <a href="product1.html" class="btn1">تفاصيل أكتر</a>
-
-      </div>
-
-
-
-      <!-- منتج 8 -->
-
-      <div class="product-card">
-
-        <img src="480g2.webp" alt="HP EliteBook 840 G2" />
-
-        <h3>HP EliteBook 840 G2</h3>
-
-        <p>Core i5-5300U | RAM 8GB | 256GB SSD</p>
-
-        <span class="price">11,800 جنيه</span>
-
-        <a href="dilv.html" class="btn">اطلب الآن</a><br />
-
-        <a href="product1.html" class="btn1">تفاصيل أكتر</a>
-
-      </div>
-
-
-
-      <!-- باقي المنتجات كانت كومنت عندك، سيبتها زي ما هي في الكود الأصلي لو حبيت ترجعها بعدين -->
-
-
-
-    </div>
-
-  </section>
-
-
-
-  <!-- OFFERS (عروض الصيف) -->
-
-  <section id="offers" class="container" aria-label="عروووض الصيف">
-
+  <!-- OFFERS (عروض الصيف / Hot offers) -->
+  <section id="offers" class="container" aria-label="عروض الصيف">
     <h2 class="section-title">🎉 عروووووض الصيف 🎉</h2>
 
+    <div class="product-grid">
 
+      <!-- تابلت A6 -->
+      <article class="product-card">
+        <img src="t6.jpg" alt="تابلت Samsung Tab A6 مستعمل بحالة ممتازة"
+             loading="lazy" />
+        <h3>Samsung Tab A6</h3>
+        <ul class="specs">
+          <li>المساحة: 32GB</li>
+          <li>الرام: 2GB</li>
+          <li>مع الكرتونة والشاحن الأصلي</li>
+        </ul>
+        <div class="card-bottom">
+          <span class="price"><del>3000</del> 2700 جنيه</span>
+          <a href="#" class="wh-btn" data-product="Samsung Tab A6">اطلب الان</a><br />
+          <a href="product1.html" class="btn1">تفاصيل أكتر</a>
+        </div>
+      </article>
+
+      <!-- تابلت A7 T509 -->
+      <article class="product-card">
+        <img src="t7.jpg" alt="تابلت Samsung A7 T509 مستعمل بحالة ممتازة"
+             loading="lazy" />
+        <h3>Samsung Tab A7 T509</h3>
+        <ul class="specs">
+          <li>المساحة: 32GB</li>
+          <li>الرام: 3GB</li>
+          <li>حالة ممتازة</li>
+        </ul>
+        <div class="card-bottom">
+          <span class="price"><del>4000</del> 3600 جنيه</span>
+          <a href="#" class="wh-btn" data-product="Samsung Tab A7 T509">اطلب الان</a><br />
+          <a href="product1.html" class="btn1">تفاصيل أكتر</a>
+        </div>
+      </article>
+
+      <!-- تابلت A7 T505 -->
+      <article class="product-card">
+        <img src="t75.jpg" alt="تابلت Samsung A7 T505 مستعمل بحالة ممتازة"
+             loading="lazy" />
+        <h3>Samsung Tab A7 T505</h3>
+        <ul class="specs">
+          <li>المساحة: 32GB</li>
+          <li>الرام: 3GB</li>
+          <li>بطارية قوية</li>
+        </ul>
+        <div class="card-bottom">
+          <span class="price"><del>3900</del> 3550 جنيه</span>
+          <a href="#" class="wh-btn" data-product="Samsung Tab A7 T505">اطلب الان</a><br />
+          <a href="product1.html" class="btn1">تفاصيل أكتر</a>
+        </div>
+      </article>
+
+      <!-- لابتوب Dell i5 gen3 -->
+      <article class="product-card">
+        <img src="del.jpg" alt="لابتوب Dell Latitude i5 Gen3"
+             loading="lazy" />
+        <h3>Dell Latitude</h3>
+        <ul class="specs">
+          <li>Core i5 - Gen3</li>
+          <li>رام: 6GB</li>
+          <li>هارد: 500GB HDD</li>
+          <li>شاشة: 15.6 بوصة</li>
+        </ul>
+        <div class="card-bottom">
+          <span class="price"><del>5200</del> 4400 جنيه</span>
+          <a href="#" class="wh-btn" data-product="Dell Latitude Gen3">اطلب الان</a><br />
+          <a href="product1.html" class="btn1">تفاصيل أكتر</a>
+        </div>
+      </article>
+
+      <!-- لابتوب Dell i5 gen4 -->
+      <article class="product-card">
+        <img src="440.jpg" alt="لابتوب Dell Latitude E5440 i5 Gen4"
+             loading="lazy" />
+        <h3>Dell Latitude E5440</h3>
+        <ul class="specs">
+          <li>Core i5 - Gen4</li>
+          <li>رام: 8GB</li>
+          <li>هارد: 500GB</li>
+          <li>شاشة: 15.6 بوصة</li>
+        </ul>
+        <div class="card-bottom">
+          <span class="price"><del>6000</del> 5500 جنيه</span>
+          <a href="#" class="wh-btn" data-product="Dell Latitude E5440 Gen4">اطلب الان</a><br />
+          <a href="product1.html" class="btn1">تفاصيل أكتر</a>
+        </div>
+      </article>
+
+      <!-- لابتوب Dell i5 gen6 -->
+      <article class="product-card">
+        <img src="Dell-E5440-1.jpg" alt="لابتوب Dell Latitude E5440 i5 Gen6"
+             loading="lazy" />
+        <h3>Dell Latitude E5440</h3>
+        <ul class="specs">
+          <li>Core i5 - Gen6</li>
+          <li>رام: 8GB</li>
+          <li>هارد: 256GB SSD</li>
+          <li>شاشة: 15.6 بوصة</li>
+        </ul>
+        <div class="card-bottom">
+          <span class="price"><del>6500</del> 5800 جنيه</span>
+          <a href="#" class="wh-btn" data-product="Dell Latitude E5440 Gen6">اطلب الان</a><br />
+          <a href="product1.html" class="btn1">تفاصيل أكتر</a>
+        </div>
+      </article>
+
+      <!-- HP ProBook -->
+      <article class="product-card">
+        <img src="probook_.jpg" alt="لابتوب HP ProBook 3040 i5 Gen3"
+             loading="lazy" />
+        <h3>HP ProBook 3040</h3>
+        <ul class="specs">
+          <li>Core i5 - Gen3</li>
+          <li>رام: 6GB</li>
+          <li>هارد: 320GB HDD</li>
+          <li>شاشة: 15.6 بوصة</li>
+        </ul>
+        <div class="card-bottom">
+          <span class="price"><del>4700</del> 4100 جنيه</span>
+          <a href="#" class="wh-btn" data-product="HP ProBook 3040">اطلب الان</a><br />
+          <a href="product1.html" class="btn1">تفاصيل أكتر</a>
+        </div>
+      </article>
+
+      <!-- HP EliteBook -->
+      <article class="product-card">
+        <img src="745.jpg" alt="لابتوب HP EliteBook E740 i3 Gen3"
+             loading="lazy" />
+        <h3>HP EliteBook E740</h3>
+        <ul class="specs">
+          <li>Core i3 - Gen3</li>
+          <li>رام: 8GB</li>
+          <li>هارد: 256GB SSD</li>
+          <li>شاشة: 15.6 بوصة</li>
+        </ul>
+        <div class="card-bottom">
+          <span class="price"><del>5700</del> 5000 جنيه</span>
+          <a href="#" class="wh-btn" data-product="HP EliteBook E740">اطلب الان</a><br />
+          <a href="product1.html" class="btn1">تفاصيل أكتر</a>
+        </div>
+      </article>
+
+      <!-- كيسة كمبيوتر -->
+      <article class="product-card">
+        <img src="c3.avif" alt="كيسة كمبيوتر Core i3 Gen2"
+             loading="lazy" />
+        <h3>كيسة كمبيوتر</h3>
+        <ul class="specs">
+          <li>Core i3 - Gen2</li>
+          <li>رام: 4GB</li>
+          <li>هارد: 500GB</li>
+          <li>كارت شاشة داخلي</li>
+        </ul>
+        <div class="card-bottom">
+          <span class="price"><del>4200</del> 3700 جنيه</span>
+          <a href="#" class="wh-btn" data-product="كيسة كمبيوتر Gen2">اطلب الان</a><br />
+          <a href="product1.html" class="btn1">تفاصيل أكتر</a>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- PRODUCTS (الفئة المتوسطة) -->
+  <section id="products" class="products">
+    <h2 class="section-title">منتجات الخالد تك - الفئة المتوسطة</h2>
 
     <div class="product-grid">
 
-
-
-      <!-- تابلت A6 -->
-
-      <article class="product-card">
-
-        <img src="t6.jpg" alt="Samsung Tab A6" />
-
-        <h3>Samsung Tab A6</h3>
-
-        <ul class="specs">
-
-          <li>المساحة: 32GB</li>
-
-          <li>الرام: 2GB</li>
-
-          <li>مع الكرتونة والشاحن الأصلي</li>
-
-        </ul>
-
-        <div class="card-bottom">
-
-          <span class="price"><del>3000</del> 2700 جنيه</span>
-
-          <a href="delv.html" target="_blank" class="wh-btn" data-product="Samsung Tab A6">اطلب الان</a><br />
-
-          <a href="product1.html" class="btn1">تفاصيل أكتر</a>
-
-        </div>
-
-      </article>
-
-
-
-      <!-- تابلت A7 T509 -->
-
-      <article class="product-card">
-
-        <img src="t7.jpg" alt="Samsung A7 T509" />
-
-        <h3>Samsung Tab A7 T509</h3>
-
-        <ul class="specs">
-
-          <li>المساحة: 32GB</li>
-
-          <li>الرام: 3GB</li>
-
-          <li>حالة ممتازة</li>
-
-        </ul>
-
-        <div class="card-bottom">
-
-          <span class="price"><del>4000</del> 3600 جنيه</span>
-
-          <a href="dilv.html" target="_blank" class="wh-btn" data-product="Samsung Tab A7 T509">اطلب الان</a><br />
-
-          <a href="product1.html" class="btn1">تفاصيل أكتر</a>
-
-        </div>
-
-      </article>
-
-
-
-      <!-- تابلت A7 T505 -->
-
-      <article class="product-card">
-
-        <img src="t75.jpg" alt="Samsung A7 T505" />
-
-        <h3>Samsung Tab A7 T505</h3>
-
-        <ul class="specs">
-
-          <li>المساحة: 32GB</li>
-
-          <li>الرام: 3GB</li>
-
-          <li>بطارية قوية</li>
-
-        </ul>
-
-        <div class="card-bottom">
-
-          <span class="price"><del>3900</del> 3550 جنيه</span>
-
-          <a href="dilv.html" target="_blank" class="wh-btn" data-product="Samsung Tab A7 T505">اطلب الان</a><br />
-
-          <a href="product1.html" class="btn1">تفاصيل أكتر</a>
-
-        </div>
-
-      </article>
-
-
-
-      <!-- لابتوب Dell i5 gen3 -->
-
-      <article class="product-card">
-
-        <img src="del.jpg" alt="Dell Laptop" />
-
-        <h3>Dell Latitude</h3>
-
-        <ul class="specs">
-
-          <li>Core i5 - Gen3</li>
-
-          <li>رام: 6GB</li>
-
-          <li>هارد: 500GB HDD</li>
-
-          <li>شاشة: 15.6 بوصة</li>
-
-        </ul>
-
-        <div class="card-bottom">
-
-          <span class="price"><del>5200</del> 4400 جنيه</span>
-
-          <a href="dilv.html" target="_blank" class="wh-btn" data-product="Dell Latitude Gen3">اطلب الان</a><br />
-
-          <a href="product1.html" class="btn1">تفاصيل أكتر</a>
-
-        </div>
-
-      </article>
-
-
-
-      <!-- لابتوب Dell i5 gen4 -->
-
-      <article class="product-card">
-
-        <img src="440.jpg" alt="Dell Latitude E5440" />
-
+      <!-- منتج 1 -->
+      <div class="product-card">
+        <a href="product1.html">
+          <img src="dellinsprean.webp" alt="Laptop Dell Inspiron 3567 i5"
+               loading="lazy" />
+        </a>
+        <h3>Dell Inspiron 3567</h3>
+        <p>Core 6200U | RAM 8GB | 500GB HDD</p>
+        <span class="price">6200 جنيه</span>
+        <a href="#" class="btn btn-primary" data-product="Dell Inspiron 3567">اطلب الآن</a><br />
+        <a href="product1.html" class="btn1">تفاصيل أكتر</a>
+      </div>
+
+      <!-- منتج 2 -->
+      <div class="product-card">
+        <a href="product2.html">
+          <img src="hpPro450g2_1.webp" alt="Laptop HP ProBook 450 G3 i5"
+               loading="lazy" />
+        </a>
+        <h3>HP ProBook 450 G3</h3>
+        <p>Core i5-6300U | RAM 8GB | 256GB SSD</p>
+        <span class="price">7800 جنيه</span>
+        <a href="#" class="btn btn-primary" data-product="HP ProBook 450 G3">اطلب الآن</a><br />
+        <a href="product2.html" class="btn1">تفاصيل أكتر</a>
+      </div>
+
+      <!-- منتج 3 -->
+      <div class="product-card">
+        <a href="product3.html">
+          <img src="lenovothinkpad t4.jpg" alt="Laptop Lenovo ThinkPad T440 i5"
+               loading="lazy" />
+        </a>
+        <h3>Lenovo ThinkPad T440</h3>
+        <p>Core i5-4300U | RAM 8GB | 500GB HDD</p>
+        <span class="price">9,800 جنيه</span>
+        <a href="#" class="btn btn-primary" data-product="Lenovo ThinkPad T440">اطلب الآن</a><br />
+        <a href="product3.html" class="btn1">تفاصيل أكتر</a>
+      </div>
+
+      <!-- منتج 4 -->
+      <div class="product-card">
+        <a href="product4.html">
+          <img src="dell e5440.webp" alt="Laptop Dell Latitude E5440 i5"
+               loading="lazy" />
+        </a>
         <h3>Dell Latitude E5440</h3>
-
-        <ul class="specs">
-
-          <li>Core i5 - Gen4</li>
-
-          <li>رام: 8GB</li>
-
-          <li>هارد: 500GB</li>
-
-          <li>شاشة: 15.6 بوصة</li>
-
-        </ul>
-
-        <div class="card-bottom">
-
-          <span class="price"><del>6000</del> 5500 جنيه</span>
-
-          <a href="dilv.html" target="_blank" class="wh-btn" data-product="Dell Latitude E5440">اطلب الان</a><br />
-
-          <a href="product1.html" class="btn1">تفاصيل أكتر</a>
-
-        </div>
-
-      </article>
-
-
-
-      <!-- لابتوب Dell i5 gen6 -->
-
-      <article class="product-card">
-
-        <img src="Dell-E5440-1.jpg" alt="Dell Latitude E5440 gen6" />
-
-        <h3>Dell Latitude E5440</h3>
-
-        <ul class="specs">
-
-          <li>Core i5 - Gen6</li>
-
-          <li>رام: 8GB</li>
-
-          <li>هارد: 256GB SSD</li>
-
-          <li>شاشة: 15.6 بوصة</li>
-
-        </ul>
-
-        <div class="card-bottom">
-
-          <span class="price"><del>6500</del> 5800 جنيه</span>
-
-          <a href="dilv.html" target="_blank" class="wh-btn" data-product="Dell Latitude E5440 Gen6">اطلب الان</a><br />
-
-          <a href="product1.html" class="btn1">تفاصيل أكتر</a>
-
-        </div>
-
-      </article>
-
-
-
-      <!-- HP ProBook -->
-
-      <article class="product-card">
-
-        <img src="probook_.jpg" alt="HP ProBook" />
-
-        <h3>HP ProBook 3040</h3>
-
-        <ul class="specs">
-
-          <li>Core i5 - Gen3</li>
-
-          <li>رام: 6GB</li>
-
-          <li>هارد: 320GB HDD</li>
-
-          <li>شاشة: 15.6 بوصة</li>
-
-        </ul>
-
-        <div class="card-bottom">
-
-          <span class="price"><del>4700</del> 4100 جنيه</span>
-
-          <a href="dilv.html" target="_blank" class="wh-btn" data-product="HP ProBook 3040">اطلب الان</a><br />
-
-          <a href="product1.html" class="btn1">تفاصيل أكتر</a>
-
-        </div>
-
-      </article>
-
-
-
-      <!-- HP EliteBook -->
-
-      <article class="product-card">
-
-        <img src="745.jpg" alt="HP EliteBook" />
-
-        <h3>HP EliteBook E740</h3>
-
-        <ul class="specs">
-
-          <li>Core i3 - Gen3</li>
-
-          <li>رام: 8GB</li>
-
-          <li>هارد: 256GB SSD</li>
-
-          <li>شاشة: 15.6 بوصة</li>
-
-        </ul>
-
-        <div class="card-bottom">
-
-          <span class="price"><del>5700</del> 5000 جنيه</span>
-
-          <a href="dilv.html" target="_blank" class="wh-btn" data-product="HP EliteBook E740">اطلب الان</a><br />
-
-          <a href="product1.html" class="btn1">تفاصيل أكتر</a>
-
-        </div>
-
-      </article>
-
-
-
-      <!-- كيسة كمبيوتر -->
-
-      <article class="product-card">
-
-        <img src="c3.avif" alt="Desktop PC" />
-
-        <h3>كيسة كمبيوتر</h3>
-
-        <ul class="specs">
-
-          <li>Core i3 - Gen2</li>
-
-          <li>رام: 4GB</li>
-
-          <li>هارد: 500GB</li>
-
-          <li>كارت شاشة داخلي</li>
-
-        </ul>
-
-        <div class="card-bottom">
-
-          <span class="price"><del>4200</del> 3700 جنيه</span>
-
-          <a href="dilv.html" target="_blank" class="wh-btn" data-product="كيسة كمبيوتر Gen2">اطلب الان</a><br />
-
-          <a href="product1.html" class="btn1">تفاصيل أكتر</a>
-
-        </div>
-
-      </article>
-
-
+        <p>Core i5-4210U | RAM 8GB | 240GB SSD</p>
+        <span class="price">10,200 جنيه</span>
+        <a href="#" class="btn btn-primary" data-product="Dell Latitude E5440">اطلب الآن</a><br />
+        <a href="product4.html" class="btn1">تفاصيل أكتر</a>
+      </div>
+
+      <!-- منتج 5 -->
+      <div class="product-card">
+        <img src="hp-elitebook-840-g1-touchscreen-laptops.jpg"
+             alt="Laptop HP EliteBook 840 G1 i5"
+             loading="lazy" />
+        <h3>HP EliteBook 840 G1</h3>
+        <p>Core i5-4300U | RAM 8GB | 500GB HDD</p>
+        <span class="price">9,600 جنيه</span>
+        <a href="#" class="btn btn-primary" data-product="HP EliteBook 840 G1">اطلب الآن</a><br />
+        <a href="product1.html" class="btn1">تفاصيل أكتر</a>
+      </div>
+
+      <!-- منتج 6 -->
+      <div class="product-card">
+        <img src="x240.jpg" alt="Laptop Lenovo ThinkPad X240 i5"
+             loading="lazy" />
+        <h3>Lenovo ThinkPad X240</h3>
+        <p>Core i5-4300U | RAM 8GB | 256GB SSD</p>
+        <span class="price">10,000 جنيه</span>
+        <a href="#" class="btn btn-primary" data-product="Lenovo ThinkPad X240">اطلب الآن</a><br />
+        <a href="product1.html" class="btn1">تفاصيل أكتر</a>
+      </div>
+
+      <!-- منتج 7 -->
+      <div class="product-card">
+        <img src="e5450.jpg" alt="Laptop Dell Latitude E5450 i5"
+             loading="lazy" />
+        <h3>Dell Latitude E5450</h3>
+        <p>Core i5-5300U | RAM 8GB | 500GB HDD</p>
+        <span class="price">11,000 جنيه</span>
+        <a href="#" class="btn btn-primary" data-product="Dell Latitude E5450">اطلب الآن</a><br />
+        <a href="product1.html" class="btn1">تفاصيل أكتر</a>
+      </div>
+
+      <!-- منتج 8 -->
+      <div class="product-card">
+        <img src="480g2.webp" alt="Laptop HP EliteBook 840 G2 i5"
+             loading="lazy" />
+        <h3>HP EliteBook 840 G2</h3>
+        <p>Core i5-5300U | RAM 8GB | 256GB SSD</p>
+        <span class="price">11,800 جنيه</span>
+        <a href="#" class="btn btn-primary" data-product="HP EliteBook 840 G2">اطلب الآن</a><br />
+        <a href="product1.html" class="btn1">تفاصيل أكتر</a>
+      </div>
+
+      <!-- باقي المنتجات اللي كانت كومنت سيبناها زي ما هي في النسخة الأصلية (تقدر ترجعها وقت ما تحب) -->
 
     </div>
-
   </section>
 
+  <!-- WHY US -->
+  <section id="why-us" class="why-us container" aria-label="ليه تختار الخالد تك؟">
+    <h2 class="section-title">ليه تختار الخالد تك؟</h2>
+    <div class="why-grid">
+      <article class="why-card">
+        <i class="fa-solid fa-shield-halved"></i>
+        <h3>ضمان وشفافية</h3>
+        <p>كل جهاز بيتم فحصه كويس قبل البيع، ومعاه ضمان استبدال في حالة وجود عيب صناعة.</p>
+      </article>
+      <article class="why-card">
+        <i class="fa-solid fa-truck-fast"></i>
+        <h3>شحن لحد باب البيت</h3>
+        <p>توصيل لكل محافظات مصر مع إمكانية الفحص والتجربة لحظة الاستلام.</p>
+      </article>
+      <article class="why-card">
+        <i class="fa-solid fa-user-graduate"></i>
+        <h3>عروض خاصة للطلاب</h3>
+        <p>أجهزة مناسبة للدراسة والأونلاين بأسعار تخدم الميزانية، مع خصومات عند إظهار الكارنيه.</p>
+      </article>
+    </div>
+  </section>
 
+  <!-- TESTIMONIALS -->
+  <section id="testimonials" class="testimonials container" aria-label="آراء عملائنا">
+    <h2 class="section-title">آراء عملائنا</h2>
+    <div class="testimonials-grid">
+      <article class="testimonial-card">
+        <p class="testimonial-text">
+          "اشتريت لابتوب للدراسة، الجهاز حالته ممتازة والتعامل كان محترم جدًا والشحن وصل أسرع مما توقعت."
+        </p>
+        <p class="testimonial-author">محمد - طالب جامعي</p>
+      </article>
+      <article class="testimonial-card">
+        <p class="testimonial-text">
+          "أجهزة قوية وسعر مناسب جدًا لشغلي في الجرافيك، وفريق الدعم كان متعاون بعد الشراء."
+        </p>
+        <p class="testimonial-author">أحمد - مصمم جرافيك</p>
+      </article>
+      <article class="testimonial-card">
+        <p class="testimonial-text">
+          "جبت جهازين لمكتب حسابات، التجربة كانت سهلة من أول اختيار المنتج لحد الاستلام."
+        </p>
+        <p class="testimonial-author">أ. منى - صاحبة مكتب خدمات</p>
+      </article>
+    </div>
+  </section>
 
   <!-- ORDER FORM -->
-
   <section class="form-container container" id="contact">
-
-    <h2>اطلب المنتج الآن</h2>
-
+    <h2 class="section-title">اطلب المنتج الآن</h2>
     <form id="orderFormMain" class="order-grid">
-
       <label for="fullName">الاسم الكامل</label>
-
       <input id="fullName" name="name" required />
 
-
-
       <label for="phoneNumber">رقم الموبايل</label>
-
       <input id="phoneNumber" name="phone" required />
 
-
-
       <label for="emailAddr">البريد الإلكتروني</label>
-
       <input id="emailAddr" name="email" type="email" required />
 
+      <label for="productType">نوع المنتج</label>
+      <select id="productType" name="productType">
+        <option value="Laptop">لابتوب</option>
+        <option value="Desktop">كمبيوتر مكتبي</option>
+        <option value="Tablet">تابلت</option>
+        <option value="Other">أخرى</option>
+      </select>
 
-
-      <label for="productName">اسم المنتج</label>
-
+      <label for="productName">اسم / موديل المنتج</label>
       <input id="productName" name="product" required />
 
-
+      <label for="contactMethod">طريقة التواصل المفضلة</label>
+      <select id="contactMethod" name="contactMethod">
+        <option value="WhatsApp">واتساب</option>
+        <option value="Call">مكالمة هاتفية</option>
+        <option value="Any">أي طريقة متاحة</option>
+      </select>
 
       <label for="address">عنوان الشحن</label>
-
       <textarea id="address" name="address" required></textarea>
 
-
-
       <button type="submit" class="submit-wh">إرسال الطلب عبر واتساب</button>
-
     </form>
-
   </section>
-
-
 
   <!-- رابط خدمات أخرى -->
-
   <a class="delv" href="delv.html" target="_blank">خدمات أخرى</a><br /><br />
 
-
-
   <!-- أزرار تواصل -->
-
   <div style="display:flex; flex-direction:column; gap:12px; max-width:250px; margin:auto;">
-
     <a href="tel:+201156062656"
-
        style="background:#007BFF; color:white; padding:14px; border-radius:30px; text-align:center; font-weight:bold; text-decoration:none;">
-
       📞 اتصل بنا
-
     </a>
-
   </div>
 
-
-
   <!-- زر واتساب عائم -->
-
   <a href="https://wa.me/201148223698" target="_blank"
-
-     style="position: fixed; bottom: 20px; right: 20px;
-
-            background: #25d366; color: white; padding: 15px 20px;
-
-            border-radius: 50px; text-decoration: none; font-weight: bold;
-
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2);">
-
+     class="floating-whatsapp">
     💬 تواصل عبر واتساب
-
   </a>
 
-
-
   <!-- ABOUT -->
-
   <section id="about" class="about">
-
     <h2>عن الشركة</h2>
-
     <p>
-
       شركة <strong>الخالد تك</strong> متخصصة في بيع وشراء أجهزة الكمبيوتر واللاب توب،
-
       وتعمل حاليًا على تقديم أفضل الحلول للعملاء بأسعار مناسبة وجودة مضمونة.
-
     </p>
-
     <p>
-
       الشركة الآن في المرحلة الثانية من التطوير، حيث تستعد لإطلاق
-
       <strong>قسم خاص بالصيانة والدعم الفني</strong> لخدمة العملاء بشكل متكامل.
-
     </p>
-
-
 
     <div class="vision-mission">
-
       <div class="vision">
-
         <h3>رؤيتنا</h3>
-
         <p>أن نكون الشركة الرائدة في مجال الكمبيوتر واللاب توب في مصر والوطن العربي.</p>
-
       </div>
-
       <div class="mission">
-
         <h3>رسالتنا</h3>
-
         <p>تقديم منتجات وخدمات تقنية عالية الجودة تلبي احتياجات العملاء وتفوق توقعاتهم.</p>
-
       </div>
-
     </div>
-
-
 
     <div class="founder">
-
       <h3>مؤسس الشركة</h3>
-
       <p>
-
         تأسست الشركة على يد <strong>المهندس خالد موسى</strong>، بشغف
-
         ورؤية واضحة لتطوير سوق الكمبيوتر وتقديم حلول تقنية مبتكرة.
-
       </p>
-
-      <img src="IMG-20240920-WA0044.jpg" alt="Khaled Mousa" class="founder-img" />
-
+      <img src="IMG-20240920-WA0044.jpg" alt="Khaled Mousa"
+           class="founder-img" loading="lazy" />
       <h3>Khaled Mousa</h3>
-
       <p class="founder-role">المؤسس - El Khaled Tech</p>
-
     </div>
-
   </section>
-
-
 
   <!-- PARTNERS -->
-
   <section id="partners" class="container" aria-label="شركاؤنا">
-
     <h2 class="section-title">شركاؤنا</h2>
-
     <div class="partners-grid">
-
-      <div class="partner-card"><img src="hp.jpg" alt="HP" /></div>
-
-      <div class="partner-card"><img src="Dell-Emblem.jpg" alt="Dell" /></div>
-
-      <div class="partner-card"><img src="apple-.jpg" alt="Apple" /></div>
-
-      <div class="partner-card"><img src="lenovo.webp" alt="Lenovo" /></div>
-
-      <div class="partner-card"><img src="Samsung-Logo.jpg" alt="Samsung" /></div>
-
-      <div class="partner-card"><img src="asus.jpeg" alt="Asus" /></div>
-
-      <div class="partner-card"><img src="Fujitsu-Logo.svg.png" alt="Fujitsu" /></div>
-
-      <div class="partner-card"><img src="acer-logo-acer-icon-free-free-vector.jpg" alt="Acer" /></div>
-
+      <div class="partner-card">
+        <img src="hp.jpg" alt="HP" loading="lazy" />
+      </div>
+      <div class="partner-card">
+        <img src="Dell-Emblem.jpg" alt="Dell" loading="lazy" />
+      </div>
+      <div class="partner-card">
+        <img src="apple-.jpg" alt="Apple" loading="lazy" />
+      </div>
+      <div class="partner-card">
+        <img src="lenovo.webp" alt="Lenovo" loading="lazy" />
+      </div>
+      <div class="partner-card">
+        <img src="Samsung-Logo.jpg" alt="Samsung" loading="lazy" />
+      </div>
+      <div class="partner-card">
+        <img src="asus.jpeg" alt="Asus" loading="lazy" />
+      </div>
+      <div class="partner-card">
+        <img src="Fujitsu-Logo.svg.png" alt="Fujitsu" loading="lazy" />
+      </div>
+      <div class="partner-card">
+        <img src="acer-logo-acer-icon-free-free-vector.jpg" alt="Acer" loading="lazy" />
+      </div>
     </div>
-
   </section>
 
-
-
   <!-- FOOTER -->
-
   <footer class="footer">
-
     <div class="footer-container">
-
       <!-- عمود 1 -->
-
       <div class="footer-col">
-
         <h3>الخالد تك</h3>
-
         <p><strong>بيع وشراء اللابتوبات وأجهزة الكمبيوتر بأفضل جودة وأسعار منافسة.</strong></p>
-
       </div>
-
-
 
       <!-- عمود 2 -->
-
       <div class="footer-col">
-
         <h2>روابط هامة</h2>
-
         <ul>
-
-          <li><a href="index.html">الرئيسية</a></li>
-
+          <li><a href="#hero">الرئيسية</a></li>
           <li><a href="abut.html">من نحن</a></li>
-
           <li><a href="faq.html">الأسئلة الشائعة</a></li>
-
         </ul>
-
       </div>
-
-
 
       <!-- عمود 3 -->
-
       <div class="footer-col">
-
         <ul>
-
           <li><a href="policy.html">سياسة الاسترجاع والاستبدال</a></li>
-
           <li><a href="privacy.html">سياسة الخصوصية</a></li>
-
           <li><a href="addres.html">العنوان</a></li>
-
           <li><a href="contact.html">تواصل معنا</a></li>
-
         </ul>
-
       </div>
-
-
 
       <!-- عمود 4 -->
-
       <div class="footer-col">
-
         <div class="footer-social">
-
           <h3>تابعنا</h3>
-
           <div class="social-icons">
-
             <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
-
             <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
-
             <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
-
             <a href="https://youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
-
             <a href="https://github.com/khaledmousa2005" target="_blank"><i class="fab fa-github"></i></a>
-
           </div>
-
         </div>
-
       </div>
-
     </div>
-
-
 
     <h2 class="footer-title">طرق الدفع</h2>
-
     <div class="footer-logos">
-
-      <img src="Visadebitcardpng-1599584312349.png" alt="Visa" />
-
-      <img src="mas.jpeg" alt="MasterCard" />
-
-      <img src="PayPal-Logo.jpg" alt="PayPal" />
-
-      <img src="bank-misr-750x430.jpg" alt="Bank Misr" />
-
-      <img src="QNB-AlAhli-بنك-QNB-مصر-Copy-1.webp" alt="QNB" />
-
-      <img src="cib.jpg" alt="CIB" />
-
-      <img src="aman.jpeg" alt="Aman" />
-
-      <img src="wepay.jpg" alt="WePay" />
-
-      <img src="vodafoncach.png" alt="Vodafone Cash" />
-
-      <img src="etsalat.jpg" alt="Etisalat" />
-
-      <img src="orange.webp" alt="Orange" />
-
-      <img src="kha.jpg" alt="Elkhaled Tech" />
-
+      <img src="Visadebitcardpng-1599584312349.png" alt="Visa" loading="lazy" />
+      <img src="mas.jpeg" alt="MasterCard" loading="lazy" />
+      <img src="PayPal-Logo.jpg" alt="PayPal" loading="lazy" />
+      <img src="bank-misr-750x430.jpg" alt="Bank Misr" loading="lazy" />
+      <img src="QNB-AlAhli-بنك-QNB-مصر-Copy-1.webp" alt="QNB" loading="lazy" />
+      <img src="cib.jpg" alt="CIB" loading="lazy" />
+      <img src="aman.jpeg" alt="Aman" loading="lazy" />
+      <img src="wepay.jpg" alt="WePay" loading="lazy" />
+      <img src="vodafoncach.png" alt="Vodafone Cash" loading="lazy" />
+      <img src="etsalat.jpg" alt="Etisalat" loading="lazy" />
+      <img src="orange.webp" alt="Orange" loading="lazy" />
+      <img src="kha.jpg" alt="Elkhaled Tech" loading="lazy" />
     </div>
-
-
 
     <br />
-
     <p><a href="privacy.html" class="privacy-link">سياسة الخصوصية</a></p>
 
-
-
     <div class="footer-bottom">
-
       <h1>© 2025 الخالد تك | جميع الحقوق محفوظة</h1>
-
     </div>
-
   </footer>
 
+  <!-- زر تغيير الوضع (ثابت) -->
+  <button id="darkModeToggle" class="dark-toggle" aria-label="تبديل الوضع">🌙</button>
 
+  <!-- Scroll To Top -->
+  <button id="scrollTopBtn" class="scroll-top" aria-label="الرجوع لأعلى">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
 
   <!-- Main Script -->
-
   <script src="script.js" defer></script>
-
 </body>
-
 </html>
