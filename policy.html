@@ -1,73 +1,484 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>سياسة الاسترجاع والاستبدال</title>
-    <link rel="stylesheet" href="policy.css">
-</head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>سياسة الاستبدال والاسترجاع — الخالد تك</title>
+  <meta name="description" content="تفاصيل سياسة الاسترجاع والاستبدال لدى الخالد تك — شروط، خطوات، نموذج طلب جاهز، وقوائم فحص لاستلام/إرجاع الأجهزة." />
+  <link rel="icon" href="kha.jpg" />
+  <!-- خطوط (لو متصل بالإنترنت) -->
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;700;900&display=swap" rel="stylesheet">
+  <!-- Font Awesome للأيقونات -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    /* ========== متغيرات عامة ========== */
+    :root{
+      --accent:#2c3e50;
+      --accent-2:#3498db;
+      --muted:#6b6f76;
+      --bg:#f5f7fb;
+      --card:#ffffff;
+      --success:#25d366;
+      --danger:#e74c3c;
+      --maxW:1200px;
+      --radius:12px;
+    }
 
+    /* ========== قاعدة ========== */
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;font-family:"Tajawal", Arial, sans-serif;background:var(--bg);color:#111;line-height:1.6}
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;height:auto;display:block}
+    .container{max-width:var(--maxW);margin:0 auto;padding:0 18px}
+
+    /* ========== NAVBAR مطابق للموقع الرئيسي ========== */
+    .ek-navbar{position:sticky;top:0;z-index:10000;background:linear-gradient(135deg,#2c3e50 0%,var(--accent) 100%);color:#fff;border-bottom:1px solid rgba(255,255,255,.08)}
+    .ek-container{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 18px;max-width:var(--maxW);margin:0 auto}
+    .ek-brand{display:flex;align-items:center;gap:10px;color:#fff;text-decoration:none}
+    .ek-logo{width:48px;height:48px;border-radius:10px;object-fit:cover;box-shadow:0 6px 18px rgba(0,0,0,.2)}
+    .ek-name{font-weight:800}
+    .ek-burger{display:none;background:transparent;border:1px solid rgba(255,255,255,.25);color:#fff;padding:8px 10px;border-radius:10px;cursor:pointer}
+    .ek-menu{list-style:none;display:flex;align-items:center;gap:12px;margin:0;padding:0}
+    .ek-menu li{display:flex;align-items:center}
+    .ek-link{color:#fff;text-decoration:none;padding:8px 12px;border-radius:10px;transition:.25s;font-weight:600;opacity:.95}
+    .ek-link:hover{background:rgba(255,255,255,.12)}
+    .ek-link.active{background:rgba(0,0,0,.22);box-shadow:inset 0 0 0 1px rgba(255,255,255,.12)}
+    .ek-whats{background:linear-gradient(90deg,var(--success),#128c7e);color:#fff;padding:8px 12px;border-radius:10px;text-decoration:none;font-weight:800}
+    .ek-dark-btn{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);color:#fff;padding:8px 10px;border-radius:10px;cursor:pointer}
+
+    /* ========== HERO احترافي (يشبه الموقع الرئيسي لكن أكبر) ========== */
+    .hero {
+      min-height:320px;
+      background:linear-gradient(180deg, rgba(11,33,46,0.85), rgba(11,33,46,0.55)), url('hero.jpg') center/cover no-repeat;
+      color:#fff;
+      display:flex;
+      align-items:center;
+      padding:40px 0;
+    }
+    .hero .hero-grid{display:flex;gap:20px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+    .hero-left{flex:1;min-width:260px}
+    .hero-left h1{font-size:30px;margin:0 0 8px}
+    .hero-left p{opacity:.95;margin:0 0 12px;color:#e6f0f7}
+    .hero-cta{display:flex;gap:10px;flex-wrap:wrap}
+    .btn {display:inline-flex;align-items:center;gap:10px;padding:10px 14px;border-radius:10px;border:none;cursor:pointer;font-weight:800}
+    .btn.wh{background:var(--success);color:#fff}
+    .btn.ghost{background:rgba(255,255,255,.08);color:#fff}
+    .hero-highlights{display:flex;gap:12px}
+    .highlight{background:rgba(255,255,255,.04);padding:10px 14px;border-radius:10px;text-align:center;min-width:110px}
+    .highlight i{font-size:20px;margin-bottom:6px;display:block;color:var(--accent-2)}
+
+    /* ========== MAIN GRID ========== */
+    .main{padding:28px 0}
+    .grid{display:grid;grid-template-columns:1fr 360px;gap:20px;align-items:start;max-width:var(--maxW);margin:0 auto;padding:0 18px}
+    .card{background:var(--card);border-radius:var(--radius);box-shadow:0 12px 34px rgba(0,0,0,0.06);padding:18px}
+
+    /* article */
+    .policy-article h2{color:var(--accent);margin-top:0}
+    .policy-article h3{color:var(--accent-2);margin-top:14px}
+    .policy-article ul, .policy-article ol{padding-inline:18px;color:var(--muted)}
+    .note{background:#fff7e6;border:1px solid #ffecce;padding:12px;border-radius:8px;color:#7a531a;margin-top:12px}
+
+    /* aside */
+    .aside .aside-actions{display:flex;flex-direction:column;gap:10px}
+    .btn.full{width:100%;padding:12px;background:linear-gradient(90deg,var(--accent-2),#c77a00);color:#fff;border-radius:10px}
+    .btn.outline{background:transparent;border:1px solid var(--accent-2);color:var(--accent);padding:10px;border-radius:10px}
+
+    /* checklist */
+    .checklist{display:grid;gap:8px;margin-top:10px}
+    .checklist .item{display:flex;gap:10px;align-items:center}
+    .checklist .item i{color:var(--accent-2);width:26px;text-align:center}
+
+    /* modal (رفع صور + نموذج) */
+    .modal{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.5);z-index:1200;opacity:0;pointer-events:none;transition:opacity .18s}
+    .modal.open{opacity:1;pointer-events:auto}
+    .modal .modal-body{background:var(--card);width:100%;max-width:720px;border-radius:12px;padding:18px;position:relative;box-shadow:0 18px 50px rgba(0,0,0,.3)}
+    .modal .close{position:absolute;left:14px;top:10px;background:transparent;border:none;font-size:22px;cursor:pointer}
+
+    /* file thumbnails */
+    .thumbs{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+    .thumb{width:80px;height:80px;border-radius:8px;overflow:hidden;border:1px solid #eee;display:flex;align-items:center;justify-content:center;background:#fafafa}
+
+    /* floating whatsapp */
+    .floating{position:fixed;bottom:18px;left:18px;background:var(--success);color:#fff;padding:14px;border-radius:50px;z-index:1300;box-shadow:0 12px 30px rgba(0,0,0,.18);text-decoration:none;font-weight:800}
+
+    /* scroll top */
+    .to-top{position:fixed;right:18px;bottom:18px;width:44px;height:44px;border-radius:50%;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;z-index:1300;border:none}
+
+    /* footer */
+    .footer{background:linear-gradient(180deg,#243447,#1e2a33);color:#eee;padding:28px 18px;margin-top:30px}
+    .footer .footer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;max-width:var(--maxW);margin:0 auto}
+    .footer .logo-row{display:flex;gap:12px;align-items:center}
+    .footer a{color:#cfe8f2}
+    .footer{
+        border-radius: 18px;
+    }
+
+    /* responsive */
+    @media (max-width:980px){
+      .ek-burger{display:inline-block}
+      .ek-menu{position:fixed;inset-inline:0;top:62px;background:linear-gradient(180deg,#243447,#1e2a33);display:flex;flex-direction:column;gap:8px;padding:12px;transform:translateY(-120%);transition:transform .25s;max-height:78vh;overflow:auto}
+      .ek-menu.show{transform:translateY(0)}
+      .grid{grid-template-columns:1fr}
+      .hero{min-height:240px;padding:22px 0}
+      .hero-highlights{display:none}
+      .aside{order:2}
+    }
+
+    /* print */
+    @media print{
+      nav, .floating, .ek-burger, .ek-menu, .to-top, .floating {display:none!important}
+      .modal{display:none!important}
+      body{background:#fff}
+    }
+
+    /* small UX touches */
+    .muted{color:var(--muted);font-size:14px}
+    .kbd{background:#f3f4f6;border-radius:6px;padding:4px 8px;font-weight:700}
+  </style>
+</head>
 <body>
 
-    <!-- ====== الناف بار ====== -->
-    <nav class="navbar">
-        <div class="container">
-            <h1 class="logo">الخالد تك</h1>
-            <ul class="nav-links">
-                <li><a href="index.html">الرئيسية</a></li>
-
-                <li><a href="addres.html">العنوان</a></li>
-                <li><a href="policy.html" class="active">سياسة الاسترجاع</a></li>
-
-            </ul>
+  <!-- NAVBAR -->
+  <nav class="ek-navbar" role="navigation" aria-label="شريط التنقل">
+    <div class="ek-container">
+      <a href="index.html#top" class="ek-brand" aria-label="الذهاب للرئيسية">
+        <img src="kha.jpg" alt="El Khaled Tech" class="ek-logo" loading="lazy">
+        <div>
+          <div class="ek-name">El Khaled Tech</div>
+          <div class="muted" style="font-size:12px">ابتكر براحتك.. والتجربة على راحتك</div>
         </div>
-    </nav>
+      </a>
 
-    <!-- ====== محتوى الصفحة ====== -->
-    <main class="policy-page">
-        <h1>سياسة الاسترجاع والاستبدال</h1>
+      <button class="ek-burger" id="ekBurger" aria-label="فتح القائمة">
+        <i class="fa-solid fa-bars"></i>
+      </button>
 
-        <p>
-            للاستفادة من خدمات الاستبدال والاسترجاع يجب إحضار الفاتورة الأصلية.
-        </p>
-        <p>
-            الاسترجاع خلال <strong>7 أيام</strong> والاستبدال خلال <strong>14 يوم</strong> من تاريخ الشراء مع مراعاة
-            الشروط التالية:
-        </p>
+      <ul class="ek-menu" id="ekMenu" role="menu" aria-hidden="true">
+        <li><a href="index.html" class="ek-link">الرئيسية</a></li>
+        <li><a href="products.html" class="ek-link">منتجاتنا</a></li>
+        <li><a href="Services.html" class="ek-link">الخدمات</a></li>
+        <li><a href="faq.html" class="ek-link">الأسئلة</a></li>
+        <li><a href="contact.html" class="ek-link">تواصل</a></li>
+        <li><a href="policy.html" class="ek-link active">سياسة الاستبدال</a></li>
+        <li><a class="ek-whats" href="https://api.whatsapp.com/send?phone=2011556062656" target="_blank"><i class="fa-brands fa-whatsapp"></i> واتساب</a></li>
+        <li><button id="darkModeToggleNav" class="ek-dark-btn" title="تبديل الوضع">🌙</button></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero" role="banner" aria-label="الهيرو — سياسة الاستبدال">
+    <div class="container hero-grid">
+      <div class="hero-left">
+        <h1>سياسة الاستبدال والاسترجاع</h1>
+        <p>حقوقك واضحة — احنا هنا نسهّل عليك كل خطوة. اقرأ الشروط بالتفصيل، أو اضغط "ابدأ طلب" لإرسال رسالة جاهزة لواتساب.</p>
+        <div class="hero-cta">
+          <a class="btn wh" id="heroWA" href="https://api.whatsapp.com/send?phone=2011556062656&text=مرحبًا%20أريد%20مساعدة%20بخصوص%20سياسة%20الاستبدال" target="_blank"><i class="fa-brands fa-whatsapp"></i> تواصل عبر واتساب</a>
+          <button class="btn ghost" id="heroPrint"><i class="fa-solid fa-print"></i> طباعة</button>
+        </div>
+      </div>
+
+      <div class="hero-highlights" aria-hidden="true">
+        <div class="highlight"><i class="fa-solid fa-clock"></i><div><strong>الاسترجاع</strong><div class="muted">7 أيام</div></div></div>
+        <div class="highlight"><i class="fa-solid fa-exchange-alt"></i><div><strong>الاستبدال</strong><div class="muted">14 يوم</div></div></div>
+        <div class="highlight"><i class="fa-solid fa-receipt"></i><div><strong>الضمان</strong><div class="muted">مذكور مع كل منتج</div></div></div>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN -->
+  <main class="main" role="main">
+    <div class="grid">
+
+      <!-- ARTICLE -->
+      <article class="card policy-article" id="policyArticle">
+        <h2>ملخص سريع (اقرأه أولًا)</h2>
         <ul>
-            <li>أن يكون المنتج بحالته الأصلية مع كامل ملحقاته ومغلفاً بالغلاف الأصلي.</li>
-            <li>في حالة شراء باقة عرض يجب على العميل إرجاع كافة المنتجات المشمولة في الباقة.</li>
-            <li>يتحمل العميل قيمة الشحن في حال الاسترجاع أو الاستبدال.</li>
-            <li>لا يتم استرجاع أو استبدال المنتجات التي تم فتحها إلا إذا ثبت وجود عيب مصنعي.</li>
+          <li>الاسترجاع خلال <strong>7 أيام</strong> للحالة السليمة غير المستخدمة.</li>
+          <li>الاستبدال خلال <strong>14 يوم</strong> في حال وجود عيب غير ناتج عن استخدام خاطئ.</li>
+          <li>ضرورة إرفاق الفاتورة الأصلية وكامل الملحقات.</li>
         </ul>
 
-        <h2>المنتجات غير القابلة للاسترجاع أو الاستبدال:</h2>
+        <h3 id="principles">1. المبادئ العامة</h3>
+        <p>نلتزم بالشفافية وحقوق المستهلك. كل حالة نفحصها حسب المعايير الموضحة أدناه. أي حالة خاصة يمكن الاتفاق بشأنها كتابيًا بين العميل والمتجر.</p>
+
+        <h3 id="timelines">2. المهل الزمنية والتفاصيل</h3>
         <ul>
-            <li>المنتجات المفتوحة أو المستخدمة بشكل غير صحيح.</li>
-            <li>الأجهزة الإلكترونية بعد تشغيلها إذا لم يكن بها عيب مصنعي.</li>
-            <li>سماعات الأذن لأسباب صحية.</li>
-            <li>البرامج وأكواد التفعيل الرقمية.</li>
-            <li>قطع الغيار بعد تركيبها.</li>
-            <li>المنتجات المخصصة حسب طلب العميل.</li>
+          <li><strong>استرجاع 7 أيام:</strong> ينطبق على المنتجات التي لم تُفتح أو تُستخدم وتُعاد في حالتها الأصلية وفي تغليفها مع كافة الملحقات.</li>
+          <li><strong>استبدال 14 يوم:</strong> يغطي العيوب المصنعية التي تظهر خلال فترة الاستبدال بشرط عدم وجود دليل لسوء الاستخدام.</li>
+          <li>في حالة وجود تلف أثناء الشحن، يجب توثيق الضرر وصوره فور الاستلام لإثبات الحالة.</li>
         </ul>
 
-        <h2>ملاحظات هامة:</h2>
+        <h3 id="howto">3. خطوات تقديم طلب (سهل وواضح)</h3>
+        <ol>
+          <li>تواصل معنا عبر واتساب أو نموذج الموقع مع رقم الفاتورة/الطلب.</li>
+          <li>ارسل صورًا توضح الحالة: أمامية/خلفية/أي جزء تالف، وصور التغليف إن أمكن.</li>
+          <li>سنحدد طريقة الإرجاع: استلام من عنوانك أو إحضار للمقر.</li>
+          <li>نقوم بفحص فني. خلال 24–72 ساعة نرجع لك القرار (استرجاع/استبدال/إصلاح).</li>
+        </ol>
+
+        <h3 id="refunds">4. طرق رد المبالغ</h3>
+        <p>نقدم الخيارات التالية لرد المبالغ عند الموافقة على الاسترجاع:</p>
         <ul>
-            <li>لا يتم استرجاع أو استبدال المنتجات المتضررة بسبب سوء الاستخدام (كسر، خدش، تعرض للماء…إلخ).</li>
-            <li>في حال استخدام إكسسوارات غير متوافقة مع الجهاز يسقط حق العميل في الاستبدال أو الاسترجاع.</li>
-            <li>يحق لمتجر <strong>الخالد تك</strong> إلغاء الطلب في حال وجود خطأ في السعر أو نفاد المخزون مع إعادة
-                المبلغ للعميل.</li>
+          <li>تحويل بنكي للحساب الذي تحدده.</li>
+          <li>رصيد داخل الحساب على الموقع (يفعّل فوريًا بعد الموافقة).</li>
+          <li>نقدًا عند الاستلام في حالات محدودة وبعد الفحص.</li>
+        </ul>
+        <p class="muted">ملاحظة: مدة الوصول في التحويل البنكي تعتمد على البنك (1–5 أيام عمل عادة).</p>
+
+        <h3 id="warranty">5. الضمان الفني واستثناءاته</h3>
+        <p>الضمان يغطي الأعطال المصنعية فقط، ولا يشمل التلف الناتج عن:</p>
+        <ul>
+          <li>سقوط، كسر، أو تضرر نتيجة الماء.</li>
+          <li>تعديلات أو تركيب قطع من طرف ثالث.</li>
+          <li>استخدام شواحن/إكسسوارات غير متوافقة.</li>
         </ul>
 
-        <p class="note">
-            تخضع سياستنا للتغيير دون إشعار مسبق، وتحتفظ <strong>الخالد تك</strong> بالحق في تعديل الشروط في أي وقت.
-        </p>
-    </main>
+        <h3 id="nonreturnable">6. منتجات غير قابلة للاسترجاع</h3>
+        <ul>
+          <li>البرمجيات، أكواد التفعيل، والمنتجات الرقمية.</li>
+          <li>سماعات الأذن لاعتبارات صحية.</li>
+          <li>منتجات مخصصة حسب طلب العميل.</li>
+          <li>قطع غيار بعد التركيب.</li>
+        </ul>
 
+        <h3 id="data">7. بياناتك وعمليات الصيانة</h3>
+        <p>عند إرسال الجهاز للصيانة ننصح بعمل نسخة احتياطية وحذف بياناتك الحساسة. نحن غير مسؤولين عن فقدان البيانات إلا لو اتفقنا كتابيًا خلاف ذلك.</p>
 
+        <h3 id="examples">8. أمثلة عملية (ماذا نفعل في كل حالة)</h3>
+        <ul>
+          <li><strong>شاشة مكسورة عند الاستلام:</strong> استرجاع/استبدال بعد التحقق من صور التغليف والشحن.</li>
+          <li><strong>عطل في الهارد بعد التشغيل:</strong> فحص فني — إذا كان عيب مصنعي يتم استبدال أو إصلاح حسب الحالة.</li>
+          <li><strong>مشكلة سوفت وير:</strong> غالبًا تصليح مجاني إذا تحت الضمان الفني وليس بسبب برامج خارجة.</li>
+        </ul>
 
+        <h3 id="process">9. نموذج رسالة جاهز للواتساب (تقدمه لك الزرار)</h3>
+        <p>زر "ابدأ طلب" يفتح واتساب مع رسالة مُعَدّة يمكنك تعديلها قبل الإرسال.</p>
+
+        <h3 id="faq">10. أسئلة متكررة</h3>
+        <div class="card">
+          <strong>هل أغطي مصاريف الشحن؟</strong>
+          <p class="muted">لو العيب مصنعي عادة يتحمل المتجر مصاريف الشحن. لو رغبت الاسترجاع لسبب شخصي — العميل يتحمل الشحن.</p>
+        </div>
+        <div class="card" style="margin-top:10px">
+          <strong>كم يستغرق رد الفلوس؟</strong>
+          <p class="muted">تحويل بنكي: 1–5 أيام عمل؛ رصيد داخل الموقع: فوري بعد الموافقة.</p>
+        </div>
+
+        <p class="note">ملاحظة: تحتفظ شركة "الخالد تك" بحق تعديل هذه السياسة عند الحاجة – أي تغييرات هامة نعلنها على الموقع.</p>
+      </article>
+
+      <!-- ASIDE -->
+      <aside class="aside">
+        <div class="card">
+          <h4>ابدأ طلب استرجاع/استبدال</h4>
+          <p class="muted">اضغط الزر لإرسال رسالة جاهزة لنا على واتساب — بعد إرسال الرسالة فريقنا يتابع معاك خطوة بخطوة.</p>
+
+          <div class="aside-actions" style="margin-top:12px">
+            <button class="btn full" id="startReturnBtn"><i class="fa-solid fa-rotate-left"></i> ابدأ طلب استرجاع</button>
+            <button class="btn outline" id="startExchangeBtn"><i class="fa-solid fa-exchange-alt"></i> ابدأ طلب استبدال</button>
+            <button class="btn ghost" id="openModalBtn"><i class="fa-solid fa-image"></i> أرفق صور الحالة (اختياري)</button>
+          </div>
+
+          <hr style="margin:14px 0;border:none;border-top:1px dashed #eee">
+
+          <h5>قائمة فحص سريعة قبل الإرجاع</h5>
+          <div class="checklist">
+            <div class="item"><i class="fa-solid fa-square-check"></i> الفاتورة الأصلية متاحة</div>
+            <div class="item"><i class="fa-solid fa-square-check"></i> التغليف الأصلي والملحقات موجودة</div>
+            <div class="item"><i class="fa-solid fa-square-check"></i> صور توضح المشكلة (مطلوبة)</div>
+            <div class="item"><i class="fa-solid fa-square-check"></i> نسخة احتياطية من البيانات عملت لها</div>
+          </div>
+
+          <hr style="margin:14px 0;border:none;border-top:1px dashed #eee">
+
+          <p style="font-size:14px"><strong>رقم الدعم:</strong> <a href="tel:+2011556062656">01156062656</a></p>
+          <p style="font-size:14px"><strong>البريد:</strong> <a href="mailto:khaledmousaawwe@gmail.com">khaledmousaawwe@gmail.com</a></p>
+        </div>
+      </aside>
+
+    </div>
+  </main>
+
+  <!-- MODAL لرفع صور (client-side only) -->
+  <div id="uploadModal" class="modal" role="dialog" aria-hidden="true" aria-labelledby="uploadTitle">
+    <div class="modal-body card">
+      <button class="close" id="closeModalBtn" aria-label="إغلاق">✕</button>
+      <h3 id="uploadTitle">أرفق صور الحالة (اختياري)</h3>
+      <p class="muted">رفع صور واضحة يساعدنا نسرّع عملية الموافقة. يمكنك رفع صور PNG/JPG (حتى 5 صور).</p>
+
+      <form id="uploadForm">
+        <label class="muted">اختيار الصور</label>
+        <input id="fileInput" type="file" accept="image/*" multiple />
+        <div class="thumbs" id="thumbsContainer" aria-live="polite"></div>
+
+        <label class="muted" style="margin-top:12px">رقم الفاتورة أو الطلب (اختياري)</label>
+        <input id="modalOrder" type="text" placeholder="رقم الفاتورة / طلب" style="width:100%;padding:10px;border-radius:8px;border:1px solid #eee" />
+
+        <div style="display:flex;gap:10px;margin-top:12px">
+          <button class="btn full" id="sendFilesBtn" type="button">أرسل للواتساب مع رسالة</button>
+          <button class="btn outline" id="cancelFilesBtn" type="button">إلغاء</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- floating whatsapp and to-top -->
+  <a class="floating" id="floatingWA" href="https://api.whatsapp.com/send?phone=2011556062656" target="_blank" aria-label="واتساب">💬 واتساب</a>
+  <button class="to-top" id="toTop" aria-label="الرجوع لأعلى" title="الرجوع لأعلى" style="display:none"><i class="fa-solid fa-arrow-up"></i></button>
+
+  <!-- FOOTER مطابق للموقع الرئيسي -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer-grid container">
+      <div>
+        <div class="logo-row"><img src="kha.jpg" alt="El Khaled Tech" style="width:56px;border-radius:10px;margin-inline-start:8px"><div>
+          <strong>الخالد تك</strong><div class="muted">بيع وشراء وصيانة أجهزة الكمبيوتر واللابتوبات</div>
+        </div></div>
+      </div>
+
+      <div>
+        <h4>روابط سريعة</h4>
+        <ul style="list-style:none;padding:0;margin-top:8px">
+          <li><a href="index.html">الرئيسية</a></li>
+       
+          <li><a href="Services.html">الخدمات</a></li>
+          <li><a href="contact.html">تواصل</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>تواصل معنا</h4>
+        <p class="muted"><i class="fa-solid fa-phone"></i> 01156062656</p>
+        <p class="muted"><i class="fa-solid fa-location-dot"></i> بني سويف - الواسطي - هرم ميدوم</p>
+        <p class="muted"><i class="fa-solid fa-envelope"></i> khaledmousaawwe@gmail.com</p>
+      </div>
+    </div>
+
+    <div style="text-align:center;padding-top:18px;color:#cfd8dc;">© 2025 الخالد تك | جميع الحقوق محفوظة</div>
+  </footer>
+
+  <!-- ========== JavaScript للتفاعلات ========= -->
+  <script>
+    (function(){
+      const WA = '2011556062656'; // رقم واتساب بصيغة دولية بدون +
+      // nav burger
+      const ekBurger = document.getElementById('ekBurger');
+      const ekMenu = document.getElementById('ekMenu');
+      ekBurger && ekBurger.addEventListener('click', ()=> {
+        ekMenu.classList.toggle('show');
+        const open = ekMenu.classList.contains('show');
+        ekMenu.setAttribute('aria-hidden', String(!open));
+      });
+
+      // print hero
+      const heroPrint = document.getElementById('heroPrint');
+      heroPrint && heroPrint.addEventListener('click', ()=> window.print());
+
+      // to-top
+      const toTop = document.getElementById('toTop');
+      window.addEventListener('scroll', ()=> {
+        if(window.scrollY > 300) { toTop.style.display='flex'; } else { toTop.style.display='none'; }
+      });
+      toTop && toTop.addEventListener('click', ()=> window.scrollTo({top:0, behavior:'smooth'}));
+
+      // start return / exchange
+      document.getElementById('startReturnBtn').addEventListener('click', ()=> {
+        const msg = encodeURIComponent('مرحبًا، أود تقديم طلب استرجاع. الرجاء إرشادي في الخطوات. رقم الفاتورة (إن وجد): ');
+        window.open(https://api.whatsapp.com/send?phone=${WA}&text=${msg}, '_blank');
+      });
+      document.getElementById('startExchangeBtn').addEventListener('click', ()=> {
+        const msg = encodeURIComponent('مرحبًا، أود تقديم طلب استبدال. الرجاء إرشادي في الخطوات. رقم الفاتورة (إن وجد): ');
+        window.open(https://api.whatsapp.com/send?phone=${WA}&text=${msg}, '_blank');
+      });
+
+      // modal open/close
+      const openModalBtn = document.getElementById('openModalBtn');
+      const uploadModal = document.getElementById('uploadModal');
+      const closeModalBtn = document.getElementById('closeModalBtn');
+      const cancelFilesBtn = document.getElementById('cancelFilesBtn');
+
+      openModalBtn.addEventListener('click', ()=> {
+        uploadModal.classList.add('open');
+        uploadModal.setAttribute('aria-hidden','false');
+      });
+      function closeModal(){
+        uploadModal.classList.remove('open');
+        uploadModal.setAttribute('aria-hidden','true');
+        // reset thumbnails & file input
+        document.getElementById('fileInput').value = '';
+        document.getElementById('thumbsContainer').innerHTML = '';
+        document.getElementById('modalOrder').value = '';
+      }
+      closeModalBtn.addEventListener('click', closeModal);
+      cancelFilesBtn.addEventListener('click', closeModal);
+
+      // file previews
+      const fileInput = document.getElementById('fileInput');
+      const thumbs = document.getElementById('thumbsContainer');
+      fileInput.addEventListener('change', (e)=> {
+        thumbs.innerHTML = '';
+        const files = Array.from(e.target.files).slice(0,5); // حد أقصى 5 صور
+        files.forEach(file => {
+          const reader = new FileReader();
+          const div = document.createElement('div');
+          div.className = 'thumb';
+          thumbs.appendChild(div);
+          reader.onload = function(ev){
+            const img = document.createElement('img');
+            img.src = ev.target.result;
+            img.alt = file.name;
+            img.style.maxWidth='100%';
+            img.style.maxHeight='100%';
+            div.appendChild(img);
+          }
+          reader.readAsDataURL(file);
+        });
+      });
+
+      // send files button -> يجهز رسالة واتساب مع نص وطلب فتح محادثة (مرفقات لا يمكن إرسالها عبر رابط whatsapp web)
+      // لذلك سنطلب من المستخدم أن يضغط ATTACH في المحادثة ثم يرفق الصور يدوياً.
+      const sendFilesBtn = document.getElementById('sendFilesBtn');
+      sendFilesBtn.addEventListener('click', ()=> {
+        const order = document.getElementById('modalOrder').value.trim();
+        const baseMsg = [
+          'مرحبًا، أود تقديم طلب استرجاع/استبدال.',
+          order ? ('رقم الفاتورة/الطلب: ' + order) : '',
+          'أرفقت صورًا توضح المشكلة. الرجاء إرشادي للخطوات التالية.'
+        ].filter(Boolean).join('\n');
+        // افتح محادثة واتساب؛ المستخدم سيضغط attach ويرفع الصور يدوياً.
+        const url = https://api.whatsapp.com/send?phone=${WA}&text=${encodeURIComponent(baseMsg)};
+        window.open(url, '_blank');
+        closeModal();
+      });
+
+      // floating WA keyboard accessible
+      document.getElementById('floatingWA').addEventListener('keydown', (e)=> { if(e.key==='Enter') window.location.href = e.target.href; });
+
+      // reveal on scroll for article & aside
+      function reveal(){
+        document.querySelectorAll('.policy-article, .aside .card').forEach(el=>{
+          const r = el.getBoundingClientRect();
+          if(r.top < window.innerHeight - 80) el.style.opacity = 1;
+        });
+      }
+      window.addEventListener('scroll', reveal);
+      reveal();
+
+      // dark mode - small toggle (nav)
+      const darkToggle = document.getElementById('darkModeToggleNav');
+      if(darkToggle){
+        darkToggle.addEventListener('click', ()=>{
+          document.body.classList.toggle('dark-mode');
+          darkToggle.textContent = document.body.classList.contains('dark-mode') ? '☀' : '🌙';
+          localStorage.setItem('siteTheme', document.body.classList.contains('dark-mode') ? 'dark' : 'light');
+        });
+        if(localStorage.getItem('siteTheme') === 'dark'){ document.body.classList.add('dark-mode'); darkToggle.textContent='☀'; }
+      }
+
+      // accessibility: close modal with Esc
+      document.addEventListener('keydown', (e)=> { if(e.key==='Escape') closeModal(); });
+
+    })();
+  </script>
 </body>
-
-
 </html>
