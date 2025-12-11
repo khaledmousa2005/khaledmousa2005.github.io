@@ -1,0 +1,462 @@
+<!-- cart.html (محدث - محافظات ومراكز مضافة + تصميم أفضل للـ selects) -->
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>سلة التسوق — الخالد تك</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+:root{
+  --bg:#f6f8fb;--card:#fff;--accent:#0d6efd;--muted:#6b7280;--success:#25d366;--danger:#ef4444;--radius:12px;--shadow:0 8px 26px rgba(12,38,57,0.08);--container:1100px;
+}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;font-family:"Tajawal",system-ui,Arial,sans-serif;background:var(--bg);color:#0b1220}
+.page{max-width:var(--container);margin:28px auto;padding:18px}
+h1{font-size:1.4rem;margin:0 0 6px}
+.top-row{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.muted{color:var(--muted);font-size:0.95rem}
+
+/* layout */
+.grid{display:grid;grid-template-columns:1fr 420px;gap:18px}
+.card{background:var(--card);border-radius:var(--radius);padding:14px;box-shadow:var(--shadow)}
+
+/* cart list */
+#cartList{display:flex;flex-direction:column;gap:12px}
+.cart-item{display:flex;gap:12px;align-items:center;padding:12px;border-radius:10px;border:1px solid #f0f2f5}
+.cart-item .img{width:120px;height:86px;border-radius:8px;overflow:hidden;flex:0 0 120px}
+.cart-item img{width:100%;height:100%;object-fit:cover;display:block}
+.cart-item .meta{flex:1;display:flex;flex-direction:column;gap:6px}
+.cart-item .meta .title{font-weight:700}
+.cart-item .meta .attrs{color:var(--muted);font-size:0.95rem}
+.cart-item .controls{display:flex;flex-direction:column;gap:8px;align-items:center}
+.qty {display:flex;align-items:center;gap:6px;border:1px solid #eef2f7;padding:6px;border-radius:8px;background:#fbfdff}
+.qty button{background:transparent;border:none;padding:6px;cursor:pointer;font-weight:700;color:var(--accent)}
+.qty input{width:56px;text-align:center;border:none;background:transparent;font-weight:700}
+.item-actions{display:flex;gap:8px}
+.item-actions button{background:transparent;border:none;color:var(--muted);cursor:pointer;padding:6px;border-radius:8px}
+.price-tag{text-align:left;font-weight:900;color:var(--accent)}
+
+/* empty state */
+.empty{padding:40px;text-align:center;color:var(--muted)}
+
+/* summary */
+.summary .row{display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px dashed #f0f2f7}
+.summary .row.total{font-weight:900;font-size:1.1rem}
+.summary .promo{display:flex;gap:8px;margin-top:10px}
+.promo input{flex:1;padding:10px;border-radius:8px;border:1px solid #e6e9ee}
+.promo button{padding:10px 12px;border-radius:8px;border:none;background:var(--accent);color:#fff;font-weight:800;cursor:pointer}
+
+/* personal form */
+.personal{margin-top:12px;display:flex;flex-direction:column;gap:8px}
+.personal input, .personal select, .personal textarea {
+  padding:10px;border-radius:8px;border:1px solid #e6e9ee;font-size:0.95rem;width:100%;
+}
+.row-cols{display:flex;gap:8px}
+.row-cols .col{flex:1}
+
+/* select styling wrapper */
+.select-styled{
+  position:relative;
+  background:#fafcff;
+  border-radius:10px;
+  padding:8px;
+  border:1px solid #eef4ff;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,0.6);
+}
+.select-styled select{
+  appearance:none; -webkit-appearance:none; -moz-appearance:none;
+  background:transparent;border:0;padding:8px 6px;font-size:0.95rem;width:100%;
+}
+.select-styled::after{
+  content:'\f107'; font-family:"Font Awesome 6 Free"; font-weight:900;
+  position:absolute;right:12px;top:50%;transform:translateY(-50%);color:var(--muted);
+  pointer-events:none;
+}
+
+/* actions */
+.actions{display:flex;gap:10px;margin-top:14px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:10px 14px;border-radius:10px;border:none;cursor:pointer;font-weight:800}
+.btn.wa{background:linear-gradient(90deg,var(--success),#128c7e);color:#fff}
+.btn.clear{background:transparent;border:1px solid #e6e9ee}
+.btn.print{background:transparent;border:1px solid #e6e9ee}
+.btn.checkout{background:linear-gradient(90deg,var(--accent),#0b5ed7);color:#fff}
+
+/* modal */
+.modal-backdrop{position:fixed;inset:0;background:rgba(11,17,34,0.45);display:none;align-items:center;justify-content:center;z-index:9999}
+.modal{width:94%;max-width:720px;background:var(--card);border-radius:12px;padding:16px;box-shadow:var(--shadow)}
+.pay-options{display:grid;grid-template-columns:1fr;gap:10px;margin-top:8px}
+.pay-card{display:flex;gap:12px;align-items:center;padding:12px;border-radius:10px;border:1px solid #eef2f7;cursor:pointer}
+.pay-card .logo{width:56px;height:56px;border-radius:8px;display:flex;align-items:center;justify-content:center;background:#f7f9fc;font-weight:900;color:var(--accent)}
+.pay-actions{display:flex;gap:8px;margin-top:8px}
+
+/* responsive */
+@media (max-width:980px){
+  .grid{grid-template-columns:1fr}
+  .cart-item{flex-direction:column;align-items:stretch}
+  .cart-item .img{width:100%;height:220px}
+  .cart-item .price-tag{text-align:right}
+  .top-row{flex-direction:column;align-items:flex-start}
+}
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="top-row">
+    <div>
+      <h1>سلة التسوق</h1>
+      <div class="muted">راجع المنتجات وعدّل الكميات أو أكمل الدفع. اختر المحافظة والمركز لحساب الشحن.</div>
+    </div>
+    <div class="muted">السلة محفوظة محليًا — يمكنك العودة لاحقًا</div>
+  </div>
+
+  <div class="grid">
+    <!-- left: items -->
+    <section class="card" aria-label="عناصر السلة">
+      <div id="cartList" aria-live="polite"></div>
+
+      <div id="emptyState" class="empty" style="display:none">
+        <p style="font-size:1.05rem;font-weight:700">السلة فارغة</p>
+        <p class="muted">أضف بعض المنتجات من صفحة المتجر لبدء الطلب.</p>
+        <div style="margin-top:10px"><a href="products.html" class="btn checkout">عرض المنتجات</a></div>
+      </div>
+    </section>
+
+    <!-- right: summary + personal -->
+    <aside class="card summary" aria-label="ملخص السلة">
+      <div style="display:flex;justify-content:space-between;align-items:center">
+        <strong>ملخص الطلب</strong>
+        <span class="tag" id="itemsCount">0 منتج</span>
+      </div>
+
+      <div style="margin-top:8px" id="summaryBreakdown"></div>
+
+      <!-- SHIPPING: governorate + center -->
+      <div style="margin-top:12px">
+        <label class="muted">اختر المحافظة</label>
+        <div class="select-styled"><select id="govSelect" aria-label="محافظة"></select></div>
+
+        <label class="muted" style="margin-top:8px">اختر المركز / المدينة</label>
+        <div class="select-styled"><select id="centerSelect" aria-label="مركز"></select></div>
+
+        <div class="muted" id="shippingNote" style="margin-top:8px">مصاريف الشحن: <strong id="shippingCostView">-</strong></div>
+      </div>
+
+      <!-- personal details -->
+      <div class="personal" aria-label="تفاصيل العميل">
+        <label class="muted">الاسم الكامل</label>
+        <input id="custName" placeholder="الاسم الكامل" />
+        <label class="muted">رقم الموبايل</label>
+        <input id="custPhone" placeholder="01xxxxxxxxx" />
+        <label class="muted">البريد الإلكتروني (اختياري)</label>
+        <input id="custEmail" placeholder="example@mail.com" />
+        <label class="muted">العنوان / تفاصيل إضافية</label>
+        <textarea id="custAddress" placeholder="شارع، عمارة، غيره..." rows="2"></textarea>
+      </div>
+
+      <div style="margin-top:8px" class="muted">ملاحظة: الضريبة مُعطّلة (تم إزالتها حسب طلبك).</div>
+
+      <div class="actions">
+        <button id="checkoutWA" class="btn wa"><i class="fa-brands fa-whatsapp"></i> اطلب عبر واتساب</button>
+        <button id="proceedCheckout" class="btn checkout"><i class="fa-solid fa-credit-card"></i> الذهاب للدفع</button>
+        <button id="clearCart" class="btn clear"><i class="fa-solid fa-trash"></i> إفراغ السلة</button>
+        <button id="printBtn" class="btn print"><i class="fa-solid fa-print"></i> طباعة الفاتورة</button>
+      </div>
+
+      <small class="muted" style="display:block;margin-top:12px">الشحن متغير بحسب المحافظة والمركز. الشحن الافتراضي يظهر بعد اختيار المركز.</small>
+    </aside>
+  </div>
+</div>
+
+<!-- Modal: Payment -->
+<div class="modal-backdrop" id="payModal">
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="payTitle">
+    <div style="display:flex;justify-content:space-between;align-items:center">
+      <h2 id="payTitle">اختر طريقة الدفع</h2>
+      <button id="closeModal" aria-label="اغلاق" style="background:none;border:none;font-size:18px;cursor:pointer">✖</button>
+    </div>
+    <p class="muted">اختر إحدى الطرق وأرسل لنا إيصال الدفع أو اتفق مع مندوب التوصيل.</p>
+    <div class="pay-options" id="payOptions"></div>
+    <div style="margin-top:12px;display:flex;gap:8px;justify-content:flex-end">
+      <button id="modalWhats" class="btn wa"><i class="fa-brands fa-whatsapp"></i> إرسال تفاصيل الطلب على واتساب</button>
+      <button id="modalClose" class="btn clear">إغلاق</button>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+  // CONFIG
+  const MERCHANTS = {
+    whatsappNumber: '201156062656',
+    vodafone: { name:'Vodafone Cash', number:'01156062656', owner:'الخالد تك' },
+    etisalat: { name:'Etisalat Cash', number:'01148223698', owner:'الخالد تك' },
+    bank: { name:'تحويل بنكي', bankName:'بنك المثال', iban:'EG00 0000 0000 0000 0000 00', accName:'الخالد تك' }
+  };
+
+  // SHIPPING: المحافظات والمراكز (قائمة غنية، حرّك أو أضف مراكز حسب حاجتك)
+  const SHIPPING = {
+    "القاهرة": {"اقرب محطة مترو":70,"مدينة نصر":70,"المعادي":65,"العباسية":60,"المنيل":55,"الزمالك":80,"المقطم":70,"المرج":60},
+    "الجيزة": {"اقرب محطة مترو":70,"الهرم":60,"الشيخ زايد":120,"الدقي":70,"السادس من اكتوبر":110,"الوراق":65},
+    "القليوبية": {"بنها":50,"قها":55,"شبين القناطر":50,"الخانكة":55},
+    "الإسكندرية": {"سموحة":90,"رشدي":85,"محطة الرمل":95,"سيدى جابر":95,"غرب المنتزه":100},
+    "بورسعيد": {"بورسعيد":100,"بورفؤاد":110},
+    "السويس": {"السويس مركز":120},
+    "الإسماعيلية": {"الإسماعيلية":120,"القنطرة شرق":140},
+    "دمياط": {"دمياط":100,"رأس البر":110},
+    "البحيرة": {"دمنهور":95,"كفر الدوار":100,"رشيد":110},
+    "كفر الشيخ": {"كفر الشيخ":95,"بلطيم":110,"مصيف بلطيم":115},
+    "الغربية": {"طنطا":90,"محلة":95,"زفتى":100},
+    "الدقهلية": {"المنصورة":85,"طلخا":90,"ميت غمر":95},
+    "المنوفية": {"شبين الكوم":85,"بركة السبع":90,"قويسنا":95},
+    "الشرقية": {"الزقازيق":85,"فاقوس":90,"بلبيس":95},
+    "بني سويف": {"بني سويف":80,"الواسطي":60,"ببا":85,"مركز ناصر":80,"المنانب":90,"هرم ميدوم":50},
+    "الفيوم": {"الفيوم":95,"مدينة الفيوم":95,"طامية":110},
+    "المنيا": {"المنيا":110,"مغاغة":120,"العدوة":130},
+    "أسيوط": {"أسيوط":130,"ديروط":135,"البداري":140},
+    "سوهاج": {"سوهاج":140,"أخميم":150,"طما":145},
+    "قنا": {"قنا":150,"نجع حمادي":160,"دشنا":155},
+    "الأقصر": {"الأقصر":170,"القرنة":180},
+    "أسوان": {"أسوان":200,"إدفو":210,"السباعية":215},
+    "البحر الأحمر": {"الغردقة":220,"سفاجا":230,"رأس غارب":240},
+    "مطروح": {"مرسى مطروح":260,"الحمام":270},
+    "شمال سيناء": {"العريش":300,"رفح":320,"نخل":340},
+    "جنوب سيناء": {"شرم الشيخ":350,"دهب":360,"نويبع":340},
+    "الوادي الجديد": {"الخارجة":320,"الفرافرة":350,"بلاط":360}
+  };
+
+  const $ = s => document.querySelector(s), el = id => document.getElementById(id);
+  function getCart(){ try{return JSON.parse(localStorage.getItem('ec_cart')||'[]')}catch(e){return []}}
+  function saveCart(cart){ localStorage.setItem('ec_cart', JSON.stringify(cart)); render() }
+  function formatNumber(v){ return Number(Math.round(v)).toLocaleString('ar-EG'); }
+
+  // populate governorates select
+  function populateGovs(){
+    const govSelect = el('govSelect'), centerSelect = el('centerSelect');
+    govSelect.innerHTML = '<option value="">اختر المحافظة</option>';
+    Object.keys(SHIPPING).forEach(gov => {
+      const o = document.createElement('option'); o.value = gov; o.textContent = gov; govSelect.appendChild(o);
+    });
+    centerSelect.innerHTML = '<option value="">اختر المركز</option>';
+  }
+
+  // when gov selected populate centers
+  el('govSelect').addEventListener('change', function(){
+    const gov = this.value;
+    const centerSelect = el('centerSelect'); centerSelect.innerHTML = '<option value="">اختر المركز</option>';
+    if(!gov) { el('shippingCostView').textContent='-'; renderSummary(getCart()); return; }
+    const centers = SHIPPING[gov] || {};
+    Object.keys(centers).forEach(c => {
+      const opt = document.createElement('option'); opt.value = c; opt.textContent = `${c} — ${centers[c]} جـ شحن`; centerSelect.appendChild(opt);
+    });
+    el('shippingCostView').textContent = '-';
+    renderSummary(getCart());
+  });
+
+  el('centerSelect').addEventListener('change', function(){
+    renderSummary(getCart());
+  });
+
+  // shipping cost based on selection
+  function getShippingCost(){
+    const gov = el('govSelect').value, center = el('centerSelect').value;
+    if(!gov || !center) return 0;
+    const fee = (SHIPPING[gov] && SHIPPING[gov][center]) ? SHIPPING[gov][center] : 0;
+    return Number(fee || 0);
+  }
+
+  // render list & summary
+  function render(){
+    const cart = getCart();
+    const list = el('cartList');
+    const emptyState = el('emptyState');
+    list.innerHTML = '';
+
+    if (!cart.length) {
+      emptyState.style.display = 'block';
+      el('itemsCount').textContent = '0 منتج';
+      renderSummary(cart);
+      return;
+    }
+    emptyState.style.display = 'none';
+    cart.forEach((it, idx)=>{
+      const node = document.createElement('div'); node.className='cart-item';
+      node.innerHTML = `
+        <div class="img"><img src="${escapeHtml(it.image||'')}" alt="${escapeHtml(it.title||'')}" onerror="this.src='https://via.placeholder.com/300x200?text=No+Image'"></div>
+        <div class="meta">
+          <div class="title">${escapeHtml(it.title)}</div>
+          <div class="attrs muted">${escapeHtml(it.attrs||'')}</div>
+          <div class="muted" style="margin-top:6px">SKU: ${escapeHtml(it.id||'')}</div>
+        </div>
+        <div style="min-width:170px;display:flex;flex-direction:column;align-items:flex-end;gap:8px">
+          <div class="price-tag">${formatNumber(it.price)} جـ</div>
+          <div style="display:flex;gap:8px;align-items:center">
+            <div class="qty" role="group">
+              <button class="qtyDown" data-i="${idx}">−</button>
+              <input class="qtyInp" data-i="${idx}" value="${it.qty}" type="number" min="1" max="99">
+              <button class="qtyUp" data-i="${idx}">+</button>
+            </div>
+            <div class="item-actions">
+              <button class="moveSave" data-i="${idx}" title="حفظ لاحقًا"><i class="fa-regular fa-bookmark"></i></button>
+              <button class="remove" data-i="${idx}" title="حذف"><i class="fa-solid fa-trash" style="color:var(--danger)"></i></button>
+            </div>
+          </div>
+        </div>
+      `;
+      list.appendChild(node);
+    });
+
+    el('itemsCount').textContent = `${cart.reduce((s,i)=>s+Number(i.qty||0),0)} منتج`;
+    attachHandlers();
+    renderSummary(cart);
+  }
+
+  function renderSummary(cart){
+    const cont = el('summaryBreakdown');
+    let subtotal = cart.reduce((s,i)=> s + (Number(i.price||0) * Number(i.qty||1)), 0);
+    const promo = JSON.parse(localStorage.getItem('ec_promo') || 'null');
+    let discount = 0;
+    if (promo && promo.code==='KHALED10') discount = subtotal * 0.10;
+
+    const shipping = getShippingCost();
+    // TAX REMOVED
+    const tax = 0;
+
+    const total = Math.round(subtotal - discount + shipping + tax);
+    cont.innerHTML = `
+      <div class="row"><div class="muted">الإجمالي الفرعي</div><div>${formatNumber(subtotal)} جـ</div></div>
+      <div class="row"><div class="muted">الخصم (${promo?promo.code:'لا يوجد'})</div><div>-${formatNumber(discount)} جـ</div></div>
+      <div class="row"><div class="muted">مصاريف الشحن</div><div>${shipping===0? 'مجاني' : formatNumber(shipping) + ' جـ'}</div></div>
+      <div class="row total"><div>الإجمالي النهائي</div><div>${formatNumber(total)} جـ</div></div>
+    `;
+    el('shippingCostView').textContent = shipping===0? 'مجاني' : formatNumber(shipping) + ' جـ';
+  }
+
+  function attachHandlers(){
+    document.querySelectorAll('.qtyUp').forEach(btn=>btn.onclick=()=>{ const i=btn.dataset.i; updateQty(Number(i), Number(getCart()[i].qty)+1); });
+    document.querySelectorAll('.qtyDown').forEach(btn=>btn.onclick=()=>{ const i=btn.dataset.i; updateQty(Number(i), Math.max(1, Number(getCart()[i].qty)-1)); });
+    document.querySelectorAll('.qtyInp').forEach(inp=>inp.onchange=()=>{ const i=inp.dataset.i; updateQty(Number(i), Math.max(1, Math.min(99,Number(inp.value||1)))); });
+    document.querySelectorAll('.remove').forEach(btn=>btn.onclick=()=>{ if(!confirm('هل تريد حذف هذا المنتج؟'))return; const i=Number(btn.dataset.i); const c=getCart(); c.splice(i,1); saveCart(c); });
+    document.querySelectorAll('.moveSave').forEach(btn=>btn.onclick=()=>{ const i=Number(btn.dataset.i); const c=getCart(); const item=c.splice(i,1)[0]; const saved=JSON.parse(localStorage.getItem('ec_saved')||'[]'); saved.push(item); localStorage.setItem('ec_saved',JSON.stringify(saved)); saveCart(c); alert('تم الحفظ لاحقًا'); });
+  }
+
+  function updateQty(i, qty){ const c=getCart(); if(!c[i]) return; c[i].qty = Math.max(1,Math.min(99,qty)); saveCart(c); }
+
+  // clear cart
+  el('clearCart').addEventListener('click', ()=> { if(confirm('افراغ السلة؟')){ localStorage.removeItem('ec_cart'); render(); } });
+
+  // print
+  el('printBtn').addEventListener('click', ()=> window.print());
+
+  // checkout via WhatsApp (direct) — includes personal details & shipping info
+  el('checkoutWA').addEventListener('click', ()=> {
+    const cart = getCart(); if(!cart.length){ alert('السلة فارغة'); return; }
+    const name = el('custName').value.trim(); const phone = el('custPhone').value.trim();
+    const email = el('custEmail').value.trim(); const address = el('custAddress').value.trim();
+    const gov = el('govSelect').value || 'غير محدد'; const center = el('centerSelect').value || 'غير محدد';
+    let subtotal = cart.reduce((s,i)=> s + Number(i.price||0)*Number(i.qty||1),0);
+    const promo = JSON.parse(localStorage.getItem('ec_promo')||'null'); let discount=0; if(promo && promo.code==='KHALED10') discount=subtotal*0.10;
+    const shipping = getShippingCost(); const tax = 0; const total = Math.round(subtotal-discount+tax+shipping);
+    const lines = cart.map(i=>`${i.title} x${i.qty} — ${formatNumber(i.price)} ج`).join('\n');
+    if(!name || !phone || !address){ if(!confirm('بعض بيانات العميل ناقصة (الاسم/الهاتف/العنوان). هل تريد المتابعة؟')) return; }
+    let msg = `مرحبًا، هذا طلب من موقع الخالد تك:\n\n${lines}\n\nالإجمالي الفرعي: ${formatNumber(subtotal)} ج\nالخصم: ${formatNumber(discount)} ج\nالشحن: ${shipping===0?'مجاني':formatNumber(shipping)+' ج'}\nالإجمالي النهائي: ${formatNumber(total)} ج\n\nتفاصيل العميل:\nالاسم: ${name}\nالهاتف: ${phone}\nالبريد: ${email}\nالعنوان: ${address}\nالمحافظة: ${gov}\nالمركز: ${center}\n\nطريقة الدفع: \nملاحظات:`;
+    window.open(`https://api.whatsapp.com/send?phone=${MERCHANTS.whatsappNumber}&text=${encodeURIComponent(msg)}`, '_blank');
+  });
+
+  // Proceed Checkout => open modal with payment options
+  const payModal = el('payModal'), payOptions = el('payOptions');
+  el('proceedCheckout').addEventListener('click', ()=> openPayModal());
+  el('closeModal').addEventListener('click', ()=> closePayModal());
+  el('modalClose').addEventListener('click', ()=> closePayModal());
+
+  function openPayModal(){
+    payOptions.innerHTML = '';
+    const opts = [
+      {id:'vodafone', title: MERCHANTS.vodafone.name, subtitle: `محفظة: ${MERCHANTS.vodafone.number}`, type:'wallet'},
+      {id:'etisalat', title: MERCHANTS.etisalat.name, subtitle: `محفظة: ${MERCHANTS.etisalat.number}`, type:'wallet'},
+      {id:'bank', title: MERCHANTS.bank.name, subtitle: `${MERCHANTS.bank.bankName} — ${MERCHANTS.bank.accName}`, type:'bank'},
+      {id:'cod', title:'الدفع عند الاستلام', subtitle:'ادفع للموصل عند الاستلام', type:'cod'}
+    ];
+    opts.forEach(o=>{
+      const card = document.createElement('div'); card.className='pay-card'; card.dataset.id=o.id;
+      card.innerHTML = `<div class="logo">${o.title[0]||'P'}</div><div style="flex:1"><strong>${o.title}</strong><div class="muted">${o.subtitle}</div></div>`;
+      const actions = document.createElement('div'); actions.className='pay-actions';
+      const copyBtn = document.createElement('button'); copyBtn.className='btn clear'; copyBtn.textContent='نسخ البيانات';
+      copyBtn.onclick = (ev)=> {
+        ev.stopPropagation();
+        if(o.id==='bank') {
+          copyText(`${MERCHANTS.bank.bankName}\nIBAN: ${MERCHANTS.bank.iban}\nحساب باسم: ${MERCHANTS.bank.accName}`);
+          alert('تم نسخ بيانات التحويل البنكي إلى الحافظة');
+        } else if(o.type==='wallet') {
+          copyText(`${o.title}\nالمستلم: ${MERCHANTS[o.id].owner}\nرقم المحفظة: ${MERCHANTS[o.id].number}`);
+          alert('تم نسخ بيانات المحفظة');
+        } else {
+          copyText('الدفع عند الاستلام');
+          alert('تم النسخ');
+        }
+      };
+      const waBtn = document.createElement('button'); waBtn.className='btn wa'; waBtn.innerHTML='<i class="fa-brands fa-whatsapp"></i> إرسال واتساب';
+      waBtn.onclick = (ev)=> { ev.stopPropagation(); sendPaymentWhatsApp(o.id); };
+      const callBtn = document.createElement('button'); callBtn.className='btn clear'; callBtn.innerHTML='<i class="fa-solid fa-phone"></i> اتصال';
+      callBtn.onclick = (ev)=> { ev.stopPropagation(); if(o.type==='wallet'){ window.location.href = `tel:${MERCHANTS[o.id].number}` } else if(o.id==='bank'){ window.location.href=`tel:${MERCHANTS.whatsappNumber}` } else { alert('لا يوجد رقم مباشر لهذه الطريقة'); } };
+      actions.appendChild(copyBtn); actions.appendChild(waBtn); actions.appendChild(callBtn);
+      card.appendChild(actions);
+      payOptions.appendChild(card);
+    });
+    payModal.style.display='flex';
+  }
+
+  function closePayModal(){ payModal.style.display='none'; }
+
+  // send payment details + order via WA (from modal)
+  function sendPaymentWhatsApp(methodId){
+    const cart = getCart(); if(!cart.length){ alert('السلة فارغة'); return; }
+    const name = el('custName').value.trim(); const phone = el('custPhone').value.trim();
+    const email = el('custEmail').value.trim(); const address = el('custAddress').value.trim();
+    const gov = el('govSelect').value || 'غير محدد'; const center = el('centerSelect').value || 'غير محدد';
+    let subtotal = cart.reduce((s,i)=> s + Number(i.price||0)*Number(i.qty||1),0);
+    const promo = JSON.parse(localStorage.getItem('ec_promo')||'null'); let discount=0; if(promo && promo.code==='KHALED10') discount=subtotal*0.10;
+    const shipping = getShippingCost(); const tax = 0; const total=Math.round(subtotal-discount+tax+shipping);
+    const lines = cart.map(i=>`${i.title} x${i.qty} — ${formatNumber(i.price)} ج`).join('\n');
+    let payInfo = '';
+    if(methodId==='vodafone') payInfo = `فودافون كاش — ${MERCHANTS.vodafone.number} — ${MERCHANTS.vodafone.owner}`;
+    else if(methodId==='etisalat') payInfo = `اتصالات كاش — ${MERCHANTS.etisalat.number} — ${MERCHANTS.etisalat.owner}`;
+    else if(methodId==='bank') payInfo = `تحويل بنكي — ${MERCHANTS.bank.bankName} — IBAN: ${MERCHANTS.bank.iban}`;
+    else payInfo = 'الدفع عند الاستلام';
+    const msg = `مرحبًا، هذا طلب من موقع الخالد تك:\n\n${lines}\n\nالإجمالي النهائي: ${formatNumber(total)} ج\n\nطريقة الدفع المختارة: ${payInfo}\n\nتفاصيل العميل:\nالاسم: ${name}\nالهاتف: ${phone}\nالبريد: ${email}\nالعنوان: ${address}\nالمحافظة: ${gov}\nالمركز: ${center}\n\nالمرجع/إيصال الدفع (لو متوفر):`;
+    window.open(`https://api.whatsapp.com/send?phone=${MERCHANTS.whatsappNumber}&text=${encodeURIComponent(msg)}`, '_blank');
+  }
+
+  el('modalWhats').addEventListener('click', ()=> sendPaymentWhatsApp('none'));
+
+  // small copy helper
+  function copyText(t){ navigator.clipboard?.writeText(t).catch(()=>{ const ta=document.createElement('textarea'); ta.value=t; document.body.appendChild(ta); ta.select(); document.execCommand('copy'); ta.remove(); }); }
+
+  function escapeHtml(s){ return String(s||'').replace(/[&<>"']/g, m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m])); }
+
+  // demo populate if empty (so you تشوف التصميم) - احذف أو عدّل هذا الجزء على الريال داتا
+  if(!localStorage.getItem('ec_cart_demo_populated')) {
+    if(!getCart().length){
+      const demo=[ {id:'inspiron-3567', title:'DELL Inspiron 3567 - i5 / 8GB', price:6200, qty:1, image:'assets/products/inspiron-front.webp', attrs:'RAM 8GB · 500GB HDD'} ];
+      localStorage.setItem('ec_cart', JSON.stringify(demo));
+    }
+    localStorage.setItem('ec_cart_demo_populated','1');
+  }
+
+  // init
+  populateGovs();
+  el('govSelect').value = '';
+  el('centerSelect').value = '';
+  render();
+
+  // close modal clicks
+  document.addEventListener('click', (e)=> {
+    if(e.target === el('payModal')) closePayModal();
+  });
+
+})();
+</script>
+</body>
+</html>
