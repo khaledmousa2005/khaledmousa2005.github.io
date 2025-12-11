@@ -1,54 +1,614 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="ar" dir="rtl">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>الأسئلة الشائعة - Elkhaled Tech</title>
-  <link rel="stylesheet" href="faq.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>الأسئلة الشائعة - El Khaled Tech</title>
+
+  <meta name="description"
+    content="الأسئلة الشائعة عن الخالد تك: التوصيل، الضمان، الاسترجاع، طرق الدفع، صيانة اللابتوبات، شراء وبيع الأجهزة المستعملة والمحمولة." />
+
+  <!-- استايل الأساسي للموقع لو عندك -->
+  <link rel="stylesheet" href="styles.css" />
+  <!-- استايل صفحة FAQ -->
+  <link rel="stylesheet" href="faq.css" />
+
+  <!-- Font Awesome للأيقونات -->
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
-<body dir="rtl">
-  <header class="header">
-    <h1>الأسئلة الشائعة</h1>
-    <p>كل اللي محتاج تعرفه عن خدماتنا</p>
+
+<body id="top">
+
+  <!-- ===== NAVBAR بنفس ستايل الموقع ===== -->
+  <nav class="ek-navbar" role="navigation" aria-label="شريط التنقل">
+    <div class="ek-container">
+      <a href="index.html#hero" class="ek-brand">
+        <img src="kha.jpg" alt="El Khaled Tech" class="ek-logo" loading="lazy" />
+        <span class="ek-name">El Khaled Tech</span>
+        <div class="brand">
+          ابتكر براحتك.. والتجربة على راحتك
+        </div>
+      </a>
+
+      <button class="ek-burger" id="ekBurger" aria-label="فتح القائمة">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+
+      <ul class="ek-menu" id="ekMenu">
+        <li><a href="index.html#hero" class="ek-link">الرئيسية</a></li>
+        <li><a href="index.html#products" class="ek-link">المنتجات</a></li>
+        <li><a href="Services.html" class="ek-link">حلول الخالد تك</a></li>
+        <li><a href="abut.html" class="ek-link">من نحن</a></li>
+        <li><a href="addres.html" class="ek-link">العنوان</a></li>
+        <li><a href="faq.html" class="ek-link active">الأسئلة الشائعة</a></li>
+        <li><a href="contact.html" class="ek-link">تواصل معنا</a></li>
+        <li>
+          <a href="https://api.whatsapp.com/send?phone=201156062656"
+            target="_blank" class="ek-whats">
+            <i class="fa-brands fa-whatsapp"></i> واتساب
+          </a>
+        </li>
+        <li>
+          <button id="darkModeToggleNav" class="ek-dark-btn" title="تبديل الوضع">🌙</button>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ===== هيرو الأسئلة الشائعة ===== -->
+  <header class="faq-hero">
+    <div class="faq-hero-inner container">
+      <div class="faq-hero-text">
+        <h1>الأسئلة الشائعة</h1>
+        <p>هنا هتلاقي إجابات لأغلب الأسئلة عن الشراء، الصيانة، الضمان، والشحن من <strong>الخالد تك</strong>.</p>
+        <ul class="faq-hero-points">
+          <li><i class="fa-solid fa-circle-question"></i> محتار تختار جهاز إيه؟</li>
+          <li><i class="fa-solid fa-truck"></i> عايز تعرف الشحن بيتم إزاي وبيوصل في قد إيه؟</li>
+          <li><i class="fa-solid fa-shield-halved"></i> عايز تطمن على الضمان والاسترجاع؟</li>
+        </ul>
+      </div>
+      <div class="faq-hero-card">
+        <i class="fa-solid fa-comments"></i>
+        <h2>لسه محتاج مساعدة؟</h2>
+        <p>لو مش لاقي إجابة سؤالك هنا، تقدر تكلمنا مباشرة على الواتساب أو من صفحة التواصل.</p>
+        <a href="https://api.whatsapp.com/send?phone=201156062656"
+          target="_blank" class="btn hero-wh-btn">
+          تواصل عبر واتساب
+          <i class="fa-brands fa-whatsapp"></i>
+        </a>
+      </div>
+    </div>
   </header>
 
-  <main class="faq-container">
-    <div class="faq-item">
-      <button class="faq-question">هل بتوفروا خدمة التوصيل؟</button>
-      <div class="faq-answer">
-        <p>أيوه، بنوصل لأي مكان داخل مصر برسوم رمزية.</p>
-      </div>
+  <!-- ===== أدوات البحث عن سؤال ===== -->
+  <section class="faq-tools container">
+    <div class="faq-search">
+      <label for="faqSearch">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        ابحث في الأسئلة
+      </label>
+      <input type="text" id="faqSearch" placeholder="اكتب كلمة مثل: شحن، ضمان، استبدال..." />
     </div>
 
-    <div class="faq-item">
-      <button class="faq-question">هل في ضمان على الأجهزة؟</button>
-      <div class="faq-answer">
-        <p>طبعًا، كل الأجهزة عليها ضمان رسمي حسب نوع المنتج.</p>
-      </div>
+    <div class="faq-filters">
+      <button class="faq-filter-btn active" data-category="all">الكل</button>
+      <button class="faq-filter-btn" data-category="شراء">الشراء والمنتجات</button>
+      <button class="faq-filter-btn" data-category="صيانة">الصيانة والدعم</button>
+      <button class="faq-filter-btn" data-category="شحن">الشحن والتوصيل</button>
+      <button class="faq-filter-btn" data-category="ضمان">الضمان والاسترجاع</button>
+      <button class="faq-filter-btn" data-category="دفع">الدفع والأسعار</button>
+      <button class="faq-filter-btn" data-category="عام">أسئلة عامة</button>
     </div>
+  </section>
 
-    <div class="faq-item">
-      <button class="faq-question">إزاي أقدر أطلب لابتوب معين؟</button>
-      <div class="faq-answer">
-        <p>ممكن تطلب من صفحة خدمة التوصيل أو تتواصل معانا مباشرة.</p>
+  <!-- ===== محتوى الأسئلة الشائعة ===== -->
+  <main class="faq-main container">
+
+    <!-- رسائل توضيح بسيطة -->
+    <p class="faq-intro">
+      تقدر تفتح أي سؤال بالضغط عليه، وتقدر تستخدم مربع البحث فوق لو بتدور على حاجة محددة.
+    </p>
+
+    <section class="faq-container">
+
+      <!-- شحن / توصيل (تشمل سؤالك الأصلي) -->
+      <div class="faq-item" data-category="شحن">
+        <button class="faq-question">
+          هل بتوفروا خدمة التوصيل؟
+          <span class="faq-toggle-icon"><i class="fa-solid fa-plus"></i></span>
+        </button>
+        <div class="faq-answer">
+          <p>
+            أيوه، بنوفر خدمة توصيل لكل محافظات مصر برسوم شحن رمزية حسب المحافظة ووزن الجهاز.
+          </p>
+          <p>
+            في العادة توصيل القاهرة والجيزة والوجه البحري بيكون خلال
+            <strong>1 – 3 أيام عمل</strong>، وباقي المحافظات من <strong>2 – 5 أيام عمل</strong>.
+          </p>
+        </div>
       </div>
-    </div>
+
+      <div class="faq-item" data-category="شحن">
+        <button class="faq-question">
+          هل أقدر أستلم الجهاز بنفسي من مكانكم؟
+          <span class="faq-toggle-icon"><i class="fa-solid fa-plus"></i></span>
+        </button>
+        <div class="faq-answer">
+          <p>
+            طبعًا، تقدر تزورنا في مقر <strong>الخالد تك</strong> في
+            <strong>بني سويف - الواسطي - هرم ميدوم</strong> بعد التنسيق معانا على الواتساب أو المكالمة.
+          </p>
+        </div>
+      </div>
+
+      <div class="faq-item" data-category="شحن">
+        <button class="faq-question">
+          إزاي بضمن إن الجهاز يوصل سليم في الشحن؟
+          <span class="faq-toggle-icon"><i class="fa-solid fa-plus"></i></span>
+        </button>
+        <div class="faq-answer">
+          <p>
+            بنغلف الأجهزة بعناية (تغليف فقاعات هواء + كرتونة قوية)، وبنتعامل مع شركات شحن موثوقة.
+          </p>
+          <p>
+            كمان بنصور حالة الجهاز قبل الشحن، وبتستلم جهازك مع فاتورة وضمان.
+          </p>
+        </div>
+      </div>
+
+      <!-- ضمان (تشمل سؤالك الأصلي) -->
+      <div class="faq-item" data-category="ضمان">
+        <button class="faq-question">
+          هل في ضمان على الأجهزة؟
+          <span class="faq-toggle-icon"><i class="fa-solid fa-plus"></i></span>
+        </button>
+        <div class="faq-answer">
+          <p>
+            طبعًا، كل الأجهزة عليها ضمان تجربة واستلام، وفي أجهزة عليها ضمان فني حسب نوع الجهاز والاتفاق وقت الشراء.
+          </p>
+          <p>
+            بالنسبة للأجهزة المستعملة: الضمان بيكون على
+            <strong>سلامة البوردة، البروسيسور، الرامات، الشاشة</strong> ماعدا سوء الاستخدام.
+          </p>
+        </div>
+      </div>
+
+      <div class="faq-item" data-category="ضمان">
+        <button class="faq-question">
+          في حالة ظهور عيب بعد الاستلام أعمل إيه؟
+          <span class="faq-toggle-icon"><i class="fa-solid fa-plus"></i></span>
+        </button>
+        <div class="faq-answer">
+          <p>
+            بتتواصل معانا فوراً على الواتساب أو الاتصال، وبتصور المشكلة لو ممكن،
+            وهنحدد معاك إما صيانة أو استبدال أو استرجاع حسب الحالة والاتفاق.
+          </p>
+        </div>
+      </div>
+
+      <div class="faq-item" data-category="ضمان">
+        <button class="faq-question">
+          هل في ضمان على البطارية والشاحن؟
+          <span class="faq-toggle-icon"><i class="fa-solid fa-plus"></i></span>
+        </button>
+        <div class="faq-answer">
+          <p>
+            البطارية والشاحن غالباً عليهم ضمان تجربة فقط وقت الاستلام، إلا لو اتفقنا على غير كده في وقت الشراء.
+          </p>
+        </div>
+      </div>
+
+      <!-- شراء / منتجات (تشمل سؤالك الأصلي) -->
+      <div class="faq-item" data-category="شراء">
+        <button class="faq-question">
+          إزاي أقدر أطلب لابتوب معين؟
+          <span class="faq-toggle-icon"><i class="fa-solid fa-plus"></i></span>
+        </button>
+        <div class="faq-answer">
+          <p>
+            عندك أكثر من طريقة:
+          </p>
+          <ul>
+            <li>من خلال صفحة المنتجات على الموقع واختيار زر <strong>اطلب الآن</strong>.</li>
+            <li>أو التواصل مباشرة على الواتساب وذكر موديل الجهاز أو استخدامك وميزانيتك.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="faq-item" data-category="شراء">
+        <button class="faq-question">
+          مش فاهم أختار مواصفات إيه تناسب شغلي، تساعدوني؟
+          <span class="faq-toggle-icon"><i class="fa-solid fa-plus"></i></span>
+        </button>
+        <div class="faq-answer">
+          <p>
+            أكيد، قولنا استخدامك (أوفيس – دراسة – جرافيك – برمجة – ألعاب...)
+            وميزانيتك، وهنرشحلك أكثر من اختيار مناسب مع مميزات وعيوب كل اختيار.
+          </p>
+        </div>
+      </div>
+
+      <div class="faq-item" data-category="شراء">
+        <button class="faq-question">
+          إيه الفرق بين الأجهزة الجديدة والمستعملة عندكم؟
+          <span class="faq-toggle-icon"><i class="fa-solid fa-plus"></i></span>
+        </button>
+        <div class="faq-answer">
+          <p>
+            الأجهزة الجديدة: بتكون بعلبتها وضمان الشركة المصنعة (أو حسب توفرها).
+          </p>
+          <p>
+            الأجهزة المستعملة: بيتم فحصها بالكامل، تغيير القطع الضعيفة، وتنظيف داخلي وخارجي،
+            مع ضمان تجربة واستلام وضمان فني حسب الاتفاق.
+          </p>
+        </div>
+      </div>
+
+      <div class="faq-item" data-category="شراء">
+        <button class="faq-question">
+          هل الصور على الموقع حقيقية لنفس الأجهزة؟
+          <span class="faq-toggle-icon"><i class="fa-solid fa-plus"></i></span>
+        </button>
+        <div class="faq-answer">
+          <p>
+            في أغلب الأجهزة بنستخدم صور حقيقية أو صور لنفس الموديل بحالة قريبة جداً من الواقع.
+            ولو حابب، نقدر نبعتلك صور وفيديو للجهاز قبل ما تكمل الطلب.
+          </p>
+        </div>
+      </div>
+
+      <!-- الدفع -->
+      <div class="faq-item" data-category="دفع">
+        <button class="faq-question">
+          طرق الدفع المتاحة إيه؟
+          <span class="faq-toggle-icon"><i class="fa-solid fa-plus"></i></span>
+        </button>
+        <div class="faq-answer">
+          <p>
+            بنقبل أكثر من طريقة دفع، منها:
+          </p>
+          <ul>
+            <li>كاش عند الاستلام (متاح في بعض المناطق).</li>
+            <li>تحويل بنكي على (بنك مصر – QNB – CIB) حسب المتاح.</li>
+            <li>محافظ إلكترونية مثل: فودافون كاش – اتصالات كاش – أورانج كاش – We Pay.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="faq-item" data-category="دفع">
+        <button class="faq-question">
+          هل في إمكانية تقسيط؟
+          <span class="faq-toggle-icon"><i class="fa-solid fa-plus"></i></span>
+        </button>
+        <div class="faq-answer">
+          <p>
+            حسب الفترة والعروض المتاحة، ممكن يكون في تقسيط عن طريق بعض أنظمة الدفع أو شركات التمويل.
+            تقدر تتواصل معانا على الواتساب لمعرفة آخر العروض في التقسيط.
+          </p>
+        </div>
+      </div>
+
+      <!-- الاسترجاع والاستبدال (ضمان/دفع) -->
+      <div class="faq-item" data-category="ضمان">
+        <button class="faq-question">
+          لو الجهاز مش مناسب لي بعد الاستلام، أقدر أرجعه أو أبدله؟
+          <span class="faq-toggle-icon"><i class="fa-solid fa-plus"></i></span>
+        </button>
+        <div class="faq-answer">
+          <p>
+            في سياسة واضحة للاسترجاع والاستبدال، تقدر تشوفها في صفحة
+            <a href="policy.html">سياسة الاسترجاع والاستبدال</a>.
+          </p>
+          <p>
+            باختصار، في فترة معينة تقدر تبدل أو ترجع الجهاز بشرط الحفاظ على حالته مع توضيح السبب.
+          </p>
+        </div>
+      </div>
+
+      <!-- الصيانة -->
+      <div class="faq-item" data-category="صيانة">
+        <button class="faq-question">
+          هل بتقدموا خدمة صيانة لابتوبات مش متشتراة من عندكم؟
+          <span class="faq-toggle-icon"><i class="fa-solid fa-plus"></i></span>
+        </button>
+        <div class="faq-answer">
+          <p>
+            نعم، بنقدم صيانة لأغلب أنواع اللابتوبات حتى لو مش متشتراة من عندنا،
+            مثل: تغيير هارد، ترقية رامات، تنظيف تبريد، تغيير شاشة أو كيبورد... إلخ.
+          </p>
+        </div>
+      </div>
+
+      <div class="faq-item" data-category="صيانة">
+        <button class="faq-question">
+          إزاي أقدر أعرف تكلفة صيانة جهاز قبل ما أبعتُه؟
+          <span class="faq-toggle-icon"><i class="fa-solid fa-plus"></i></span>
+        </button>
+        <div class="faq-answer">
+          <p>
+            بتكلمنا على الواتساب، وتشرح المشكلة بالتفصيل، ويفضل تبعت فيديو أو صورة
+            للرسالة اللي بتظهر أو الصوت اللي بيطلع من الجهاز، وهنقولك تقدير مبدئي للتكلفة.
+          </p>
+        </div>
+      </div>
+
+      <div class="faq-item" data-category="صيانة">
+        <button class="faq-question">
+          هل بتعملوا ترقية للأجهزة القديمة (RAM / SSD)؟
+          <span class="faq-toggle-icon"><i class="fa-solid fa-plus"></i></span>
+        </button>
+        <div class="faq-answer">
+          <p>
+            نعم، بنوفر خدمة ترقية الرامات، تغيير الهارد لهارد SSD، وتنظيف النظام،
+            وده بيحسّن أداء الجهاز بشكل ملحوظ جداً حتى لو قديم نسبياً.
+          </p>
+        </div>
+      </div>
+
+      <!-- أسئلة عامة -->
+      <div class="faq-item" data-category="عام">
+        <button class="faq-question">
+          هل الخالد تك شركة ولا محل فردي؟
+          <span class="faq-toggle-icon"><i class="fa-solid fa-plus"></i></span>
+        </button>
+        <div class="faq-answer">
+          <p>
+            الخالد تك نشاط تجاري مختص في بيع وشراء وصيانة أجهزة الكمبيوتر واللابتوب،
+            ويتم حالياً تطويره ليكون علامة تجارية معروفة على مستوى مصر.
+          </p>
+        </div>
+      </div>
+
+      <div class="faq-item" data-category="عام">
+        <button class="faq-question">
+          هل بتقدموا عروض خاصة للطلاب أو الشركات؟
+          <span class="faq-toggle-icon"><i class="fa-solid fa-plus"></i></span>
+        </button>
+        <div class="faq-answer">
+          <p>
+            أيوه، في أوقات كتير بيكون في خصومات خاصة للطلاب أو للشركات اللي هتشتري أكتر من جهاز.
+            تابعنا على صفحات السوشيال أو اسألنا مباشرة عن العروض الحالية.
+          </p>
+        </div>
+      </div>
+
+      <div class="faq-item" data-category="عام">
+        <button class="faq-question">
+          إيه أفضل طريقة أتواصل بيكم لو عندي سؤال مستعجل؟
+          <span class="faq-toggle-icon"><i class="fa-solid fa-plus"></i></span>
+        </button>
+        <div class="faq-answer">
+          <p>
+            أسرع طريقة هي الواتساب على رقمنا:
+            <a href="https://api.whatsapp.com/send?phone=201156062656"
+              target="_blank">01156062656</a>
+            أو الاتصال المباشر في مواعيد العمل.
+          </p>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ===== لسه عندك سؤال؟ ===== -->
+    <section class="still-have-question">
+      <h2>لسه عندك سؤال مش لاقي إجابته هنا؟</h2>
+      <p>
+        ولا يهمك، تقدر تبعتلنا سؤال واحد أو أكتر على الواتساب، أو تستخدم صفحة
+        <a href="contact.html">تواصل معنا</a> وإحنا هنرد عليك في أسرع وقت.
+      </p>
+      <div class="still-actions">
+        <a href="https://api.whatsapp.com/send?phone=201156062656&text=%D8%B9%D9%86%D8%AF%D9%8A%20%D8%B3%D8%A4%D8%A7%D9%84%20%D8%B9%D9%86%20%D8%AE%D8%AF%D9%85%D8%A7%D8%AA%20%D8%A7%D9%84%D8%AE%D8%A7%D9%84%D8%AF%20%D8%AA%D9%83"
+          target="_blank" class="btn main-btn">
+          اسألنا على واتساب
+          <i class="fa-brands fa-whatsapp"></i>
+        </a>
+        <a href="contact.html" class="btn secondary-btn">
+          صفحة تواصل معنا
+          <i class="fa-solid fa-envelope"></i>
+        </a>
+      </div>
+    </section>
+
+    <!-- ===== نصائح قبل الشراء (استخدام blog-container بتاعك) ===== -->
+    <section class="tips-section">
+      <h2>نصائح قبل ما تشتري لابتوب</h2>
+      <p class="tips-intro">
+        قبل ما تاخد قرار الشراء، ممكن يفيدك تطّلع على شوية نصايح أساسية علشان تختار الأنسب ليك.
+      </p>
+
+      <div class="blog-container">
+        <article class="blog-card">
+          <img src="tip-performance.jpg" alt="اختيار لابتوب للأداء القوي" loading="lazy" />
+          <h2>إزاي تختار لابتوب يناسب شغلك أو دراستك؟</h2>
+          <p>
+            مش كل الأجهزة مناسبة لكل الاستخدامات. اعرف الفرق بين لابتوب للجرافيك، للألعاب، للبرمجة،
+            وللاستخدام اليومي.
+          </p>
+          <a href="contact.html">استشارة مجانية قبل الشراء</a>
+        </article>
+
+        <article class="blog-card">
+          <img src="tip-ssd.jpg" alt="أهمية هارد SSD" loading="lazy" />
+          <h2>ليه تحويل الهارد لـ SSD مهم جداً؟</h2>
+          <p>
+            هارد SSD ممكن يضاعف سرعة جهازك 3 مرات أو أكتر، خصوصًا مع الأجهزة الجيل الثالث والرابع.
+          </p>
+          <a href="Services.html">اطلب خدمة ترقية SSD</a>
+        </article>
+
+        <article class="blog-card">
+          <img src="tip-battery.jpg" alt="الحفاظ على البطارية" loading="lazy" />
+          <h2>نصائح للحفاظ على بطارية اللابتوب</h2>
+          <p>
+            اعرف إزاي تشحن صح، تقلل السخونة، وتطوّل عمر البطارية لأطول فترة ممكنة.
+          </p>
+          <a href="contact.html">اسأل عن حالة البطارية قبل الشراء</a>
+        </article>
+      </div>
+    </section>
   </main>
 
+  <!-- زر واتساب عائم -->
+  <a href="https://api.whatsapp.com/send?phone=201156062656"
+    target="_blank" class="floating-whatsapp">
+    💬 محتاج مساعدة سريعة؟
+  </a>
+
+  <!-- زر رجوع لأعلى -->
+  <button id="scrollTopBtn" class="scroll-top" aria-label="الرجوع لأعلى">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <!-- ====== الفوتر ====== -->
+  <footer class="footer">
+    <div class="footer-container">
+
+      <div class="footer-col">
+        <h3>الخالد تك</h3>
+        <p><strong>بيع وشراء اللابتوبات وأجهزة الكمبيوتر بأفضل جودة وأسعار منافسة.</strong></p>
+      </div>
+
+      <div class="footer-col">
+        <h4>روابط هامة</h4>
+        <ul>
+          <li><a href="index.html">الرئيسية</a></li>
+          <li><a href="abut.html">من نحن</a></li>
+          <li><a href="faq.html">الأسئلة الشائعة</a></li>
+          <li><a href="policy.html">سياسة الاسترجاع والاستبدال</a></li>
+          <li><a href="privacy.html">سياسة الخصوصية</a></li>
+          <li><a href="addres.html">العنوان</a></li>
+          <li><a href="contact.html">تواصل معنا</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <div class="footer-social">
+          <h3>تابعنا</h3>
+          <div class="social-icons">
+            <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+            <a href="https://github.com/khaledmousa2005" target="_blank"><i class="fab fa-github"></i></a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="footer-logos">
+      <img src="Visadebitcardpng-1599584312349.png" alt="Visa" />
+      <img src="mas.jpeg" alt="MasterCard" />
+      <img src="PayPal-Logo.jpg" alt="PayPal" />
+      <img src="bank-misr-750x430.jpg" alt="bankmisr" />
+      <img src="QNB-AlAhli-بنك-QNB-مصر-Copy-1.webp" alt="qnb" />
+      <img src="cib.jpg" alt="cib" />
+      <img src="aman.jpeg" alt="aman" />
+      <img src="kha.jpg" alt="Elkhaled Tech" />
+    </div>
+    <br />
+    <p><a href="privacy.html" class="privacy-link">سياسة الخصوصية</a></p>
+    <div class="footer-bottom">
+      <h1>© 2025 الخالد تك | جميع الحقوق محفوظة</h1>
+    </div>
+  </footer>
+
+  <!-- زر تغيير الوضع (لو شغال في الموقع) -->
+  <button id="darkModeToggle" class="dark-toggle" aria-label="تبديل الوضع">🌙</button>
+
+  <!-- سكربت الموقع العام لو عندك -->
+  <script src="script.js" defer></script>
+
+  <!-- سكربت خاص بالـ FAQ -->
   <script>
-    // أكورديون FAQ
-    const questions = document.querySelectorAll(".faq-question");
-    questions.forEach(q => {
-      q.addEventListener("click", () => {
-        q.classList.toggle("active");
-        const answer = q.nextElementSibling;
-        if (answer.style.display === "block") {
-          answer.style.display = "none";
-        } else {
-          answer.style.display = "block";
-        }
+    document.addEventListener("DOMContentLoaded", function () {
+      const faqItems = document.querySelectorAll(".faq-item");
+      const searchInput = document.getElementById("faqSearch");
+      const filterButtons = document.querySelectorAll(".faq-filter-btn");
+      const scrollTopBtn = document.getElementById("scrollTopBtn");
+
+      // أكورديون الأسئلة
+      faqItems.forEach(item => {
+        const btn = item.querySelector(".faq-question");
+        const answer = item.querySelector(".faq-answer");
+        const icon = item.querySelector(".faq-toggle-icon i");
+
+        btn.addEventListener("click", () => {
+          const isOpen = item.classList.contains("open");
+
+          // غلق الباقي لو حابب واحد بس يبقى مفتوح
+          faqItems.forEach(i => {
+            i.classList.remove("open");
+            i.querySelector(".faq-answer").style.maxHeight = null;
+            i.querySelector(".faq-toggle-icon i").classList.replace("fa-minus", "fa-plus");
+          });
+
+          if (!isOpen) {
+            item.classList.add("open");
+            answer.style.maxHeight = answer.scrollHeight + "px";
+            icon.classList.replace("fa-plus", "fa-minus");
+          }
+        });
       });
+
+      // فلتر حسب التصنيف
+      filterButtons.forEach(btn => {
+        btn.addEventListener("click", () => {
+          const category = btn.dataset.category;
+
+          filterButtons.forEach(b => b.classList.remove("active"));
+          btn.classList.add("active");
+
+          faqItems.forEach(item => {
+            const itemCat = item.dataset.category;
+            if (category === "all" || itemCat === category) {
+              item.style.display = "";
+            } else {
+              item.style.display = "none";
+            }
+          });
+        });
+      });
+
+      // بحث في الأسئلة
+      if (searchInput) {
+        searchInput.addEventListener("input", () => {
+          const term = searchInput.value.trim().toLowerCase();
+          faqItems.forEach(item => {
+            const question = item.querySelector(".faq-question").textContent.toLowerCase();
+            const answer = item.querySelector(".faq-answer").textContent.toLowerCase();
+            if (question.includes(term) || answer.includes(term)) {
+              item.style.display = "";
+            } else {
+              item.style.display = "none";
+            }
+          });
+        });
+      }
+
+      // Scroll Top
+      function handleScrollTop() {
+        if (!scrollTopBtn) return;
+        const scrollPos = window.scrollY || window.pageYOffset;
+        if (scrollPos > 250) {
+          scrollTopBtn.classList.add("show");
+        } else {
+          scrollTopBtn.classList.remove("show");
+        }
+      }
+
+      if (scrollTopBtn) {
+        scrollTopBtn.addEventListener("click", () => {
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+      }
+
+      window.addEventListener("scroll", handleScrollTop);
+      window.addEventListener("load", handleScrollTop);
+      handleScrollTop();
     });
   </script>
 </body>
+
 </html>

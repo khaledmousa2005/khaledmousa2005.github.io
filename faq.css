@@ -6,36 +6,322 @@ body {
   color: #333;
 }
 
-.header {
-  text-align: center;
-  padding: 30px;
+/* ===== هيرو الأسئلة الشائعة ===== */
+.faq-hero {
   background: #0077b6;
-  color: white;
+  color: #fff;
+  padding: 30px 16px 36px;
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
 }
 
-.header h1 {
-  margin: 0;
+.faq-hero-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.faq-hero-text {
+  flex: 1.6;
+}
+
+.faq-hero-text h1 {
+  margin: 0 0 6px;
   font-size: 28px;
 }
-.header p {
-  margin: 5px 0 0;
+
+.faq-hero-text p {
+  margin: 0 0 8px;
   font-size: 16px;
 }
 
-/* المدونة */
+.faq-hero-points {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.faq-hero-points li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+
+.faq-hero-points i {
+  color: #ffdd00;
+}
+
+/* كارت جانبي */
+.faq-hero-card {
+  flex: 1;
+  max-width: 320px;
+  background: rgba(0, 0, 0, 0.18);
+  border-radius: 16px;
+  padding: 18px 16px;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+.faq-hero-card i {
+  font-size: 2.4rem;
+  margin-bottom: 8px;
+  color: #ffdd00;
+}
+
+.faq-hero-card h2 {
+  margin: 0 0 6px;
+}
+
+.faq-hero-card p {
+  font-size: 14px;
+  margin: 0 0 12px;
+}
+
+.hero-wh-btn {
+  background: #25d366;
+  color: #fff;
+}
+
+.hero-wh-btn:hover {
+  filter: brightness(0.95);
+}
+
+/* ===== أدوات البحث / الفلتر ===== */
+.faq-tools {
+  max-width: 1100px;
+  margin: 16px auto 8px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px;
+}
+
+.faq-search {
+  flex: 1.1;
+  min-width: 260px;
+}
+
+.faq-search label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+
+.faq-search input {
+  width: 100%;
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-family: inherit;
+  font-size: 14px;
+}
+
+.faq-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  justify-content: flex-end;
+}
+
+.faq-filter-btn {
+  padding: 6px 10px;
+  border-radius: 20px;
+  border: 1px solid #0077b6;
+  background: #fff;
+  color: #0077b6;
+  font-size: 12px;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.faq-filter-btn.active,
+.faq-filter-btn:hover {
+  background: #0077b6;
+  color: #fff;
+}
+
+/* ===== الـ MAIN ===== */
+.faq-main {
+  max-width: 1100px;
+  margin: 0 auto 30px;
+  padding: 0 16px 10px;
+}
+
+.faq-intro {
+  font-size: 14px;
+  margin: 4px 0 14px;
+}
+
+/* ===== FAQ ===== */
+.faq-container {
+  margin: 0 0 24px;
+}
+
+.faq-item {
+  margin-bottom: 10px;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+}
+
+.faq-question {
+  width: 100%;
+  padding: 14px 14px;
+  background: #0077b6;
+  color: white;
+  border: none;
+  outline: none;
+  text-align: right;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.faq-question .faq-toggle-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.faq-question .faq-toggle-icon i {
+  font-size: 14px;
+}
+
+.faq-item.open .faq-question {
+  background: #023e8a;
+}
+
+.faq-answer {
+  background: white;
+  padding: 0 14px 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.25s ease;
+}
+
+.faq-answer p,
+.faq-answer ul {
+  font-size: 14px;
+}
+
+.faq-answer p {
+  margin: 8px 0;
+}
+
+.faq-answer ul {
+  margin: 0 0 10px;
+  padding-right: 18px;
+}
+
+/* ===== لسه عندك سؤال؟ ===== */
+.still-have-question {
+  margin-top: 10px;
+  padding: 16px 14px 18px;
+  border-radius: 14px;
+  background: #e3f2fd;
+}
+
+.still-have-question h2 {
+  margin: 0 0 6px;
+  font-size: 18px;
+}
+
+.still-have-question p {
+  margin: 0 0 10px;
+  font-size: 14px;
+}
+
+.still-have-question a {
+  color: #0077b6;
+  text-decoration: none;
+}
+
+.still-have-question a:hover {
+  text-decoration: underline;
+}
+
+.still-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+/* أزرار عامة (نفس روح بقية الموقع) */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 13px;
+  text-decoration: none;
+}
+
+.main-btn {
+  background: #0077b6;
+  color: #fff;
+}
+
+.main-btn:hover {
+  filter: brightness(0.95);
+}
+
+.secondary-btn {
+  background: #111;
+  color: #fff;
+}
+
+.secondary-btn:hover {
+  opacity: 0.9;
+}
+
+/* ===== قسم النصائح (blog-container بتاعك) ===== */
+.tips-section {
+  margin-top: 10px;
+  padding-bottom: 10px;
+}
+
+.tips-section h2 {
+  margin: 0 0 8px;
+  font-size: 20px;
+  color: #0077b6;
+}
+
+.tips-intro {
+  margin: 0 0 14px;
+  font-size: 14px;
+}
+
+/* المدونة (كما هي + تعديلات بسيطة) */
 .blog-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 20px;
-  padding: 30px;
+  padding: 0;
 }
 
 .blog-card {
   background: white;
   border-radius: 15px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   transition: transform 0.2s;
 }
@@ -52,7 +338,7 @@ body {
 
 .blog-card h2 {
   margin: 15px;
-  font-size: 20px;
+  font-size: 18px;
   color: #0077b6;
 }
 
@@ -70,43 +356,83 @@ body {
   text-decoration: none;
   border-top: 1px solid #eee;
 }
+
 .blog-card a:hover {
   background: #023e8a;
 }
 
-/* FAQ */
-.faq-container {
-  padding: 30px;
-  max-width: 800px;
-  margin: auto;
+/* ===== زر واتساب عائم + Scroll Top + Dark Toggle ===== */
+.floating-whatsapp {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  background: #25d366;
+  color: #fff;
+  padding: 8px 14px;
+  border-radius: 40px;
+  text-decoration: none;
+  font-weight: 700;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+  z-index: 999;
+  font-size: 13px;
 }
 
-.faq-item {
-  margin-bottom: 15px;
+.floating-whatsapp:hover {
+  filter: brightness(0.95);
 }
 
-.faq-question {
-  width: 100%;
-  padding: 15px;
-  background: #0077b6;
-  color: white;
+.scroll-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
   border: none;
-  outline: none;
-  text-align: right;
-  font-size: 16px;
-  border-radius: 10px;
+  background: #111;
+  color: #fff;
   cursor: pointer;
-}
-
-.faq-question.active {
-  background: #023e8a;
-}
-
-.faq-answer {
   display: none;
-  background: white;
-  padding: 15px;
-  border-radius: 10px;
-  margin-top: 5px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  z-index: 999;
+}
+
+.scroll-top.show {
+  display: flex;
+}
+
+.dark-toggle {
+  position: fixed;
+  top: 80px;
+  left: 20px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid #ddd;
+  background: #fff;
+  cursor: pointer;
+  z-index: 999;
+}
+
+/* ===== موبايل ===== */
+@media (max-width: 768px) {
+  .faq-hero-inner {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+
+  .faq-tools {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .faq-filters {
+    justify-content: flex-start;
+  }
+
+  .still-actions {
+    flex-direction: column;
+  }
 }
