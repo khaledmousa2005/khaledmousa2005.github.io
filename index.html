@@ -81,7 +81,7 @@
       <ul class="ek-menu" id="ekMenu">
         <li><a href="#hero" class="ek-link active">الرئيسية</a></li>
         <li><a href="#offers" class="ek-link">العروض</a></li>
-        <li><a href="Services.html" class="ek-link" target="_blank">الدعم الفني</a></li>
+        <li><a href="#products" class="ek-link">منتجاتنا</a></li>
         <li><a href="#why-us" class="ek-link">ليه الخالد تك؟</a></li>
         <li><a href="#testimonials" class="ek-link">آراء العملاء</a></li>
         <li><a href="#contact" class="ek-link">اطلب الآن</a></li>
@@ -91,7 +91,10 @@
             <i class="fa-brands fa-whatsapp"></i> واتساب
           </a>
         </li>
-       
+        <li>
+          <!-- زر تغيير الوضع (ثابت) -->
+  <button id="darkModeToggle" class="dark-toggle" aria-label="تبديل الوضع">🌙</button>
+        </li>
       </ul>
     </div>
   </nav>
@@ -361,17 +364,8 @@
         <a href="product4.html" class="btn1">تفاصيل أكتر</a>
       </div>
 
-      <!-- منتج 5 -->
-      <div class="product-card">
-        <img src="hp-elitebook-840-g1-touchscreen-laptops.jpg"
-             alt="Laptop HP EliteBook 840 G1 i5"
-             loading="lazy" />
-        <h3>HP EliteBook 840 G1</h3>
-        <p>Core i5-4300U | RAM 8GB | 500GB HDD</p>
-        <span class="price">9,600 جنيه</span>
-        <a href="#" class="btn btn-primary" data-product="HP EliteBook 840 G1">اطلب الآن</a><br />
-        <a href="product1.html" class="btn1">تفاصيل أكتر</a>
-      </div>
+    
+
 
       <!-- منتج 6 -->
       <div class="product-card">
@@ -381,7 +375,16 @@
         <p>Core i5-4300U | RAM 8GB | 256GB SSD</p>
         <span class="price">10,000 جنيه</span>
         <a href="#" class="btn btn-primary" data-product="Lenovo ThinkPad X240">اطلب الآن</a><br />
-        <a href="product1.html" class="btn1">تفاصيل أكتر</a>
+        <a href="product1.html" class="btn1">تفاصيل أكتر</a>  <!-- منتج 5 -->
+     <div class="cta-row">
+  <button class="btn add-to-cart"
+          data-id="hp-840-g1"
+          data-title="HP EliteBook 840 G1"
+          data-price="9600"
+          data-image="hp-elitebook-840-g1-touchscreen-laptops.jpg">
+      <i class="fa-solid fa-cart-plus"></i> أضف للسلة
+  </button>
+</div>
       </div>
 
       <!-- منتج 7 -->
@@ -499,8 +502,12 @@
   <!-- رابط خدمات أخرى -->
   <a class="delv" href="services.html" target="_blank">خدمات الدعم الفني والتقني</a><br /><br />
 
- 
 
+  <!-- زر واتساب عائم -->
+  <a href="https://wa.me/201148223698" target="_blank"
+     class="floating-whatsapp">
+    💬 تواصل عبر واتساب
+  </a>
 
   <!-- ABOUT -->
   <section id="about" class="about">
@@ -591,8 +598,6 @@
       <!-- عمود 3 -->
       <div class="footer-col">
         <ul>
-                  <li><a href="Services.html" class="ek-link" target="_blank">خدماتنا</a></li>
-
           <li><a href="policy.html">سياسة الاسترجاع والاستبدال</a></li>
           <li><a href="privacy.html">سياسة الخصوصية</a></li>
           <li><a href="addres.html">العنوان</a></li>
@@ -639,13 +644,44 @@
     </div>
   </footer>
 
-  <!-- زر تغيير الوضع (ثابت) -->
-  <button id="darkModeToggle" class="dark-toggle" aria-label="تبديل الوضع">🌙</button>
+
 
   <!-- Scroll To Top -->
   <button id="scrollTopBtn" class="scroll-top" aria-label="الرجوع لأعلى">
     <i class="fa-solid fa-arrow-up"></i>
   </button>
+
+
+  <!-- ==================== CART WIDGET (ضعوه قبل </body>) ==================== -->
+<div id="cartWidget" class="cart-widget" aria-hidden="false">
+  <button id="openCartBtn" class="cart-btn" aria-expanded="false" aria-controls="miniCart">
+    <i class="fa-solid fa-cart-shopping"></i>
+    <span style="margin-inline-start:8px">السلة</span>
+    <span id="cartCount" class="cart-badge">0</span>
+  </button>
+
+  <div id="miniCart" class="minicart" role="dialog" aria-label="محتوى السلة" style="display:none">
+    <div class="header">
+      <strong>سلة التسوق</strong>
+      <button id="miniClose" style="background:none;border:none;cursor:pointer">✖</button>
+    </div>
+    <div id="miniItems" class="items" aria-live="polite">
+      <!-- items injected here -->
+    </div>
+    <div class="footer">
+      <div id="miniTotal" style="font-weight:800">الإجمالي: 0 جـ</div>
+      <div style="display:flex;gap:8px">
+        <button id="clearMini" class="btn clear">إفراغ</button>
+        <button id="goCart" class="btn view">عرض السلة</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- ==================== END CART WIDGET ==================== -->
+
+
+
+
 
   <!-- Main Script -->
   <script src="script.js" defer></script>
